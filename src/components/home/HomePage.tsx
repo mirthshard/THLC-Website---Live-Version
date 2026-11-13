@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { HeroCarousel } from './HeroCarousel';
 import { useNavigation } from '../../context/NavigationContext';
 import { SERVICES_DATA, ETHOS_PRINCIPLES, LONDON_NEIGHBOURHOODS, TGLC_CONTACT } from '../../data/tglcData';
 import { GoldDivider } from '../common/GoldDivider';
+import { PillarGridSkeleton } from '../common/EditorialSkeletons';
 import { ArrowUpRight, Lock, Compass, Sliders } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
@@ -160,6 +161,14 @@ const DIFFERENCE_IMAGERY = [
 export const HomePage: React.FC = () => {
   const { navigateTo, openIntroductionModal } = useNavigation();
   const [activeTab, setActiveTab] = useState(0);
+  const [isPillarsLoading, setIsPillarsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => {
+      setIsPillarsLoading(false);
+    }, 280);
+    return () => window.clearTimeout(timer);
+  }, []);
 
   const currentPillar = LIFESTYLE_PILLARS[activeTab];
 
@@ -226,7 +235,15 @@ export const HomePage: React.FC = () => {
         <div className="h-6 bg-gradient-to-b from-black to-[#08090C]" aria-hidden="true" />
 
         <div className="max-w-7xl mx-auto px-5 sm:px-12 pb-10 sm:pb-14 relative z-10 space-y-8">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-t border-[#1D1F28] pt-8">
+          <div className="relative flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-t border-[#1D1F28] pt-8">
+            <motion.span
+              aria-hidden="true"
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
+              className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-[#B98633]/75 via-[#E2BA6B]/40 to-transparent origin-left"
+            />
             <div>
               <span className="text-[11px] uppercase tracking-[0.26em] text-[#CFA85E] font-medium block">
                 Six Core Concierge Pillars
@@ -240,91 +257,116 @@ export const HomePage: React.FC = () => {
             </span>
           </div>
 
-          <motion.div
-            variants={sectionStaggerVariants}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.05 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
-          >
-            {[
-              {
-                num: 'I.',
-                kicker: 'Pillar One · Hospitality & Suites',
-                title: 'VIP Ticketing & Sporting Boxes',
-                desc: 'Premier League derby boxes, Champions League finals, world-title fight nights, and major cultural festivals. We connect principals directly with authorised suite holders—handling seating, fine dining, and quiet matchday coordination without stress.',
-                route: 'service-detail' as const,
-                params: { serviceId: 'experiences-culture' },
-              },
-              {
-                num: 'II.',
-                kicker: 'Pillar Two · Accommodation',
-                title: 'Luxury Suites & Country Estates',
-                desc: 'London five-star hotel suites, discreet mews townhouses, and staffed countryside estates arranged on tailored terms. Every stay—whether an overnight boardroom trip or an extended family summer—is verified before your luggage crosses the threshold.',
-                route: 'service-detail' as const,
-                params: { serviceId: 'residences-relocation' },
-              },
-              {
-                num: 'III.',
-                kicker: 'Pillar Three · Chauffeurs',
-                title: 'Executive Ground Transportation',
-                desc: 'Immaculate Rolls-Royce, Mercedes-Maybach, and Range Rover fleets driven by vetted defensive chauffeurs who know London’s mews lanes by heart. Seamless transfers between private aviation aprons, residences, and late evening tables.',
-                route: 'service-detail' as const,
-                params: { serviceId: 'transport-security' },
-              },
-              {
-                num: 'IV.',
-                kicker: 'Pillar Four · Aviation & Sea',
-                title: 'Private Aviation & Coastal Charters',
-                desc: 'Direct Part 135 charter sourcing across RAF Northolt, Farnborough, and continental hubs alongside vetted yacht tenders—moving you effortlessly from boardroom meetings straight onto alpine valleys or Mediterranean moorings.',
-                route: 'service-detail' as const,
-                params: { serviceId: 'travel-aviation' },
-              },
-              {
-                num: 'V.',
-                kicker: 'Pillar Five · Dining & Private Clubs',
-                title: 'Private Dining & Social Access',
-                desc: 'Hard-to-reach corner tables in Mayfair and St James’s, sommelier cellar rooms, and personal introductions to historic private members’ clubs—coordinated discreetly through long-standing maître d’ relationships.',
-                route: 'service-detail' as const,
-                params: { serviceId: 'dining-nightlife' },
-              },
-              {
-                num: 'VI.',
-                kicker: 'Pillar Six · Private Sourcing',
-                title: 'Sartorial Craft & Objects of Desire',
-                desc: 'In-residence Savile Row basted fittings, independent watchmaker introductions, rare cellar bottles, and closed-door Bond Street previews—sourced directly through primary craftspeople with clear pass-through terms.',
-                route: 'service-detail' as const,
-                params: { serviceId: 'luxury-sourcing' },
-              },
-            ].map((pillar) => (
+          <AnimatePresence mode="wait">
+            {isPillarsLoading ? (
               <motion.div
-                key={pillar.num}
-                variants={blockItemVariants}
-                whileHover={{ y: -4 }}
-                onClick={() => navigateTo(pillar.route, pillar.params)}
-                className="group relative cursor-pointer space-y-3 p-6 bg-[#0C0D12] border border-[#1E202B] hover:border-[#CFA85E]/70 transition-colors flex flex-col justify-between overflow-hidden"
+                key="home-pillars-skeleton"
+                initial={{ opacity: 0.8 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2 }}
               >
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <span className="font-serif text-2xl text-[#CFA85E] font-light tabular-nums">{pillar.num}</span>
-                    <ArrowUpRight className="w-4 h-4 text-[#8B672B] group-hover:text-[#CFA85E] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
-                  </div>
-                  <span className="text-xs tracking-wide text-[#C4933F] font-medium block">{pillar.kicker}</span>
-                  <h3 className="font-serif text-xl sm:text-2xl text-[#F4F1EA] group-hover:text-[#E2BA6B] transition-colors">
-                    {pillar.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-[#A5A096] leading-relaxed font-light">
-                    {pillar.desc}
-                  </p>
-                </div>
-                <div className="pt-4">
-                  <span className="block h-[1px] w-full bg-[#1C1E28] relative overflow-hidden">
-                    <span className="block h-full w-0 group-hover:w-full bg-gradient-to-r from-[#8B672B] via-[#E2BA6B] to-[#C4933F] transition-all duration-500" />
-                  </span>
-                </div>
+                <PillarGridSkeleton variant="home" count={6} />
               </motion.div>
-            ))}
-          </motion.div>
+            ) : (
+              <motion.div
+                key="home-pillars-loaded"
+                variants={sectionStaggerVariants}
+                initial="hidden"
+                animate="show"
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+              >
+                {[
+                  {
+                    num: 'I.',
+                    kicker: 'Pillar One · Hospitality',
+                    title: 'VIP Event & Box Access',
+                    desc: 'Premier League derby boxes, Champions League finals, world-title fight nights, and major cultural festivals. We connect principals directly with authorised suite holders—handling seating, fine dining, and quiet matchday coordination without stress.',
+                    route: 'service-detail' as const,
+                    params: { serviceId: 'experiences-culture' },
+                  },
+                  {
+                    num: 'II.',
+                    kicker: 'Pillar Two · Accommodation',
+                    title: 'Suites & Private Estates',
+                    desc: 'London five-star hotel suites, discreet mews townhouses, and staffed countryside estates arranged on tailored terms. Every stay—whether an overnight boardroom trip or an extended family summer—is verified before your luggage crosses the threshold.',
+                    route: 'service-detail' as const,
+                    params: { serviceId: 'residences-relocation' },
+                  },
+                  {
+                    num: 'III.',
+                    kicker: 'Pillar Three · Chauffeurs',
+                    title: 'Chauffeur & Ground Fleet',
+                    desc: 'Immaculate Rolls-Royce, Mercedes-Maybach, and Range Rover fleets driven by vetted defensive chauffeurs who know London’s mews lanes by heart. Seamless transfers between private aviation aprons, residences, and late evening tables.',
+                    route: 'service-detail' as const,
+                    params: { serviceId: 'transport-security' },
+                  },
+                  {
+                    num: 'IV.',
+                    kicker: 'Pillar Four · Aviation & Sea',
+                    title: 'Private Air & Sea Charter',
+                    desc: 'Direct Part 135 charter sourcing across RAF Northolt, Farnborough, and continental hubs alongside vetted yacht tenders—moving you effortlessly from boardroom meetings straight onto alpine valleys or Mediterranean moorings.',
+                    route: 'service-detail' as const,
+                    params: { serviceId: 'travel-aviation' },
+                  },
+                  {
+                    num: 'V.',
+                    kicker: 'Pillar Five · Dining & Clubs',
+                    title: 'Private Dining & Clubs',
+                    desc: 'Hard-to-reach corner tables in Mayfair and St James’s, sommelier cellar rooms, and personal introductions to historic private members’ clubs—coordinated discreetly through long-standing maître d’ relationships.',
+                    route: 'service-detail' as const,
+                    params: { serviceId: 'dining-nightlife' },
+                  },
+                  {
+                    num: 'VI.',
+                    kicker: 'Pillar Six · Private Sourcing',
+                    title: 'Bespoke Craft & Sourcing',
+                    desc: 'In-residence Savile Row basted fittings, independent watchmaker introductions, rare cellar bottles, and closed-door Bond Street previews—sourced directly through primary craftspeople with clear pass-through terms.',
+                    route: 'service-detail' as const,
+                    params: { serviceId: 'luxury-sourcing' },
+                  },
+                ].map((pillar) => (
+                  <motion.div
+                    key={pillar.num}
+                    variants={blockItemVariants}
+                    whileHover={{ y: -4 }}
+                    onClick={() => navigateTo(pillar.route, pillar.params)}
+                    className="group relative cursor-pointer space-y-3 p-6 bg-[#0C0D12] border border-[#1E202B] hover:border-[#CFA85E]/70 transition-colors flex flex-col justify-between overflow-hidden"
+                  >
+                    <span
+                      aria-hidden="true"
+                      className="absolute top-0 left-0 w-2.5 h-2.5 border-t border-l border-[#E2BA6B] opacity-0 group-hover:opacity-100 scale-90 group-hover:scale-100 transition-all duration-300 pointer-events-none"
+                    />
+                    <span
+                      aria-hidden="true"
+                      className="absolute bottom-0 right-0 w-2.5 h-2.5 border-b border-r border-[#E2BA6B] opacity-0 group-hover:opacity-100 scale-90 group-hover:scale-100 transition-all duration-300 pointer-events-none"
+                    />
+
+                    <div className="space-y-3">
+                      <div className="flex items-center justify-between">
+                        <span className="font-serif text-2xl text-[#CFA85E] font-light tabular-nums">{pillar.num}</span>
+                        <ArrowUpRight className="w-4 h-4 text-[#8B672B] group-hover:text-[#CFA85E] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                      </div>
+                      <span className="text-xs tracking-wide text-[#C4933F] font-medium block">{pillar.kicker}</span>
+                      <div className="h-[3.5rem] sm:h-[3.75rem] flex items-center">
+                        <h3 className="font-serif text-xl sm:text-[1.32rem] xl:text-[1.45rem] leading-[1.25] text-[#F4F1EA] group-hover:text-[#E2BA6B] transition-colors line-clamp-2">
+                          {pillar.title}
+                        </h3>
+                      </div>
+                      <p className="text-xs sm:text-sm text-[#A5A096] leading-relaxed font-light">
+                        {pillar.desc}
+                      </p>
+                    </div>
+                    <div className="pt-4">
+                      <span className="block h-[1px] w-full bg-[#1C1E28] relative overflow-hidden">
+                        <span className="block h-full w-0 group-hover:w-full bg-gradient-to-r from-[#8B672B] via-[#E2BA6B] to-[#C4933F] transition-all duration-500" />
+                      </span>
+                    </div>
+                  </motion.div>
+                ))}
+              </motion.div>
+            )}
+          </AnimatePresence>
 
           {/* Standalone House Covenant Architectural Ribbon */}
           <motion.div
@@ -724,7 +766,7 @@ export const HomePage: React.FC = () => {
               className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center bg-[#0C0D12] border border-[#20222E] p-6 sm:p-10 shadow-2xl"
             >
               <div className="lg:col-span-7 space-y-4">
-                <div className="relative aspect-[16/10] overflow-hidden bg-black border border-[#242632] group">
+                <div className="relative aspect-[16/10] overflow-hidden tglc-shimmer-soft border border-[#242632] group">
                   <motion.img
                     src={currentPillar.image}
                     alt={currentPillar.title}
@@ -1092,7 +1134,7 @@ export const HomePage: React.FC = () => {
                   idx === 0 ? 'md:col-span-2 lg:col-span-2' : ''
                 }`}
               >
-                <motion.div variants={imagePlateVariants} className={`w-full overflow-hidden bg-black relative ${idx === 0 ? 'aspect-[21/9]' : 'aspect-[16/10]'}`}>
+                <motion.div variants={imagePlateVariants} className={`w-full overflow-hidden tglc-shimmer-soft relative ${idx === 0 ? 'aspect-[21/9]' : 'aspect-[16/10]'}`}>
                   <img
                     src={DIFFERENCE_IMAGERY[idx % DIFFERENCE_IMAGERY.length]}
                     alt={principle.title}
@@ -1106,9 +1148,11 @@ export const HomePage: React.FC = () => {
 
                 <div className="p-6 sm:p-7 space-y-3 flex-1 flex flex-col justify-between">
                   <div className="space-y-2">
-                    <h3 className="font-serif text-2xl text-[#F4F1EA] group-hover:text-[#CFA85E] transition-colors">
-                      {principle.title}
-                    </h3>
+                    <div className="h-[3.5rem] sm:h-[3.75rem] flex items-center">
+                      <h3 className="font-serif text-2xl text-[#F4F1EA] group-hover:text-[#CFA85E] transition-colors leading-[1.25] line-clamp-2">
+                        {principle.title}
+                      </h3>
+                    </div>
                     <p className="text-xs sm:text-sm text-[#D9D4CA] leading-relaxed font-light">
                       {principle.summary}
                     </p>
@@ -1153,7 +1197,7 @@ export const HomePage: React.FC = () => {
               </h2>
             </div>
             <p className="text-xs sm:text-sm text-[#9C968A] max-w-md leading-relaxed font-light">
-              Our house stands at 3rd Floor, 45 Albemarle Street in Mayfair, with localized intelligence across St James’s, Knightsbridge, Belgravia, and Chelsea.
+              Our house stands at 3rd Floor, 45 Albemarle Street in Mayfair, with localised intelligence across St James’s, Knightsbridge, Belgravia, and Chelsea.
             </p>
           </motion.div>
 

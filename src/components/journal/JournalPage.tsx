@@ -4,6 +4,7 @@ import { useNavigation } from '../../context/NavigationContext';
 import { CALENDAR_EVENTS, JOURNAL_ARTICLES, TEAM_MEMBERS } from '../../data/tglcData';
 import { ArrowUpRight, Calendar, ChevronLeft, ChevronRight, Search, X } from 'lucide-react';
 import { GoldDivider } from '../common/GoldDivider';
+import { ArticleListSkeleton } from '../common/EditorialSkeletons';
 
 const JOURNAL_FORMATS = [
   'All Formats',
@@ -92,6 +93,7 @@ export const JournalPage: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All Articles');
   const [searchQuery, setSearchQuery] = useState('');
   const [heroIdx, setHeroIdx] = useState(0);
+  const [isArticlesLoading, setIsArticlesLoading] = useState(true);
 
   useEffect(() => {
     const timer = window.setInterval(() => {
@@ -99,6 +101,14 @@ export const JournalPage: React.FC = () => {
     }, 6500);
     return () => window.clearInterval(timer);
   }, []);
+
+  useEffect(() => {
+    setIsArticlesLoading(true);
+    const timer = window.setTimeout(() => {
+      setIsArticlesLoading(false);
+    }, 230);
+    return () => window.clearTimeout(timer);
+  }, [selectedFormat, selectedCategory, searchQuery]);
 
   const orderedArticles = useMemo(() => {
     const prioritySlugs = [
@@ -448,188 +458,227 @@ export const JournalPage: React.FC = () => {
           </div>
         </motion.section>
 
-        {/* Empty State or Lead + Grid */}
-        {!featuredArticle ? (
-          <motion.div
-            initial={{ opacity: 0.9, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="bg-[#0D1017] border border-[#242630] p-10 text-center space-y-4"
-          >
-            <span className="tglc-kicker block">No Matching Entries</span>
-            <h2 className="font-serif text-3xl text-[#FAF7F0]">
-              No dispatches matched your current filters.
-            </h2>
-            <p className="tglc-prose text-sm max-w-xl mx-auto">
-              Adjust your publication format tab, discipline filter, or keyword search to restore the full TGLC editorial archive.
-            </p>
-            <button
-              type="button"
-              onClick={resetFilters}
-              className="btn-outline-gold px-6 py-2.5 text-xs inline-flex items-center gap-2 min-h-[44px]"
+        {/* Shimmer Skeleton Transition, Empty State, or Lead + Grid */}
+        <AnimatePresence mode="wait">
+          {isArticlesLoading ? (
+            <motion.div
+              key="journal-articles-skeleton"
+              initial={{ opacity: 0.75 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.18 }}
             >
-              Reset All Filters
-            </button>
-          </motion.div>
-        ) : (
-          <>
-            {/* Featured Lead Story with Staggered Content & Image Reveal */}
-            <motion.article
-              key={featuredArticle.slug}
-              variants={journalStaggerVariants}
-              initial="hidden"
-              animate="show"
-              whileHover={{ y: -2 }}
-              onClick={() => navigateTo('journal-article', { articleSlug: featuredArticle.slug })}
-              className="group cursor-pointer p-6 sm:p-9 bg-[#0D1017] border border-[#242630] hover:border-[#E2BA6B]/80 transition-colors grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
+              <ArticleListSkeleton includeLead={true} cardCount={6} />
+            </motion.div>
+          ) : !featuredArticle ? (
+            <motion.div
+              key="journal-articles-empty"
+              initial={{ opacity: 0.9, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
+              className="bg-[#0D1017] border border-[#242630] p-10 text-center space-y-4"
             >
-              <motion.div variants={journalStaggerVariants} className="lg:col-span-6 order-2 lg:order-1 space-y-4">
-                <motion.div variants={journalItemVariants} className="tglc-meta flex flex-wrap items-center gap-2.5">
-                  <span className="text-[#E2BA6B] uppercase tracking-[0.18em]">
-                    {featuredArticle.articleType || 'Feature Essay'}
-                  </span>
-                  <span aria-hidden="true">·</span>
-                  <span>{featuredArticle.category}</span>
-                  <span aria-hidden="true">·</span>
-                  <span className="tabular-nums">{featuredArticle.publishDate}</span>
-                  <span aria-hidden="true">·</span>
-                  <span className="tabular-nums">{featuredArticle.readTime}</span>
-                </motion.div>
+              <span className="tglc-kicker block">No Matching Entries</span>
+              <h2 className="font-serif text-3xl text-[#FAF7F0]">
+                No dispatches matched your current filters.
+              </h2>
+              <p className="tglc-prose text-sm max-w-xl mx-auto">
+                Adjust your publication format tab, discipline filter, or keyword search to restore the full TGLC editorial archive.
+              </p>
+              <button
+                type="button"
+                onClick={resetFilters}
+                className="btn-outline-gold px-6 py-2.5 text-xs inline-flex items-center gap-2 min-h-[44px]"
+              >
+                Reset All Filters
+              </button>
+            </motion.div>
+          ) : (
+            <motion.div
+              key={`journal-loaded-${selectedFormat}-${selectedCategory}-${searchQuery}`}
+              initial={{ opacity: 0.85 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              className="space-y-10"
+            >
+              {/* Featured Lead Story with Staggered Content & Image Reveal */}
+              <motion.article
+                key={featuredArticle.slug}
+                variants={journalStaggerVariants}
+                initial="hidden"
+                animate="show"
+                whileHover={{ y: -2 }}
+                onClick={() => navigateTo('journal-article', { articleSlug: featuredArticle.slug })}
+                className="group relative cursor-pointer p-6 sm:p-9 bg-[#0D1017] border border-[#242630] hover:border-[#E2BA6B]/80 transition-colors grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
+              >
+                <span
+                  aria-hidden="true"
+                  className="absolute top-0 left-0 w-3 h-3 border-t border-l border-[#E2BA6B] opacity-0 group-hover:opacity-100 scale-90 group-hover:scale-100 transition-all duration-300 pointer-events-none"
+                />
+                <span
+                  aria-hidden="true"
+                  className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-[#E2BA6B] opacity-0 group-hover:opacity-100 scale-90 group-hover:scale-100 transition-all duration-300 pointer-events-none"
+                />
 
-                <motion.h2 variants={journalItemVariants} className="font-serif text-3xl sm:text-4xl lg:text-[2.75rem] text-[#FAF7F0] group-hover:text-[#E2BA6B] transition-colors leading-[1.1]">
-                  {featuredArticle.title}
-                </motion.h2>
+                <motion.div variants={journalStaggerVariants} className="lg:col-span-6 order-2 lg:order-1 space-y-4">
+                  <motion.div variants={journalItemVariants} className="tglc-meta flex flex-wrap items-center gap-2.5">
+                    <span className="text-[#E2BA6B] uppercase tracking-[0.18em]">
+                      {featuredArticle.articleType || 'Feature Essay'}
+                    </span>
+                    <span aria-hidden="true">·</span>
+                    <span>{featuredArticle.category}</span>
+                    <span aria-hidden="true">·</span>
+                    <span className="tabular-nums">{featuredArticle.publishDate}</span>
+                    <span aria-hidden="true">·</span>
+                    <span className="tabular-nums">{featuredArticle.readTime}</span>
+                  </motion.div>
 
-                <motion.p variants={journalItemVariants} className="font-serif italic text-lg sm:text-xl text-[#E2BA6B]/95">
-                  {featuredArticle.subtitle}
-                </motion.p>
+                  <motion.h2 variants={journalItemVariants} className="font-serif text-3xl sm:text-4xl lg:text-[2.75rem] text-[#FAF7F0] group-hover:text-[#E2BA6B] transition-colors leading-[1.1]">
+                    {featuredArticle.title}
+                  </motion.h2>
 
-                {featuredArticle.venueNote && (
-                  <motion.p variants={journalItemVariants} className="tglc-meta text-[#D4D8E2]">
-                    {featuredArticle.venueNote}
+                  <motion.p variants={journalItemVariants} className="font-serif italic text-lg sm:text-xl text-[#E2BA6B]/95">
+                    {featuredArticle.subtitle}
                   </motion.p>
-                )}
 
-                <motion.p variants={journalItemVariants} className="tglc-prose text-sm sm:text-base max-w-2xl">
-                  {featuredArticle.excerpt}
-                </motion.p>
+                  {featuredArticle.venueNote && (
+                    <motion.p variants={journalItemVariants} className="tglc-meta text-[#D4D8E2]">
+                      {featuredArticle.venueNote}
+                    </motion.p>
+                  )}
 
-                {featuredArticle.keyTakeaways && featuredArticle.keyTakeaways.length > 0 && (
-                  <motion.ul variants={journalItemVariants} className="space-y-1.5 pt-1 border-t border-[#1D2130]">
-                    {featuredArticle.keyTakeaways.slice(0, 2).map((point, kIdx) => (
-                      <li key={kIdx} className="text-xs text-[#8F98AA] flex items-start gap-2 pt-1.5">
-                        <span className="text-[#E2BA6B] font-mono shrink-0">—</span>
-                        <span>{point}</span>
-                      </li>
-                    ))}
-                  </motion.ul>
-                )}
+                  <motion.p variants={journalItemVariants} className="tglc-prose text-sm sm:text-base max-w-2xl">
+                    {featuredArticle.excerpt}
+                  </motion.p>
 
-                <motion.div variants={journalItemVariants} className="pt-4 flex flex-wrap items-center justify-between gap-2 text-xs text-[#8F98AA] border-t border-[#20232E]">
-                  <span>
-                    By <strong className="font-medium text-[#FAF7F0]">{featuredArticle.author}</strong> · {featuredArticle.authorRole}
-                  </span>
-                  <span className="text-[#E2BA6B] group-hover:text-[#FAF7F0] transition-colors flex items-center gap-1.5 font-mono uppercase tracking-wider">
-                    <span>Read {featuredArticle.articleType || 'Essay'}</span>
-                    <ArrowUpRight className="w-3.5 h-3.5" />
-                  </span>
+                  {featuredArticle.keyTakeaways && featuredArticle.keyTakeaways.length > 0 && (
+                    <motion.ul variants={journalItemVariants} className="space-y-1.5 pt-1 border-t border-[#1D2130]">
+                      {featuredArticle.keyTakeaways.slice(0, 2).map((point, kIdx) => (
+                        <li key={kIdx} className="text-xs text-[#8F98AA] flex items-start gap-2 pt-1.5">
+                          <span className="text-[#E2BA6B] font-mono shrink-0">—</span>
+                          <span>{point}</span>
+                        </li>
+                      ))}
+                    </motion.ul>
+                  )}
+
+                  <motion.div variants={journalItemVariants} className="pt-4 flex flex-wrap items-center justify-between gap-2 text-xs text-[#8F98AA] border-t border-[#20232E]">
+                    <span>
+                      By <strong className="font-medium text-[#FAF7F0]">{featuredArticle.author}</strong> · {featuredArticle.authorRole}
+                    </span>
+                    <span className="text-[#E2BA6B] group-hover:text-[#FAF7F0] transition-colors flex items-center gap-1.5 font-mono uppercase tracking-wider">
+                      <span>Read {featuredArticle.articleType || 'Essay'}</span>
+                      <ArrowUpRight className="w-3.5 h-3.5" />
+                    </span>
+                  </motion.div>
                 </motion.div>
-              </motion.div>
 
-              <motion.div variants={journalImageVariants} className="lg:col-span-6 order-1 lg:order-2">
-                <div className="aspect-[16/10] w-full overflow-hidden bg-[#131722] border border-[#242630]">
-                  <img
-                    src={featuredArticle.heroImage}
-                    alt={featuredArticle.title}
-                    referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover brightness-105 contrast-105 group-hover:scale-105 transition-transform duration-700"
-                  />
-                </div>
-              </motion.div>
-            </motion.article>
+                <motion.div variants={journalImageVariants} className="lg:col-span-6 order-1 lg:order-2">
+                  <div className="aspect-[16/10] w-full overflow-hidden tglc-shimmer-soft border border-[#242630]">
+                    <img
+                      src={featuredArticle.heroImage}
+                      alt={featuredArticle.title}
+                      referrerPolicy="no-referrer"
+                      className="w-full h-full object-cover brightness-105 contrast-105 group-hover:scale-105 transition-transform duration-700"
+                    />
+                  </div>
+                </motion.div>
+              </motion.article>
 
-            {gridArticles.length > 0 && (
-              <>
-                <GoldDivider />
-                {/* Staggered Publications Grid */}
-                <motion.div
-                  key={`${selectedFormat}-${selectedCategory}-${searchQuery}`}
-                  variants={journalStaggerVariants}
-                  initial="hidden"
-                  whileInView="show"
-                  viewport={{ once: true, amount: 0.02 }}
-                  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7"
-                >
-                  {gridArticles.map((art) => (
-                    <motion.article
-                      key={art.slug}
-                      variants={journalItemVariants}
-                      whileHover={{ y: -3 }}
-                      onClick={() => navigateTo('journal-article', { articleSlug: art.slug })}
-                      className="group cursor-pointer bg-[#0D1017] border border-[#242630] hover:border-[#E2BA6B]/70 p-6 transition-colors flex flex-col justify-between"
-                    >
-                      <div>
-                        <motion.div
-                          variants={journalImageVariants}
-                          className="aspect-[16/10] w-full overflow-hidden mb-5 bg-[#131722] border border-[#20232E]"
-                        >
-                          <img
-                            src={art.heroImage}
-                            alt={art.title}
-                            referrerPolicy="no-referrer"
-                            className="w-full h-full object-cover brightness-105 contrast-105 group-hover:scale-105 transition-transform duration-700"
-                          />
-                        </motion.div>
+              {gridArticles.length > 0 && (
+                <>
+                  <GoldDivider />
+                  {/* Staggered Publications Grid */}
+                  <motion.div
+                    variants={journalStaggerVariants}
+                    initial="hidden"
+                    animate="show"
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7"
+                  >
+                    {gridArticles.map((art) => (
+                      <motion.article
+                        key={art.slug}
+                        variants={journalItemVariants}
+                        whileHover={{ y: -3 }}
+                        onClick={() => navigateTo('journal-article', { articleSlug: art.slug })}
+                        className="group relative cursor-pointer bg-[#0D1017] border border-[#242630] hover:border-[#E2BA6B]/70 p-6 transition-colors flex flex-col justify-between"
+                      >
+                        <span
+                          aria-hidden="true"
+                          className="absolute top-0 left-0 w-2.5 h-2.5 border-t border-l border-[#E2BA6B] opacity-0 group-hover:opacity-100 scale-90 group-hover:scale-100 transition-all duration-300 pointer-events-none"
+                        />
+                        <span
+                          aria-hidden="true"
+                          className="absolute bottom-0 right-0 w-2.5 h-2.5 border-b border-r border-[#E2BA6B] opacity-0 group-hover:opacity-100 scale-90 group-hover:scale-100 transition-all duration-300 pointer-events-none"
+                        />
 
-                        <div className="tglc-meta flex flex-wrap items-center gap-2 text-[11px] mb-2.5">
-                          <span className="text-[#E2BA6B] uppercase tracking-wider">
-                            {art.articleType || 'Feature Essay'}
-                          </span>
-                          <span aria-hidden="true">·</span>
-                          <span>{art.category}</span>
-                          <span aria-hidden="true">·</span>
-                          <span className="tabular-nums">{art.readTime}</span>
-                          {art.editorialImages && art.editorialImages.length > 0 && (
-                            <>
-                              <span aria-hidden="true">·</span>
-                              <span className="tabular-nums text-[#E2BA6B]">{art.editorialImages.length + 1} Photos</span>
-                            </>
+                        <div>
+                          <motion.div
+                            variants={journalImageVariants}
+                            className="aspect-[16/10] w-full overflow-hidden mb-5 tglc-shimmer-soft border border-[#20232E]"
+                          >
+                            <img
+                              src={art.heroImage}
+                              alt={art.title}
+                              referrerPolicy="no-referrer"
+                              className="w-full h-full object-cover brightness-105 contrast-105 group-hover:scale-105 transition-transform duration-700"
+                            />
+                          </motion.div>
+
+                          <div className="tglc-meta flex flex-wrap items-center gap-2 text-[11px] mb-2.5">
+                            <span className="text-[#E2BA6B] uppercase tracking-wider">
+                              {art.articleType || 'Feature Essay'}
+                            </span>
+                            <span aria-hidden="true">·</span>
+                            <span>{art.category}</span>
+                            <span aria-hidden="true">·</span>
+                            <span className="tabular-nums">{art.readTime}</span>
+                            {art.editorialImages && art.editorialImages.length > 0 && (
+                              <>
+                                <span aria-hidden="true">·</span>
+                                <span className="tabular-nums text-[#E2BA6B]">{art.editorialImages.length + 1} Photos</span>
+                              </>
+                            )}
+                          </div>
+
+                          <div className="h-[3.5rem] sm:h-[3.8rem] flex items-start mb-2">
+                            <h3 className="font-serif text-2xl text-[#FAF7F0] group-hover:text-[#E2BA6B] transition-colors leading-[1.22] line-clamp-2">
+                              {art.title}
+                            </h3>
+                          </div>
+
+                          {art.eventDates && (
+                            <p className="font-mono text-[11px] text-[#8F98AA] mb-2 truncate">
+                              {art.eventDates}
+                            </p>
                           )}
+
+                          <p className="tglc-prose text-xs sm:text-sm line-clamp-3 mb-6">
+                            {art.excerpt}
+                          </p>
                         </div>
 
-                        <h3 className="font-serif text-2xl text-[#FAF7F0] group-hover:text-[#E2BA6B] transition-colors mb-2 leading-snug">
-                          {art.title}
-                        </h3>
-
-                        {art.eventDates && (
-                          <p className="font-mono text-[11px] text-[#8F98AA] mb-2 truncate">
-                            {art.eventDates}
-                          </p>
-                        )}
-
-                        <p className="tglc-prose text-xs sm:text-sm line-clamp-3 mb-6">
-                          {art.excerpt}
-                        </p>
-                      </div>
-
-                      <div className="space-y-2.5 pt-3 border-t border-[#20232E]">
-                        <div className="flex items-center justify-between gap-2 text-xs text-[#8F98AA]">
-                          <span className="truncate">{art.author}</span>
-                          <span className="text-[#E2BA6B] group-hover:text-[#FAF7F0] transition-colors flex items-center gap-1 whitespace-nowrap shrink-0 font-mono uppercase text-[11px] tracking-wider">
-                            <span>Open</span>
-                            <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                        <div className="space-y-2.5 pt-3 border-t border-[#20232E]">
+                          <div className="flex items-center justify-between gap-2 text-xs text-[#8F98AA]">
+                            <span className="truncate">{art.author}</span>
+                            <span className="text-[#E2BA6B] group-hover:text-[#FAF7F0] transition-colors flex items-center gap-1 whitespace-nowrap shrink-0 font-mono uppercase text-[11px] tracking-wider">
+                              <span>Open</span>
+                              <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                            </span>
+                          </div>
+                          <span className="block h-[1px] w-full bg-[#191C26] overflow-hidden">
+                            <span className="block h-full w-0 group-hover:w-full bg-gradient-to-r from-[#8B672B] via-[#E2BA6B] to-[#C4933F] transition-all duration-500" />
                           </span>
                         </div>
-                        <span className="block h-[1px] w-full bg-[#191C26] overflow-hidden">
-                          <span className="block h-full w-0 group-hover:w-full bg-gradient-to-r from-[#8B672B] via-[#E2BA6B] to-[#C4933F] transition-all duration-500" />
-                        </span>
-                      </div>
-                    </motion.article>
-                  ))}
-                </motion.div>
-              </>
-            )}
-          </>
-        )}
+                      </motion.article>
+                    ))}
+                  </motion.div>
+                </>
+              )}
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         <GoldDivider />
 

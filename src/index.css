@@ -133,3 +133,37 @@ html.theme-white-tie body {
   color: #EEF1F7;
 }
 
+@keyframes tglcShimmerSweep {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.tglc-shimmer {
+  background: linear-gradient(
+    105deg,
+    #0e1118 0%,
+    #141925 36%,
+    rgba(207, 168, 94, 0.14) 50%,
+    #141925 64%,
+    #0e1118 100%
+  );
+  background-size: 220% 100%;
+  animation: tglcShimmerSweep 2.1s infinite linear;
+}
+
+.tglc-shimmer-soft {
+  background: linear-gradient(
+    105deg,
+    #0b0d14 0%,
+    #121622 40%,
+    rgba(226, 186, 107, 0.09) 50%,
+    #121622 60%,
+    #0b0d14 100%
+  );
+  background-size: 220% 100%;
+  animation: tglcShimmerSweep 2.4s infinite linear;
+}

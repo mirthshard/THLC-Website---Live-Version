@@ -3,7 +3,22 @@ import { motion, AnimatePresence } from 'motion/react';
 import { useNavigation } from '../../context/NavigationContext';
 import { TEAM_MEMBERS, ETHOS_PRINCIPLES, APPROACH_STEPS, LONDON_NEIGHBOURHOODS } from '../../data/tglcData';
 import { GoldDivider } from '../common/GoldDivider';
-import { ArrowUpRight, Shield, Award, Lock, Check, Compass, ChevronLeft, ChevronRight } from 'lucide-react';
+import { PillarGridSkeleton } from '../common/EditorialSkeletons';
+import {
+  ArrowUpRight,
+  Shield,
+  Award,
+  Lock,
+  Check,
+  Compass,
+  ChevronLeft,
+  ChevronRight,
+  Ticket,
+  Building2,
+  Car,
+  Plane,
+  Gem,
+} from 'lucide-react';
 import { ConsortiumLocationsMap } from './ConsortiumLocationsMap';
 
 const CONSORTIUM_HERO_SLIDES = [
@@ -73,8 +88,18 @@ export const ConsortiumPages: React.FC<ConsortiumPagesProps> = ({ subPage = 'ove
   const [selectedLondonArea, setSelectedLondonArea] = useState(0);
   const [heroSlide, setHeroSlide] = useState(0);
   const [isHeroPaused, setIsHeroPaused] = useState(false);
+  const [isPillarsLoading, setIsPillarsLoading] = useState(true);
 
   const activeTabLabel = SUB_TABS.find((t) => t.key === subPage)?.label ?? 'Overview';
+
+  useEffect(() => {
+    if (subPage !== 'overview') return;
+    setIsPillarsLoading(true);
+    const timer = window.setTimeout(() => {
+      setIsPillarsLoading(false);
+    }, 250);
+    return () => window.clearTimeout(timer);
+  }, [subPage]);
 
   useEffect(() => {
     if (isHeroPaused) return;
@@ -342,21 +367,21 @@ export const ConsortiumPages: React.FC<ConsortiumPagesProps> = ({ subPage = 'ove
                   kicker: 'Triple Up · Live Access',
                   title: 'VIP Suites, Derbies & Fight Nights',
                   caption: 'Official hospitality suites across Wembley, Premier League grounds, Wimbledon, and Championship Boxing—paired seamlessly with stays and chauffeurs.',
-                  action: () => navigateTo('service-detail', { serviceId: 'events-culture' }),
+                  action: () => navigateTo('service-detail', { serviceId: 'experiences-culture' }),
                 },
                 {
                   img: '/assets/aistudio/corporate_ea_boardroom.jpg',
                   kicker: 'Executive & EA Desk',
                   title: 'Seamless Corporate Briefings',
                   caption: 'Dedicated day-and-night relief for Executive Assistants and visiting delegations—boardroom logistics, five-star stays, and group hosting.',
-                  action: () => navigateTo('service-detail', { serviceId: 'lifestyle-management' }),
+                  action: () => navigateTo('service-detail', { serviceId: 'personal-private-office' }),
                 },
                 {
                   img: '/assets/aistudio/Main-5_c9bf5214.png',
                   kicker: 'Five-Star Sanctuary',
                   title: 'London Townhouses & Suites',
                   caption: 'Quiet sanctuary suites across Mayfair, Knightsbridge, and the City inspected ahead of arrival so your key works effortlessly on step-in.',
-                  action: () => navigateTo('service-detail', { serviceId: 'private-estates' }),
+                  action: () => navigateTo('service-detail', { serviceId: 'residences-relocation' }),
                 },
               ].map((card, i) => (
                 <motion.div
@@ -398,58 +423,206 @@ export const ConsortiumPages: React.FC<ConsortiumPagesProps> = ({ subPage = 'ove
             </div>
           </section>
 
-          {/* Three Pillars Cards */}
-          <section className="max-w-7xl mx-auto px-5 sm:px-8 grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-            {[
-              {
-                num: '01 · Purpose',
-                title: 'Curated Attention',
-                body: 'We strictly cap the number of families entrusted to each Senior Principal, preserving the unhurried time required to anticipate nuances before they ever become urgent requests.',
-                cta: 'Meet Leadership',
-                route: 'about' as const,
-              },
-              {
-                num: '02 · Principles',
-                title: 'Sound Judgement',
-                body: 'Real access is earned through years of mutual decency—never paid directories or scripted pitches. Our introductions carry personal accountability on both sides of the door.',
-                cta: 'Read Our Ethos',
-                route: 'ethos' as const,
-              },
-              {
-                num: '03 · Trust',
-                title: 'Privacy by Default',
-                body: 'Every dossier is governed under English Law non-disclosure covenants. Where anonymity matters most, pseudonymised arrivals and encrypted briefings come as standard.',
-                cta: 'Confidentiality Code',
-                route: 'privacy-discretion' as const,
-              },
-            ].map((card, i) => (
-              <motion.div
-                key={card.num}
-                initial={{ opacity: 0.9, y: 14 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.01 }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
-                whileHover={{ y: -3 }}
-                className="p-7 bg-[#12141A] border border-[#242630] hover:border-[#8B672B] transition-colors flex flex-col justify-between space-y-5"
-              >
-                <div className="space-y-3">
-                  <span className="text-xs tracking-[0.18em] text-[#E2BA6B] font-medium block">
-                    {card.num}
-                  </span>
-                  <h3 className="font-serif text-2xl text-[#FAF7F0]">{card.title}</h3>
-                  <p className="text-xs sm:text-sm text-[#D4D8E2] leading-relaxed font-light">
-                    {card.body}
-                  </p>
-                </div>
-                <button
-                  onClick={() => navigateTo(card.route)}
-                  className="text-xs tracking-wider text-[#E2BA6B] hover:text-[#FAF7F0] pt-2 inline-flex items-center gap-1.5 transition-colors self-start"
+          {/* Our Pillars — Five Distinct Core Service Pillars in a 2x3 Architectural Grid */}
+          <section className="max-w-7xl mx-auto px-5 sm:px-8 space-y-6">
+            <motion.div
+              {...REVEAL_SECTION}
+              className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#1D1F28] pb-4"
+            >
+              <div>
+                <span className="text-xs uppercase tracking-[0.22em] text-[#CFA85E] font-medium block mb-1">
+                  Five Core Service Mandates
+                </span>
+                <h2 className="font-serif text-3xl sm:text-4xl text-[#F4F1EA]">
+                  Our Pillars
+                </h2>
+              </div>
+              <p className="text-xs sm:text-sm text-[#9C968A] max-w-md font-light leading-relaxed">
+                Five core practice pillars stewarded directly from 45 Albemarle Street—delivered with unconflicted terms from £100 engagements to sovereign itineraries.
+              </p>
+            </motion.div>
+
+            <AnimatePresence mode="wait">
+              {isPillarsLoading ? (
+                <motion.div
+                  key="consortium-pillars-skeleton"
+                  initial={{ opacity: 0.8 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.2 }}
                 >
-                  <span>{card.cta}</span>
-                  <ArrowUpRight className="w-3.5 h-3.5" />
-                </button>
-              </motion.div>
-            ))}
+                  <PillarGridSkeleton variant="consortium" count={6} />
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="consortium-pillars-loaded"
+                  initial={{ opacity: 0.85 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.25 }}
+                  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7"
+                >
+                  {[
+                    {
+                      num: 'I.',
+                      kicker: 'Pillar One · Hospitality',
+                      title: 'VIP Event & Box Access',
+                      icon: Ticket,
+                      body: 'Premier League derby boxes, Champions League finals, world-title fight nights, and major cultural festivals. We connect principals directly with authorised suite holders—handling seating, fine dining, and quiet matchday coordination without stress.',
+                      serviceId: 'experiences-culture',
+                    },
+                    {
+                      num: 'II.',
+                      kicker: 'Pillar Two · Accommodation',
+                      title: 'Suites & Private Estates',
+                      icon: Building2,
+                      body: 'London five-star hotel suites, discreet mews townhouses, and staffed countryside estates arranged on tailored terms. Every stay—whether an overnight boardroom trip or an extended family summer—is verified before your luggage crosses the threshold.',
+                      serviceId: 'residences-relocation',
+                    },
+                    {
+                      num: 'III.',
+                      kicker: 'Pillar Three · Chauffeurs',
+                      title: 'Chauffeur & Ground Fleet',
+                      icon: Car,
+                      body: 'Immaculate Rolls-Royce, Mercedes-Maybach, and Range Rover fleets driven by vetted defensive chauffeurs who know London’s mews lanes by heart. Seamless transfers between private aviation aprons, residences, and late evening tables.',
+                      serviceId: 'transport-security',
+                    },
+                    {
+                      num: 'IV.',
+                      kicker: 'Pillar Four · Aviation & Sea',
+                      title: 'Private Air & Sea Charter',
+                      icon: Plane,
+                      body: 'Direct Part 135 charter sourcing across RAF Northolt, Farnborough, and continental hubs alongside vetted yacht tenders—moving you effortlessly from boardroom meetings straight onto alpine valleys or Mediterranean moorings.',
+                      serviceId: 'travel-aviation',
+                    },
+                    {
+                      num: 'V.',
+                      kicker: 'Pillar Five · Private Sourcing',
+                      title: 'Bespoke Craft & Sourcing',
+                      icon: Gem,
+                      body: 'In-residence Savile Row basted fittings, independent watchmaker introductions, rare cellar bottles, and closed-door Bond Street previews—sourced directly through primary craftspeople with clear pass-through terms.',
+                      serviceId: 'luxury-sourcing',
+                    },
+                  ].map((pillar, i) => {
+                    const PillarIcon = pillar.icon;
+                    return (
+                      <motion.div
+                        key={pillar.num}
+                        initial={{ opacity: 0.9, y: 14 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.48, delay: i * 0.06 }}
+                        whileHover={{ y: -4 }}
+                        onClick={() => navigateTo('service-detail', { serviceId: pillar.serviceId })}
+                        className="group relative cursor-pointer p-7 bg-[#12141A] border border-[#242630] hover:border-[#CFA85E]/80 transition-colors flex flex-col justify-between space-y-6 overflow-hidden"
+                      >
+                        <span
+                          aria-hidden="true"
+                          className="absolute top-0 left-0 w-2.5 h-2.5 border-t border-l border-[#E2BA6B] opacity-0 group-hover:opacity-100 scale-90 group-hover:scale-100 transition-all duration-300 pointer-events-none"
+                        />
+                        <span
+                          aria-hidden="true"
+                          className="absolute bottom-0 right-0 w-2.5 h-2.5 border-b border-r border-[#E2BA6B] opacity-0 group-hover:opacity-100 scale-90 group-hover:scale-100 transition-all duration-300 pointer-events-none"
+                        />
+
+                        <div className="space-y-4">
+                          <div className="flex items-center justify-between gap-3">
+                            <div className="flex items-center gap-3">
+                              <div className="w-11 h-11 bg-[#090B10] border border-[#8B672B]/70 group-hover:border-[#E2BA6B] flex items-center justify-center text-[#E2BA6B] transition-colors shrink-0">
+                                <PillarIcon className="w-5 h-5" />
+                              </div>
+                              <div>
+                                <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#CFA85E] block">
+                                  {pillar.kicker}
+                                </span>
+                                <span className="font-serif italic text-xl text-[#E2BA6B] tabular-nums leading-none">
+                                  {pillar.num}
+                                </span>
+                              </div>
+                            </div>
+                            <ArrowUpRight className="w-4 h-4 text-[#8B672B] group-hover:text-[#E2BA6B] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0" />
+                          </div>
+
+                          <div className="h-[3.5rem] sm:h-[3.75rem] flex items-center">
+                            <h3 className="font-serif text-xl sm:text-[1.32rem] xl:text-[1.45rem] text-[#FAF7F0] group-hover:text-[#E2BA6B] transition-colors leading-[1.25] line-clamp-2">
+                              {pillar.title}
+                            </h3>
+                          </div>
+
+                          <p className="text-xs sm:text-sm text-[#D4D8E2] leading-relaxed font-light">
+                            {pillar.body}
+                          </p>
+                        </div>
+
+                        <div className="pt-4 border-t border-[#1D202A] flex items-center justify-between text-xs text-[#E2BA6B]">
+                          <span>Inspect Practice</span>
+                          <span className="font-mono text-[11px] text-[#9C968A] group-hover:text-[#E2BA6B] transition-colors">
+                            Direct Desk
+                          </span>
+                        </div>
+
+                        <div className="absolute bottom-0 inset-x-0 h-[2px] bg-[#E2BA6B] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500" />
+                      </motion.div>
+                    );
+                  })}
+
+                  {/* 6th Grid Cell: Dedicated Albemarle Bespoke Mandate Panel (completes balanced 2x3 grid cleanly without mixing non-pillar ethos items) */}
+                  <motion.div
+                    initial={{ opacity: 0.9, y: 14 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.48, delay: 0.3 }}
+                    className="relative p-7 bg-[#090B10] border border-[#8B672B]/55 flex flex-col justify-between space-y-6"
+                  >
+                    <span aria-hidden="true" className="absolute top-0 left-0 w-2.5 h-2.5 border-t border-l border-[#E2BA6B]" />
+                    <span aria-hidden="true" className="absolute bottom-0 right-0 w-2.5 h-2.5 border-b border-r border-[#E2BA6B]" />
+
+                    <div className="space-y-4">
+                      <div className="flex items-center gap-3">
+                        <div className="w-11 h-11 bg-[#12141A] border border-[#8B672B]/60 flex items-center justify-center text-[#E2BA6B] shrink-0">
+                          <Compass className="w-5 h-5" />
+                        </div>
+                        <div>
+                          <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#E2BA6B] block">
+                            Mayfair Private Office
+                          </span>
+                          <span className="font-serif italic text-xl text-[#E2BA6B] leading-none">
+                            Bespoke
+                          </span>
+                        </div>
+                      </div>
+
+                      <div className="h-[3.5rem] sm:h-[3.75rem] flex items-center">
+                        <h3 className="font-serif text-xl sm:text-[1.32rem] xl:text-[1.45rem] text-[#FAF7F0] leading-[1.25] line-clamp-2">
+                          Unlisted House Mandates
+                        </h3>
+                      </div>
+
+                      <p className="text-xs sm:text-sm text-[#C8C2B7] leading-relaxed font-light">
+                        Our directors coordinate custom residential scouting, dining introductions, and multi-generational family calendars directly from 45 Albemarle Street.
+                      </p>
+                    </div>
+
+                    <div className="pt-4 border-t border-[#1D202A] flex flex-col sm:flex-row lg:flex-col gap-2.5">
+                      <button
+                        type="button"
+                        onClick={() => openIntroductionModal('Bespoke Mandate Inquiry via Consortium Pillars')}
+                        className="btn-gold w-full py-2.5 px-4 text-xs flex items-center justify-center gap-1.5"
+                      >
+                        <span>Speak With a Principal</span>
+                        <ArrowUpRight className="w-3.5 h-3.5 text-[#08090C]" />
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => navigateTo('services')}
+                        className="btn-outline-gold w-full py-2.5 px-4 text-xs flex items-center justify-center gap-1.5"
+                      >
+                        <span>Explore Full Services Directory</span>
+                        <ArrowUpRight className="w-3.5 h-3.5" />
+                      </button>
+                    </div>
+                  </motion.div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </section>
 
           {/* Governance Charter & Hard Operational Limits */}
@@ -601,7 +774,7 @@ export const ConsortiumPages: React.FC<ConsortiumPagesProps> = ({ subPage = 'ove
                   Anchored at TGLC House on historic Albemarle Street in Mayfair—moments from the Royal Academy, Old Bond Street galleries, and Berkeley Square—our third-floor office acts as a discreet extension of your household rather than an outside supplier.
                 </p>
                 <p>
-                  Because we turn away high-volume volume retainers, every conversation happens person-to-person with principals who remember your estate preferences, your family’s travelling rhythm, and the subtler points of life in London.
+                  Because we turn away high-volume retainers, every conversation happens person-to-person with principals who remember your estate preferences, your family’s travelling rhythm, and the subtler points of life in London.
                 </p>
 
                 <div className="pt-2 border-t border-[#1E202B] grid grid-cols-2 gap-4 text-xs">
