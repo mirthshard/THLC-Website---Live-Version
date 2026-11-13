@@ -530,7 +530,7 @@ export const SERVICES_DATA: ServiceCategory[] = [
     memberScenario: {
       client: 'Art collector expanding into contemporary British sculpture',
       brief: 'Private introductions to three leading independent sculptors working in East London, with studio viewings, curated commentary by an independent art historian, and transport arranged in a quiet hybrid vehicle.',
-      solution: 'Dr. Helena Zhang-Somerset orchestrated a tailored Saturday itinerary across Hackney and Deptford, culminating in an unhurried tea with an artist whose major retrospective opens next year at Tate Britain.',
+      solution: 'Melize Nastaasia and our Cultural Desk orchestrated a tailored Saturday itinerary across Hackney and Deptford, culminating in an unhurried tea with an artist whose major retrospective opens next year at Tate Britain.',
       details: 'Member acquired two works directly from the artists’ studios before public exhibition.'
     },
     subServices: [
@@ -711,7 +711,7 @@ export const SERVICES_DATA: ServiceCategory[] = [
     memberScenario: {
       client: 'International family establishing primary residence in London',
       brief: 'Coordination of a 6-month temporary residence in Knightsbridge while their permanent Belgravia townhouse completed refurbishment, alongside school liaison and recruiting a bilingual private chef.',
-      solution: 'Camilla Vance-Moreau secured an exceptional off-market garden residence on Cadogan Square, coordinated with an independent education consultant to secure admissions, and appointed a vetted Le Cordon Bleu-trained chef.',
+      solution: 'Leance Djedje secured an exceptional off-market garden residence on Cadogan Square, coordinated with an independent education consultant to secure admissions, and appointed a vetted Le Cordon Bleu-trained chef.',
       details: 'The family stepped into a fully furnished, operational home with internet, utility accounts, and organic groceries already in place.'
     },
     subServices: [
@@ -892,7 +892,7 @@ export const SERVICES_DATA: ServiceCategory[] = [
     memberScenario: {
       client: 'Visiting international family during a high-profile diplomatic summit in London',
       brief: 'Coordination of three matched unmarked Range Rover vehicles with security-trained chauffeurs for 10 days, managing complex central London road closures and providing gentle, child-friendly accompaniment.',
-      solution: 'Julian Sterling coordinated our senior team of former diplomatic protection drivers. Alternative routes mapped in real-time, allowing the family to attend theatre, meetings, and dinner without delay or crowd intrusion.',
+      solution: 'Our Close Protection & Mobility Desk coordinated a senior team of former diplomatic protection drivers. Alternative routes mapped in real-time, allowing the family to attend theatre, meetings, and dinner without delay or crowd intrusion.',
       details: 'All communications conducted over end-to-end encrypted voice and data lines.'
     },
     subServices: [
@@ -1055,7 +1055,7 @@ export const SERVICES_DATA: ServiceCategory[] = [
     memberScenario: {
       client: 'Executive Chairman managing dual corporate commitments in London and Singapore',
       brief: 'Coordination of personal life while leading a six-week takeover bid: management of domestic staff, urgent dry cleaning and tailoring delivery, appointment of an English literature tutor for daughter, and daily executive wellness support.',
-      solution: 'Camilla Vance-Moreau integrated directly with the Chairman’s executive assistant. Daily status memos provided at 07:00, all personal logistics resolved quietly in the background.',
+      solution: 'Melize Nastaasia integrated directly with the Chairman’s executive assistant. Daily status memos provided at 07:00, all personal logistics resolved quietly in the background.',
       details: 'Principal reported feeling completely supported, saving an estimated twenty hours of personal administrative distraction weekly.'
     },
     subServices: [
@@ -1398,7 +1398,7 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
     description: 'An intimate evening gathering ahead of the public unveiling of this year’s commissioned architecture pavilion. Private remarks by the commissioned architect and drinks on the lawn.',
     curatorNote: 'Quietly one of London’s most civilized summer evenings. Highly limited capacity; early RSVP recommended.',
     isPrivateInvitation: true,
-    image: '/assets/aistudio/royal_opera_gallery.jpg',
+    image: '/assets/aistudio/Main-5_c9bf5214.png',
     badge: 'Member Private Preview'
   },
   {
@@ -1529,7 +1529,7 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
     description: 'A specially designed Saturday morning for members and their young families. Private access to the conservation laboratories and ancient Egyptian archives.',
     curatorNote: 'Inspiring for young minds aged 8 to 16. Guided by senior British Museum conservators.',
     isPrivateInvitation: false,
-    image: '/assets/aistudio/hidden_subterranean_vault_1794295323175.jpg'
+    image: '/assets/aistudio/brunel_brick_shaft_1794391688745.jpg'
   },
   {
     id: 'cal-11',
@@ -1599,7 +1599,7 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
     location: 'Various Private Venues, Mayfair & East London',
     neighbourhood: 'Mayfair & Shoreditch',
     description: 'Curated access to private salon shows, behind-the-scenes fitting appointments, and intimate dinners with London’s most celebrated vanguard fashion designers.',
-    curatorNote: 'Coordinated by Dr. Helena Zhang-Somerset with VIP front-row salon seating.',
+    curatorNote: 'Coordinated by Melize Nastaasia with VIP front-row salon seating.',
     isPrivateInvitation: true,
     image: '/assets/aistudio/liberty-department-store-640x360_44860915.jpg',
     badge: 'Front Row Access'
@@ -1687,7 +1687,7 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
     location: 'New Bond Street Private Penthouse Suites',
     neighbourhood: 'Mayfair',
     description: 'An exclusive after-hours evening across three premier Bond Street maisons. View museum-grade untreated natural stones (Kashmir sapphires, Colombian emeralds) in private salons.',
-    curatorNote: 'Private security escort provided by Julian Sterling’s close protection team.',
+    curatorNote: 'Private security escort provided by our Close Protection & Mobility Desk.',
     isPrivateInvitation: true,
     image: '/assets/aistudio/bond_street_jewellery.jpg',
     badge: 'Closed-Door Salons'
@@ -1784,8 +1784,8 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     ],
     readTime: '12 min read',
     publishDate: '02 November 2026',
-    author: 'Mickell Washington & Dr. Helena Zhang-Somerset',
-    authorRole: 'Managing Director & Head of Cultural Curation',
+    author: 'Mickell Washington & Melize Nastaasia',
+    authorRole: 'Managing Director & Corporate Cultural Liaison',
     excerpt: 'In an era where high-profile timepieces are often locked behind artificial scarcity, London’s independent watch salons and private department store penthouses remain sanctuaries of genuine scholarship, provenance, and master craftsmanship.',
     heroImage: '/assets/aistudio/About-Luxury-Watches_77cb4520.jpg',
     pullQuote: 'A rare complication is not merely an instrument of mechanical accuracy; it is centuries of micro-mechanical sculpture that carries human genius upon a human wrist.',
@@ -1854,8 +1854,8 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     ],
     readTime: '11 min read',
     publishDate: '26 October 2026',
-    author: 'Camilla Vance-Moreau & Dr. Helena Zhang-Somerset',
-    authorRole: 'Director of Private Office & Head of Cultural Curation',
+    author: 'Leance Djedje & Melize Nastaasia',
+    authorRole: 'Stewards · Private Office & Cultural Liaison',
     excerpt: 'High jewellery is rarely bought from a glass display cabinet. An insider exploration into private high jewellery salons, private vault showings, and bespoke family commissions on New Bond Street.',
     heroImage: '/assets/aistudio/high_jewellery_vault.jpg',
     pullQuote: 'The finest stones speak in whispers. An untreated Colombian emerald has a personality that was formed fifty million years ago; when placed against the skin, it is utterly unmistakable.',
@@ -1903,7 +1903,7 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
         title: 'Heritage Resetting & Diplomatic Transit Protocols',
         paragraphs: [
           'Heirloom stones inherited across generations often sit unworn in dated 19th-century mounts. Our gemmological team pairs families with contemporary master goldsmiths to reimagine antique cushion-cut sapphires and Burmese rubies into wearable modern architecture.',
-          'When pieces move between London, Geneva, and New York residences, Julian Sterling’s security team coordinates bonded diplomatic courier transport and custom bridle-leather travel trunks tailored in Shropshire.'
+          'When pieces move between London, Geneva, and New York residences, our Close Protection & Mobility Desk coordinates bonded diplomatic courier transport and custom bridle-leather travel trunks tailored in Shropshire.'
         ]
       }
     ]
@@ -1923,8 +1923,8 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     ],
     readTime: '10 min read',
     publishDate: '20 October 2026',
-    author: 'Julian Sterling',
-    authorRole: 'Director of Fleet, Aviation & Tactical Security',
+    author: 'Leance Djedje',
+    authorRole: 'Steward · Hospitality, Stays & Pacific Relations',
     excerpt: 'Wimbledon remains the crowning jewel of the English summer social season. How TGLC arranges Centre Court debentures, private Rosewater dining, and helicopter transit into SW19.',
     heroImage: '/assets/aistudio/wimbledon_centre_court_1794391696846.jpg',
     pullQuote: 'At Wimbledon, the drama of world championship tennis unfolds against thirty-eight acres of clipped rye grass, white hydrangeas, and absolute British stillness before serve.',
@@ -1989,8 +1989,8 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     ],
     readTime: '9 min read',
     publishDate: '28 October 2026',
-    author: 'Dr. Helena Zhang-Somerset',
-    authorRole: 'Head of Cultural Curation & Sub-Rosa Operations',
+    author: 'Melize Nastaasia',
+    authorRole: 'Steward · Corporate Accounts & Cultural Liaison',
     excerpt: 'True London nightlife has never been about strobe lights or cordoned VIP queues. It belongs to the basement jazz dens of Soho, custom sound systems of Vauxhall, and private listening salons.',
     heroImage: '/assets/aistudio/soho_jazz_cellar_1794391689109.jpg',
     pullQuote: 'The best rooms in London do not announce themselves from the street. They are found down narrow alleys, behind heavy drapery, where the conversation is sharp and the drinks are made with reverence.',
@@ -2058,7 +2058,7 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
         title: 'The Close-Protection After-Hours Handover',
         paragraphs: [
           'For principals travelling with international guests or high-value horology past 02:00, moving gracefully across Soho, Vauxhall, and Shoreditch requires discreet route timing rather than heavy-handed security displays.',
-          'Julian Sterling’s advance officers inspect rear freight elevators and loading courtyards twenty minutes prior to wrap, coordinating seamless radio handoffs so principals step directly from subterranean exit stairs into warm waiting cabins.',
+          'Our Close Protection advance officers inspect rear freight elevators and loading courtyards twenty minutes prior to wrap, coordinating seamless radio handoffs so principals step directly from subterranean exit stairs into warm waiting cabins.',
           'Where congestion threatens cross-Thames bridges late at night, river stealth craft depart private piers directly toward Chelsea or Canary Wharf in complete quiet.'
         ]
       }
@@ -2078,8 +2078,8 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     ],
     readTime: '10 min read',
     publishDate: '15 October 2026',
-    author: 'Julian Sterling',
-    authorRole: 'Director of Fleet, Aviation & Tactical Security',
+    author: 'Mickell Washington',
+    authorRole: 'Founder & Managing Director',
     excerpt: 'In an age of omnipresent social media, true luxury has become synonymous with invisibility. How ultra-high-net-worth travellers are rethinking private aviation, estate sourcing, and personal security.',
     heroImage: '/assets/aistudio/MAIN-IMAGE-Shangri-La-The-Shard-London-Illuminate-Yacht-_571087f0.jpg',
     pullQuote: 'The modern traveller is no longer collecting trophies of status; they are guarding their mental stillness and family privacy with fierce intention.',
@@ -2143,8 +2143,8 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     ],
     readTime: '12 min read',
     publishDate: '02 October 2026',
-    author: 'Camilla Vance-Moreau',
-    authorRole: 'Director of Private Office & Client Relations',
+    author: 'Leance Djedje',
+    authorRole: 'Steward · Hospitality, Stays & Pacific Relations',
     excerpt: 'How to experience the capital at its most relaxed: private gallery hours, morning markets before the gates open, and long unhurried Sunday lunches.',
     heroImage: '/assets/aistudio/U2xzhqR8NqpZGDRNVta6Gk_fe26a8c6.jpg',
     pullQuote: 'A great London weekend is not about packing an itinerary; it is about leaving enough space between appointments for the city to surprise you.',
@@ -2205,12 +2205,12 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     keyTakeaways: [
       'Private bronze foundry pours along Deptford Creek arranged ahead of Venice or London solos.',
       'Direct collector acquisitions inside Hackney Wick painting lofts with zero gallery markups.',
-      'Curated East London architectural studio tours hosted by Dr. Helena Zhang-Somerset.'
+      'Curated East London architectural studio tours hosted by Melize Nastaasia.'
     ],
     readTime: '13 min read',
     publishDate: '18 September 2026',
-    author: 'Dr. Helena Zhang-Somerset',
-    authorRole: 'Head of Cultural Curation & Sub-Rosa Operations',
+    author: 'Melize Nastaasia',
+    authorRole: 'Steward · Corporate Accounts & Cultural Liaison',
     excerpt: 'While Mayfair remains the commercial anchor of the art market, London’s creative soul thrives across Deptford, Hackney Wick, Bloomsbury, and Southwark.',
     heroImage: '/assets/aistudio/hidden_brutalist_penthouse_1794295322915.jpg',
     pullQuote: 'To understand contemporary culture, one must leave the white-cube galleries behind and enter the dust and turpentine of an actual working atelier.',
@@ -2249,7 +2249,7 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
         title: 'Hackney Wick: Vanguard Painting & Light-Filled Lofts',
         paragraphs: [
           'In former industrial buildings framing the River Lee Navigation, contemporary painters produce large-scale canvases exploring colour field theory and tactile impasto largely hidden from passing foot traffic.',
-          'Dr. Helena Zhang-Somerset maintains ongoing dialogues with eighteen active artists across East London, securing first-look studio appointments months before museum acquisitions or gallery retrospectives.'
+          'Melize Nastaasia maintains ongoing dialogues with eighteen active artists across East London, securing first-look studio appointments months before museum acquisitions or gallery retrospectives.'
         ]
       },
       {
@@ -2275,8 +2275,8 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     ],
     readTime: '12 min read',
     publishDate: '04 September 2026',
-    author: 'Camilla Vance-Moreau',
-    authorRole: 'Director of Private Office & Client Relations',
+    author: 'Leance Djedje',
+    authorRole: 'Steward · Hospitality, Stays & Pacific Relations',
     excerpt: 'The English country house is undergoing a quiet renaissance. Today’s weekend retreats prioritize biodynamic kitchen gardens, wild swimming lakes, and discreet high-speed tech.',
     heroImage: '/assets/aistudio/highland_stone_estate_1794391698042.jpg',
     pullQuote: 'The new English country life is not about formality; it is about waking to birdsong, walking barefoot across dewy grass, and eating food harvested an hour before.',
@@ -2292,13 +2292,13 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
       { value: 'Year-Round', label: 'Absentee Estate Caretaking' }
     ],
     editorialImages: [
-      '/assets/aistudio/highland_stone_estate_1794391698042.jpg',
+      '/assets/aistudio/cotswolds_manor_estate.jpg',
       '/assets/aistudio/hero_luxury_london_residence_1794298893032.jpg',
       '/assets/aistudio/property-category-highlight-82_3dc00e71.jpg',
       '/assets/aistudio/rare_cellar_vault.jpg'
     ],
     editorialCaptions: [
-      'High-latitude stone manor estate with private drive and secluded moorland boundary',
+      'Cotswolds limestone manor estate with private drive and secluded meadow boundary',
       'Morning conservatory light overlooking terraced lawns ahead of country weekend brunch',
       'Restored timber framing and private library quarters reserved for extended rural retreats',
       'Estate game cellar and vintage wine racks maintained at balanced year-round humidity'
@@ -2405,8 +2405,8 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     ],
     readTime: '11 min read',
     publishDate: '10 August 2026',
-    author: 'Camilla Vance-Moreau',
-    authorRole: 'Director of Private Office & Client Relations',
+    author: 'Melize Nastaasia',
+    authorRole: 'Steward · Corporate Accounts & Cultural Liaison',
     excerpt: 'Why an author-inscribed first edition or a hand-bound leather journal carries a hundred times more emotional resonance than standard store-bought luxury.',
     heroImage: '/assets/aistudio/leather_saddlery_bench_1794391695162.jpg',
     pullQuote: 'The finest gifts are not bought off a shelf; they are discovered through patient scholarship and quiet artisan relationships.',
@@ -2535,8 +2535,8 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     ],
     readTime: '11 min read',
     publishDate: '12 July 2026',
-    author: 'Camilla Vance-Moreau',
-    authorRole: 'Director of Private Office & Client Relations',
+    author: 'Leance Djedje',
+    authorRole: 'Steward · Hospitality, Stays & Pacific Relations',
     excerpt: 'How to experience the Renaissance capital in tranquil intimacy, avoiding the tourist corridors to find private gardens and historic noble libraries.',
     heroImage: '/assets/aistudio/florence_palazzo_courtyard.jpg',
     pullQuote: 'Florence is an intimate city of private courtyards; behind stone walls that have stood since the Quattrocento lies an untouched world of human warmth.',
@@ -2600,8 +2600,8 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     ],
     readTime: '12 min read',
     publishDate: '29 June 2026',
-    author: 'Julian Sterling',
-    authorRole: 'Director of Fleet, Aviation & Tactical Security',
+    author: 'Leance Djedje',
+    authorRole: 'Steward · Aviation, Maritime & Diplomatic Protocol',
     excerpt: 'Why the crew chemistry, chef philosophy, and captain’s local anchorage knowledge matter far more than the vessel’s length overall.',
     heroImage: '/assets/aistudio/monaco_harbor_twilight_1794391696625.jpg',
     pullQuote: 'A yacht is merely steel and aluminium; it is the crew’s instinct, kindness, and maritime precision that make it a sanctuary.',
@@ -2666,10 +2666,10 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     ],
     readTime: '12 min read',
     publishDate: '14 June 2026',
-    author: 'Dr. Helena Zhang-Somerset',
-    authorRole: 'Head of Cultural Curation & Sub-Rosa Operations',
+    author: 'Melize Nastaasia',
+    authorRole: 'Steward · Corporate Accounts & Cultural Liaison',
     excerpt: 'Navigating London with an eye for provenance, scholarship, and quiet discoveries.',
-    heroImage: '/assets/aistudio/frieze_gallery_pavilion_1794391697548.jpg',
+    heroImage: '/assets/aistudio/royal_opera_gallery.jpg',
     pullQuote: 'London is the world capital of connoisseurship; scholarship and provenance are spoken here as native tongues.',
     contentParagraphs: [
       'London is the world capital of connoisseurship. Beyond the major public sales lie private viewing rooms where pieces of extraordinary museum quality are examined under natural northern light.',
@@ -2683,7 +2683,7 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
       { value: 'Freeport', label: 'Direct Geneva Bonded Art Crating' }
     ],
     editorialImages: [
-      '/assets/aistudio/royal_opera_gallery.jpg',
+      '/assets/aistudio/frieze_gallery_pavilion_1794391697548.jpg',
       '/assets/aistudio/bond_street_jewellery.jpg',
       '/assets/aistudio/About-Luxury-Watches_77cb4520.jpg',
       '/assets/aistudio/hidden_brutalist_penthouse_1794295322915.jpg'
@@ -2794,14 +2794,14 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     ],
     readTime: '13 min read',
     publishDate: '15 November 2026',
-    author: 'Julian Sterling',
-    authorRole: 'Director of Fleet, Aviation & Tactical Security',
+    author: 'TGLC Security & Mobility Desk',
+    authorRole: 'Close Protection & Diplomatic Escort',
     excerpt: 'Security in prime residential London is an exercise in route intelligence, polite deterrence, and psychological calmness rather than sirens and bodyguards in sunglasses.',
     heroImage: '/assets/aistudio/close_protection_security.jpg',
     pullQuote: 'The most effective security detail in Mayfair is the one no passerby ever realizes is standing in the room.',
     contentParagraphs: [
       'Conspicuous security is often an invitation for attention. In a city like London—where sovereign families, prominent entrepreneurs, and global figures navigate private galleries, schools, and dinners—true protection is founded on total integration and advance intelligence.',
-      'Julian Sterling directs TGLC’s tactical security practice, drawing specialists exclusively from the British Armed Forces, the Metropolitan Police Royalty and Specialist Protection Command, and UK Diplomatic Protection groups.',
+      'TGLC’s tactical security desk draws specialists exclusively from the British Armed Forces, the Metropolitan Police Royalty and Specialist Protection Command, and UK Diplomatic Protection groups.',
       'Our officers dress in tailored Savile Row charcoal suits, carry bespoke encrypted micro-earpieces, and maintain an unobtrusive, gentle accompaniment that provides safety without creating social friction for your children or guests.',
       'When accompanying principals into edgy late-night venues—from East End championship fight nights to Shoreditch sound vaults—unobtrusive countersurveillance clears exit corridors minutes ahead of departure.'
     ],
@@ -2860,8 +2860,8 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     ],
     readTime: '12 min read',
     publishDate: '10 November 2026',
-    author: 'Dr. Helena Zhang-Somerset',
-    authorRole: 'Head of Cultural Curation & Sub-Rosa Operations',
+    author: 'Melize Nastaasia',
+    authorRole: 'Steward · Corporate Accounts & Cultural Liaison',
     excerpt: 'A comprehensive investigation into the heritage houses of Savile Row, bespoke basted fittings, and why true bespoke tailoring remains an irreplaceable British art form.',
     heroImage: '/assets/aistudio/savile_row_shears.jpg',
     pullQuote: 'A bespoke suit does not announce itself with logos; it is recognized by the gentle drape across the shoulder and the stillness it brings to the wearer.',
@@ -2989,15 +2989,15 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     ],
     readTime: '13 min read',
     publishDate: '28 October 2026',
-    author: 'Julian Sterling',
-    authorRole: 'Director of Fleet, Aviation & Tactical Security',
+    author: 'Mickell Washington',
+    authorRole: 'Founder & Managing Director',
     excerpt: 'An operational breakdown of ultra-long-range aviation: Bombardier Global 7500, Gulfstream G650ER, and rapid tarmac dispatch out of RAF Northolt and Farnborough.',
     heroImage: '/assets/aistudio/6a194620490b49214619b628_file_8wpx83o3_8d7f9f53.png',
     pullQuote: 'Private aviation is the preservation of time; when executed with clinical precision, international borders cease to be an obstacle.',
     contentParagraphs: [
       'In private aviation, true value is not measured by discount charter brokers; it is defined by airworthiness, crew credentials, cabin pressurization altitude, and airport slot access.',
       'Flying transatlantic on an ultra-long-range jet such as the Bombardier Global 7500 or Gulfstream G650ER allows passengers to cruise at 51,000 feet, far above commercial airline corridors and atmospheric turbulence. The lower cabin altitude—equivalent to just 2,900 feet above sea level—means arriving in Los Angeles, Tokyo, or Singapore refreshed, with zero travel fatigue.',
-      'Julian Sterling coordinates direct apron access at RAF Northolt, Farnborough, and Biggin Hill, ensuring that members step directly from chauffeured vehicles onto the aircraft airstairs without entering a public terminal.',
+      'Our Aviation & Mobility Desk coordinates direct apron access at RAF Northolt, Farnborough, and Biggin Hill, ensuring that members step directly from chauffeured vehicles onto the aircraft airstairs without entering a public terminal.',
       'We inspect every Part 135 operator’s maintenance log and pilot rest history directly prior to charter release—never brokering unverified third-party aggregators.'
     ],
     pullStats: [
@@ -3053,8 +3053,8 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     ],
     readTime: '12 min read',
     publishDate: '20 October 2026',
-    author: 'Camilla Vance-Moreau & Mickell Washington',
-    authorRole: 'Director of Private Office & Managing Director',
+    author: 'Melize Nastaasia & Mickell Washington',
+    authorRole: 'Corporate Private Office & Managing Director',
     excerpt: 'Family office CEOs and private bankers focus on asset preservation and governance; TGLC provides the operational muscle that keeps daily family life running seamlessly.',
     heroImage: '/assets/aistudio/01-Neo-Bankside-Luxury-Penthouse-London-England-UK-640x360_c8f27abb.jpg',
     pullQuote: 'A family office manages capital; we manage life. When the two operate in complete harmony, the family experiences total serenity.',
@@ -3118,10 +3118,10 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     ],
     readTime: '14 min read',
     publishDate: '15 October 2026',
-    author: 'Dr. Helena Zhang-Somerset',
-    authorRole: 'Head of Cultural Curation & Sub-Rosa Operations',
+    author: 'Melize Nastaasia',
+    authorRole: 'Steward · Corporate Accounts & Cultural Liaison',
     excerpt: 'Condition, dial originality, and archive extracts: what every serious watch collector must evaluate before raising a paddle at major horological auctions.',
-    heroImage: '/assets/aistudio/25_Koenigsegg_CCXR_Trevita_30-Most-Expensive-Cars-in-the-World_Tyroola_0c18f9f0.jpg',
+    heroImage: '/assets/aistudio/private_horology_cleanroom.jpg',
     pullQuote: 'In vintage horology, original condition trumps perfection; an unpolished case with honest patina is worth five polished examples.',
     contentParagraphs: [
       'The international auction market for collectible timepieces has evolved into a sophisticated discipline where six-figure discrepancies hinge on minute typographical nuances: the shape of an accent on a dial signature, the serif of a numeral, or the chemical composition of luminous markers under ultraviolet light.',
@@ -3184,8 +3184,8 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     ],
     readTime: '9 min read',
     publishDate: '24 November 2026',
-    author: 'Dr. Helena Zhang-Somerset',
-    authorRole: 'Head of Cultural Curation & Sub-Rosa Operations',
+    author: 'Melize Nastaasia',
+    authorRole: 'Steward · Corporate Accounts & Cultural Liaison',
     excerpt: 'London’s highest-spending nocturnal culture no longer gathers solely behind oak panelling in St James’s. Across Vauxhall masonry vaults and high-ceilinged Shoreditch vinyl lofts, TGLC unlocks raw sound, street-couture archives, and unphotographed late-night salons.',
     heroImage: '/assets/aistudio/urban_vinyl_booth_deep.jpg',
     pullQuote: 'True modern exclusivity fuses street-level sonic authenticity—custom rotary mixers and sub-bass masonry—with zero-friction security from kerb to booth.',
@@ -3206,14 +3206,14 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
       '/assets/aistudio/shoreditch_dj_loft_1794391691810.jpg',
       '/assets/aistudio/luxury_streetwear_salon_1794391693258.jpg',
       '/assets/aistudio/mayfair_alley_arrival_1794391693142.jpg',
-      '/assets/aistudio/urban_vinyl_booth_deep.jpg',
+      '/assets/aistudio/urban_hiphop_club_1794391691841.jpg',
       '/assets/aistudio/shoreditch_street_couture.jpg'
     ],
     editorialCaptions: [
       'High-ceilinged Shoreditch vinyl listening loft fitted with custom walnut rotary consoles and studio acoustic baffles',
       'Private Soho street-couture archive room hosting off-schedule collector previews prior to global drops',
       'Rear alleyway Maybach staging protocol ensuring zero-exposure arrivals across Soho and Vauxhall',
-      'Analogue turntables and custom valve crossovers engineered for rich hip-hop bass without listening fatigue',
+      'Sub-bass masonry booth engineered for intimate private acoustic buyouts without public scrutiny',
       'Archive garment racks pairing heavyweight outerwear capsules with studio vinyl sessions East of Bishopsgate'
     ],
     subheadings: [
@@ -3244,7 +3244,7 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
       {
         title: 'Satin-Black Convoy Timing & Meard Street Continuation',
         paragraphs: [
-          'Julian Sterling’s close-protection drivers synchronise dual-vehicle radio staging inside freight courtyards so guests step out from a Shoreditch service lift into warm Maybach cabins and cross town to Mayfair or Soho in twelve minutes.',
+          'Our Close Protection & Chauffeur Desk synchronises dual-vehicle radio staging inside freight courtyards so guests step out from a Shoreditch service lift into warm Maybach cabins and cross town to Mayfair or Soho in twelve minutes.',
           'For parties continuing into late-night Texas Hold’em or quiet digestifs, a simultaneous desk handoff holds tables waiting behind Meard Street without cold pavement waits.',
           'Every touchpoint carries the exact polish of our daytime aviation work—applied seamlessly to London’s sharpest urban night scene.'
         ]
@@ -3266,8 +3266,8 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     ],
     readTime: '10 min read',
     publishDate: '19 November 2026',
-    author: 'Camilla Vance-Moreau',
-    authorRole: 'Director of Private Office & Client Relations',
+    author: 'Leance Djedje',
+    authorRole: 'Steward · Hospitality, Stays & Pacific Relations',
     excerpt: 'From late-evening candlelit art inspections at Frieze Masters to winter gala intervals at the Royal Opera House, our seasonal briefing aligns private calendar holds with discreet hospitality logistics.',
     heroImage: '/assets/aistudio/frieze_gallery_pavilion_1794391697548.jpg',
     pullQuote: 'Seasonal patronage is effortless when museum previews, Box intervals, and winter flight slots move as a single choreography.',
@@ -3332,8 +3332,8 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     ],
     readTime: '8 min read',
     publishDate: '18 November 2026',
-    author: 'Dr. Helena Zhang-Somerset',
-    authorRole: 'Head of Cultural Curation & Sub-Rosa Operations',
+    author: 'Melize Nastaasia',
+    authorRole: 'Steward · Corporate Accounts & Cultural Liaison',
     excerpt: 'A rare technical and atmospheric inspection of London’s disused underground railway war rooms and tidal bridge vaults—evaluating candlelight, acoustics, and culinary staging below street level.',
     heroImage: '/assets/aistudio/down_street_station_1794391687146.jpg',
     pullQuote: 'Dining forty feet beneath the River Thames or inside a disused Piccadilly Line platform induces a stillness no penthouse terrace can imitate.',
@@ -3392,7 +3392,7 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
         title: 'High-Altitude Contrast: Elevated Gantry & Thames Pier Extraction',
         paragraphs: [
           'Many Sub-Rosa evenings pair subterranean earth with dramatic altitude. Groups emerge straight from the southern pier lifts onto the glass-floored high-level walkways 140 feet above the illuminated river for midnight single-cask drams while Tower Hill sleeps below.',
-          'Simultaneously, Julian Sterling’s mobility team positions either a stealth river tender at St Katharine Pier or two dark Maybachs inside Tower Hill coach bays for swift quiet dispersion across West London.'
+          'Simultaneously, our Mobility Desk positions either a stealth river tender at St Katharine Pier or two dark Maybachs inside Tower Hill coach bays for swift quiet dispersion across West London.'
         ]
       }
     ]
@@ -3412,8 +3412,8 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     ],
     readTime: '8 min read',
     publishDate: '21 November 2026',
-    author: 'Julian Sterling & Mickell Washington',
-    authorRole: 'Director of Mobility & Managing Director',
+    author: 'Mickell Washington & Leance Djedje',
+    authorRole: 'Managing Director & Aviation Steward',
     excerpt: 'With winter ski positioning and Davos movements compressing European business aviation slots, choosing the right London West terminal determines whether a morning meeting in Zurich starts calm or rushed.',
     heroImage: '/assets/aistudio/6a5e4f29ca98c820c85071cd_file_l7dpoy6z_91be91a5.png',
     pullQuote: 'In executive aviation, time is saved on the Westway and on the de-icing apron—long before Vr rotation speed is ever called.',
@@ -3481,7 +3481,7 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     author: 'Mickell Washington',
     authorRole: 'Founder & Managing Director',
     excerpt: 'Ahead of late-autumn collector previews in Geneva and Mayfair, our Objects of Desire desk visits a three-person Shropshire workshop turning oak-bark tanned bridle hide into bespoke travel trunks and horological chests.',
-    heroImage: '/assets/aistudio/leather_saddlery_bench_1794391695162.jpg',
+    heroImage: '/assets/aistudio/savile_row_bespoke.jpg',
     pullQuote: 'Great luggage should wear its mileage lightly: oak-bark bridle leather darkens only at the handle where a hand lifts it across thirty winters.',
     contentParagraphs: [
       'Even among collectors who own fifty-piece watch cabinets and bespoke sporting shotguns, luggage and storage cases are too frequently treated as an afterthought—bought off shelves in mass-produced monogram canvas rather than built around the exact objects inside.',
@@ -3544,8 +3544,8 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     ],
     readTime: '14 min read',
     publishDate: '27 November 2026',
-    author: 'Dr. Helena Zhang-Somerset & Mickell Washington',
-    authorRole: 'Head of Cultural Curation & Managing Director',
+    author: 'Melize Nastaasia & Mickell Washington',
+    authorRole: 'Private Office & Managing Director',
     excerpt: 'When twelve principals require absolute conversational immunity paired with rare-vintage gastronomy, London’s oldest buried masonry vaults offer stillness no restaurant dining room can replicate.',
     heroImage: '/assets/aistudio/subrosa_catacomb_dinner.jpg',
     pullQuote: 'Forty feet beneath street cobbles, crystal stemware catches candle flame differently and negotiation posture yields immediately to trust.',
@@ -3615,8 +3615,8 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     ],
     readTime: '12 min read',
     publishDate: '29 November 2026',
-    author: 'Dr. Helena Zhang-Somerset',
-    authorRole: 'Head of Cultural Curation & Sub-Rosa Operations',
+    author: 'Melize Nastaasia',
+    authorRole: 'Steward · Corporate Accounts & Cultural Liaison',
     excerpt: 'An inside look at how modern creative wealth bridges Soho street-couture archive fittings with audiophile Shoreditch vinyl rooms and midnight East End hip-hop culture.',
     heroImage: '/assets/aistudio/shoreditch_street_couture.jpg',
     pullQuote: 'You hear the difference immediately on a walnut rotary console: kick drums hit your chest gently like velvet rather than tearing the room apart.',
@@ -3684,8 +3684,8 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     ],
     readTime: '12 min read',
     publishDate: '30 November 2026',
-    author: 'Julian Sterling & Mickell Washington',
-    authorRole: 'Director of Tactical Security & Managing Director',
+    author: 'TGLC Security & Mobility Desk & Mickell Washington',
+    authorRole: 'Close Protection & Managing Director',
     excerpt: 'From private ringside aprons beneath Bethnal Green brick arches to rapid tunnel extractions after championship bouts at The O2, how elite movement planning elevates high-voltage urban nights.',
     heroImage: '/assets/aistudio/east_end_boxing_1794391694652.jpg',
     pullQuote: 'Whether stepping ringside in East London or pulling out of a championship fight arena, true composure comes from having three clear exit corridors mapped long before the opening bell.',
@@ -3699,7 +3699,7 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
       'For global principals who arrive directly off private flights to watch marquee international cards—or commission bespoke closed-door exhibition bouts for private groups—attending with zero friction requires far more than holding ringside seats.',
       'Leaving a 20,000-person arena alongside tens of thousands of commuters commonly strands standard chauffeured vehicles inside forty-five-minute Peninsula tailbacks. Conversely, TGLC combines diplomatic security advance mapping, stealth Thames river interceptors, and rear-tunnel staging.',
       'Thirty seconds after the final judge’s scorecard reads out ringside, principals glide down private security stairwells into dark awaiting cabins or private pier craft bound swiftly for Embankment, Battersea, or East London listening suites.',
-      'Across every leg, Julian Sterling’s former Royal Protection and Special Forces alumni move calmly beside guests in understated dark tailoring—ensuring total physical peace of mind without intrusive theatre.'
+      'Across every leg, our former Royal Protection and Special Forces alumni move calmly beside guests in understated dark tailoring—ensuring total physical peace of mind without intrusive theatre.'
     ],
     editorialImages: [
       '/assets/aistudio/ufc_arena_ringside.jpg',
@@ -3753,8 +3753,8 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     ],
     readTime: '11 min read',
     publishDate: '01 December 2026',
-    author: 'Julian Sterling & Camilla Vance-Moreau',
-    authorRole: 'Director of Aviation & Director of Private Office',
+    author: 'Leance Djedje & Melize Nastaasia',
+    authorRole: 'Stewards · Aviation & Private Office',
     excerpt: 'For multi-residence families splitting calendars between snow peaks and coastal waters, transitioning seamlessly between an Engadin ski lodge and a 65-metre Monaco superyacht requires disciplined behind-the-scenes choreography.',
     heroImage: '/assets/aistudio/swiss_alpine_chalet.jpg',
     pullQuote: 'A family should step from fresh powder ski boots in St Moritz into linen yacht loafers in Monaco that very same twilight without packing a single zip bag.',
@@ -3865,6 +3865,266 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
         ]
       }
     ]
+  },
+  {
+    slug: 'triple-up-concierge-hospitality-stays-chauffeurs-guide',
+    title: 'Opening Doors That Don’t Usually Exist: Inside Our Triple-Up Choreography Across Hospitality, Stays & Chauffeurs',
+    subtitle: 'Why separating matchday boxes, hotel suites, and London transport creates needless stress—and how one conversation in Mayfair unifies the whole weekend.',
+    category: 'London Intelligence',
+    articleType: 'Feature Essay',
+    eventDates: 'Year-Round London & European Fixtures',
+    venueNote: '45 Albemarle Street · Wembley · Mayfair Suites · Central Chauffeur Bays',
+    keyTakeaways: [
+      'Authorised box & suite sourcing paired directly with verified hotel residences and matched vehicles.',
+      'The exact standard of care applies whether a client brings a £100 dining request or a £100,000 charter.',
+      'Dedicated staging notes clear routes before final whistle so principals never stand in rain or traffic.'
+    ],
+    readTime: '11 min read',
+    publishDate: '04 December 2026',
+    author: 'Mickell Washington & Leance Djedje',
+    authorRole: 'Managing Director & Steward of Hospitality',
+    excerpt: 'Too often a remarkable evening is let down not inside the stadium box or dining room, but between them—fighting queues, miscommunicated check-ins, or late cars. Here is how our Triple-Up standard keeps the human touch intact from threshold to home.',
+    heroImage: '/assets/aistudio/wembley_vip_hospitality.jpg',
+    pullQuote: 'Luxury is not defined by how much somebody spends—it is defined by how exceptionally they are treated at every single handover.',
+    pullStats: [
+      { value: '3 Pillars', label: 'Ticketing · Suites · Chauffeur Sync' },
+      { value: '1 Desk', label: 'Single Albemarle Street Point of Contact' },
+      { value: '100% Equal', label: 'Care From £100 to £100,000 Requests' }
+    ],
+    contentParagraphs: [
+      'Most people assume a major fixture weekend—whether a Cup Final at Wembley, an evening box at the O2, or championship tennis in SW19—goes smoothly solely because good tickets were purchased. Yet anyone who has arranged an itinerary for visiting clients or family knows where weekends unravel: at the seams between providers.',
+      'The hospitality team assumes your hotel concierge holds your luggage; the hotel assumes your car service knows which perimeter gate closes forty minutes after final whistle; and three separate booking threads turn what should have felt effortless into administrative housework.',
+      'At The Global Luxury Consortium, our core foundation is built around solving that exact friction. When we speak about opening doors that don’t usually exist, we mean both literal access to private suites and the relational foresight that stops three simple bookings from feeling disconnected.',
+      'Just as importantly, our house rule never alters based on invoice size. Whether a member calls our desk with a £100 table arrangement for visiting parents or a £100,000 multi-family weekend, the voice on the line, the route scouting, and the warmth of welcome remain identical.'
+    ],
+    editorialImages: [
+      '/assets/aistudio/five_star_mayfair_suite.jpg',
+      '/assets/aistudio/rolls-cullian-featured_a41abfa9.webp',
+      '/assets/aistudio/corporate_ea_boardroom.jpg',
+      '/assets/aistudio/tglc_st_james_salon.jpg'
+    ],
+    editorialCaptions: [
+      'Mayfair suites inspected in person prior to guest check-in with preferred espresso and lighting ready',
+      'Vetted chauffeur saloons briefed directly on perimeter gate timings long before full-time',
+      'Clear consolidated briefings prepared smoothly alongside your executive assistant or family office',
+      'Third-floor salon at 45 Albemarle Street where complex multi-day itineraries are quietly mapped out'
+    ],
+    subheadings: [
+      {
+        title: 'Ticketing That Begins Before You Leave Your Suite',
+        paragraphs: [
+          'True hospitality starts at breakfast, not at the turnstile. Through direct relationships with authorised suite holders and cultural custodians, we verify exact sightlines, dietary preferences inside private lounges, and entrance lanes before your party steps outside.',
+          'Rather than vague generic vouchers, every guest receives clear human guidance—eliminating uncertainty at stadium or opera thresholds.'
+        ]
+      },
+      {
+        title: 'Matching the Address, Not Just the Zip Code',
+        paragraphs: [
+          'A five-star suite on the wrong side of town turns a midnight return into a forty-minute crawl across Oxford Street. We match residences carefully to your fixture schedule—pairing Wembley corporate nights with quiet Marylebone garden suites or West End theatre plans with St James’s residences a six-minute glide away.'
+        ]
+      },
+      {
+        title: 'Poise on the Kerb & Transparent Commercial Conduct',
+        paragraphs: [
+          'Every chauffeur is briefed directly on secondary pick-up points, luggage handling, and discreet umbrella arrival regardless of London weather. And because we are building enduring trust rather than chasing hidden commissions, terms remain candid and clearly itemised from first telephone call.'
+        ]
+      }
+    ]
+  },
+  {
+    slug: 'corporate-ea-pa-consortium-support-playbook',
+    title: 'For the Executive Assistant: A Calm Playbook for Supporting Travelling Principals Across Time Zones',
+    subtitle: 'How EAs, PAs, and Chiefs of Staff use our Mayfair desk as a quiet extension of their own office without losing oversight.',
+    category: 'Member Stories',
+    articleType: 'Field Report',
+    eventDates: 'Executive & Corporate Desk Operations · Ongoing',
+    venueNote: '45 Albemarle Street · Canary Wharf · Continental Financial Corridors',
+    keyTakeaways: [
+      'Direct one-to-one human handoffs written specifically to match your principal’s cadence and tone.',
+      'Rapid contingency re-routing when commercial airlines, board meetings, or London weather shift late.',
+      'Clean single-entity itemised summaries keeping corporate accounting departments calm and audit-ready.'
+    ],
+    readTime: '10 min read',
+    publishDate: '06 December 2026',
+    author: 'Melize Nastaasia',
+    authorRole: 'Steward · Corporate Accounts & Cultural Liaison',
+    excerpt: 'An exceptional Executive Assistant carries the unspoken pressure of an entire organisation on their shoulders. Here is how our desk works beside PAs and EAs—listening carefully, respecting internal hierarchy, and making your workday noticeably lighter.',
+    heroImage: '/assets/aistudio/corporate_ea_boardroom.jpg',
+    pullQuote: 'A great intermediary never tries to step between an Executive Assistant and their principal; we strengthen the EA’s hand so the entire house runs smoothly.',
+    pullStats: [
+      { value: '< 15 Mins', label: 'Urgent Schedule Adjustment Response' },
+      { value: 'EA-First', label: 'Respecting Internal Command Chain' },
+      { value: 'Zero Drama', label: 'Candid Supplier Confirmation Logs' }
+    ],
+    contentParagraphs: [
+      'If you manage a founder’s calendar or coordinate travel for an executive board landing into London from New York, Jakarta, or Singapore, you already know the toughest moments happen at 19:00 on a Thursday. A meeting overruns by ninety minutes, a car service drops a booking, or four senior clients suddenly need a quiet private dining room near Threadneedle Street within the hour.',
+      'Traditional call-centre concierges often make life harder for an Executive Assistant—forcing you to repeat details to three scripted agents before handing you back an unvetted web link. At The Global Luxury Consortium, we sit on the exact opposite philosophy.',
+      'Instead of automating relationships away, we pair directly with you on human terms. You speak to the steward handling the mandate—someone who listens carefully to why a corner booth needs acoustic privacy or why the Chairman prefers decaf roasted dark after 16:00.',
+      'Every supplier confirmation, chauffeur contact, and hotel preference sits clearly organised so your briefing memo lands clean, accurate, and ready to forward without chasing missing fine print.'
+    ],
+    editorialImages: [
+      '/assets/aistudio/mayfair_fine_dining.jpg',
+      '/assets/aistudio/luxury_sprinter_jetvan.jpg',
+      '/assets/aistudio/five_star_mayfair_suite.jpg',
+      '/assets/aistudio/images__3__7bd6ae28.jpg'
+    ],
+    editorialCaptions: [
+      'Quiet corporate dinner tables vetted for conversational privacy around Mayfair and The City',
+      'Mobile executive Sprinter offices keeping board calls undisturbed between airports and meetings',
+      'Early hotel check-ins cleared directly with duty managers ahead of red-eye transatlantic landings',
+      'Coordinated aircraft-to-car tarmac handoffs timed cleanly against changing flight manifests'
+    ],
+    subheadings: [
+      {
+        title: 'Seamless Handovers Without Stepping on Internal Authority',
+        paragraphs: [
+          'Every office has its own culture. Some Executive Assistants want us managing the entire ground operation invisibly under their name; others prefer direct encrypted threads alongside travelling guests while keeping summaries cc’d.',
+          'We adapt completely to your rhythm, supplying honest vendor lead times rather than over-promising when a room is genuinely unavailable.'
+        ]
+      },
+      {
+        title: 'Last-Minute Board Dinners & Multi-Time-Zone Recovery',
+        paragraphs: [
+          'Because London dining shifts rapidly around global investor conferences, our desk maintains personal contacts with maitre d’s who recognise quality conversation ahead of commercial PR noise—helping find serene corners even during busy autumn weeks.'
+        ]
+      },
+      {
+        title: 'Clear Consolidated Billing for Finance Teams',
+        paragraphs: [
+          'Nothing breaks goodwill faster than opaque invoices arriving six weeks late. Every disbursement carries transparent itemisation so finance teams reconcile trips smoothly.'
+        ]
+      }
+    ]
+  },
+  {
+    slug: 'london-five-star-sanctuary-suites-insider-guide',
+    title: 'Quiet Sanctuary Suites: How We Match Principals With the Right London Room Beyond Star Ratings',
+    subtitle: 'Why ceiling height, courtyard acoustics, pillow craft, and discrete side entrances define a great London stay far more than gold marble.',
+    category: 'Private Residences',
+    articleType: 'Feature Essay',
+    eventDates: 'London Residential & Hotel Stewardship · Year-Round',
+    venueNote: 'Mayfair W1K · Knightsbridge SW1X · Belgravia & Marylebone Mews',
+    keyTakeaways: [
+      'Room orientation auditing eliminates street-noise exposure on Piccadilly and Park Lane corners.',
+      'Warm pre-arrival lighting, floral allergies, and private family meal staging briefed in full.',
+      'Discreet side-door arrivals coordinated directly with head hall porters before your car draws up.'
+    ],
+    readTime: '11 min read',
+    publishDate: '08 December 2026',
+    author: 'Leance Djedje',
+    authorRole: 'Steward · Hospitality, Stays & Pacific Relations',
+    excerpt: 'Anyone with an internet connection can book a penthouse by square footage. Knowing which wing sits away from early morning deliveries—and which hall porter keeps private mews gates unlocked past midnight—is where genuine concierge judgement lives.',
+    heroImage: '/assets/aistudio/five_star_mayfair_suite.jpg',
+    pullQuote: 'You notice genuine hospitality ten seconds after closing your suite door—in the stillness of the floorboards, the warmth of the lamp, and the feeling that nothing was overlooked.',
+    pullStats: [
+      { value: 'Side-Gate', label: 'Quiet Arrival Away From Main Foyers' },
+      { value: 'Courtyard', label: 'Preferred Low-Decibel Wing Orientation' },
+      { value: 'Custom', label: 'Bedding, Climate & Pantry Briefed Early' }
+    ],
+    contentParagraphs: [
+      'A five-star badge along central London’s golden postcodes hides astonishing differences between rooms inside the very same hotel. On the wrong elevation overlooking a bus lane or loading bay, even an expensive signature suite leaves an international traveller exhausted before breakfast.',
+      'Conversely, tucked inside courtyard wings of Connaught Village, Mount Street, or quieter lanes off Wilton Crescent, lie suites with double-sash acoustic stillness, warm oak proportions, and morning light spilling gently onto slate fireplaces.',
+      'Having welcomed guests across oceanic and European journeys alike, we treat accommodation selection with patient warmth rather than brochure guesswork. If a principal arrives with young children, we verify adjoining nanny doorways and safe bathtub proportions; if a founder plans three days of sensitive phone negotiations, we check acoustic thickness and side-entrance routes before confirming.',
+      'Most of all, arrival never feels transactional. Your preferred tea leaves, allergen-free down or silk pillows, and unhurried private key handover sit waiting quietly ahead of tyres touching the kerb.'
+    ],
+    editorialImages: [
+      '/assets/aistudio/01-Lethbridge-House-20-Cornwall-Terrace-Marylebone-London-UK-640x360_b59e806c.jpg',
+      '/assets/aistudio/hero_luxury_london_residence_1794298893032.jpg',
+      '/assets/aistudio/cotswolds_manor_estate.jpg',
+      '/assets/aistudio/property-category-highlight-82_3dc00e71.jpg'
+    ],
+    editorialCaptions: [
+      'Restored Nash terrace townhouses around Regent’s Park ideal for extended confidential family stays',
+      'Soft evening drawing rooms staged quietly ahead of delayed continental landings',
+      'Effortless extension from Mayfair hotels into serene Cotswolds country retreats within ninety minutes',
+      'Private residential libraries tailored for longer London assignments and cultural residencies'
+    ],
+    subheadings: [
+      {
+        title: 'Knowing the Floorplan Before You Check In',
+        paragraphs: [
+          'True curation rejects generic category bookings. Whenever availability shifts during busy gallery or sporting fortnights, our hospitality desk calls senior concierge desks personally to pin down exact suite numbers away from lifts and service pantries.',
+          'That extra conversation before booking turns ordinary five-star rooms into genuine personal sanctuaries.'
+        ]
+      },
+      {
+        title: 'Extended Townhouse Living When Hotels Feel Temporary',
+        paragraphs: [
+          'Once a stay stretches past ten days—during summer holidays, medical recuperation, or cross-border advisory work—most families crave a private front door and an unfussy kitchen. We transition clients smoothly into turnkey Belgravia or Marylebone houses cared for quietly from Albemarle Street.'
+        ]
+      },
+      {
+        title: 'Unhurried Departures & Forward Luggage Coordination',
+        paragraphs: [
+          'Late evening flights shouldn’t force suitcases onto pavements at noon. Whenever schedules allow, we secure serene late afternoon holds or collect trunks directly to aircraft holds while principals enjoy one final walk through Hyde Park.'
+        ]
+      }
+    ]
+  },
+  {
+    slug: 'private-aviation-aprons-and-executive-chauffeur-logistics',
+    title: 'Wing to Waiting Cabin: Bridging Executive Airfields & London Street Poise Without Theatre',
+    subtitle: 'What separates a truly calm chauffeur movement from ordinary airport pickups across RAF Northolt, Farnborough, and central London.',
+    category: 'Travel Notes',
+    articleType: 'News Dispatch',
+    eventDates: 'Executive Mobility & Ground Protocol · Year-Round',
+    venueNote: 'RAF Northolt · Farnborough EGLF · Biggin Hill · Mayfair Mews',
+    keyTakeaways: [
+      'Airside vehicle timing adjusts automatically against live radar wheels-down estimates.',
+      'Vetted UK chauffeurs trained in smooth deceleration, privacy etiquette, and secondary routes.',
+      'Direct private tarmac coordination removes public terminal stress for both business and family groups.'
+    ],
+    readTime: '9 min read',
+    publishDate: '10 December 2026',
+    author: 'Mickell Washington',
+    authorRole: 'Founder & Managing Director',
+    excerpt: 'Stepping off a long flight should feel effortless—warm climate inside the cabin, unhurried luggage care, and a driver who already knows when to remain quietly silent and when to guide the route cleanly past Westway traffic.',
+    heroImage: '/assets/aistudio/images__3__7bd6ae28.jpg',
+    pullQuote: 'A great chauffeur reads the rhythm of a cabin without glancing back—turning London traffic into forty minutes of peaceful decompression.',
+    pullStats: [
+      { value: 'Live Sync', label: 'Tail-Tracked Tarmac Staging' },
+      { value: '30 Sec', label: 'Airstair To Saloon Transition' },
+      { value: '0 Chatter', label: 'Discreet Cabin Etiquette' }
+    ],
+    contentParagraphs: [
+      'In luxury coordination, movement is often where promises either quietly shine or immediately crack. You can arrange a remarkable restaurant table or an extraordinary rural house, yet if an exhausted family exits an airport ramp to find a tardy car, loud phone ringtones, or confusion at luggage doors, the spell vanishes instantly.',
+      'At The Global Luxury Consortium, ground mobility is treated as a quiet discipline rather than an afterthought. Whether pulling onto a private apron beside an arriving jet at Farnborough or slipping calmly into a Mayfair hotel mews in a long-wheelbase saloon, every transfer follows clear British poise.',
+      'Drivers monitor live tail movements directly rather than relying on scheduled timetable estimates—meaning early tailwind landings from Geneva or delays out of New York never leave principals standing cold on tarmac steps.',
+      'Equally important is human calibration: knowing when a principal wishes to step out straight into an impromptu coffee stop, when young children need calm warmth after midnight, or when a confidential board call requires an unbroken quiet cabin all the way down Piccadilly.'
+    ],
+    editorialImages: [
+      '/assets/aistudio/best-luxury-cars-2024_ab87bb7b.webp',
+      '/assets/aistudio/698157105b08bd0b828e954b_file_k95qb05z_c7bc7f74.png',
+      '/assets/aistudio/mayfair_alley_arrival_1794391693142.jpg',
+      '/assets/aistudio/rolls-cullian-featured_a41abfa9.webp'
+    ],
+    editorialCaptions: [
+      'Long-wheelbase flagship saloons maintained to spotless showroom interior calibration before dispatch',
+      'Seamless airframe-to-ground matching coordinated at executive terminals west and south of London',
+      'Quiet back-lane mews staging keeping private residence arrivals free from main road congestion',
+      'All-weather high-ground-clearance SUVs suited equally to central Belgravia and country manor lanes'
+    ],
+    subheadings: [
+      {
+        title: 'Airside Handovers Built Around Real Time, Not Timetables',
+        paragraphs: [
+          'Executive aviation moves dynamically around headwinds, slot windows, and late meeting departures. By coordinating directly with licensed FBO handlers before wheels-up, our ground desk holds tarmac passes updated to the minute.',
+          'Suitcases move gracefully from hold straight to saloon while customs checks occur seamlessly around you.'
+        ]
+      },
+      {
+        title: 'Knowing London’s Living Geography by Heart',
+        paragraphs: [
+          'Satellite navigation alone sends cars straight into ceremonial road closures along Whitehall, Knightsbridge school traffic, or Park Lane diversions. Our regular London drivers rely on human route judgment built over years navigating West End back streets calmly.'
+        ]
+      },
+      {
+        title: 'The Same Respect Across Every Single Booking',
+        paragraphs: [
+          'Whether commissioning an individual airport pickup for an arriving guest or a multi-car convoy across five busy summit days, every driver turns out identically—immaculate dark tailoring, calm manners, and complete respect for whoever steps through the door.'
+        ]
+      }
+    ]
   }
 ];
 
@@ -3969,7 +4229,7 @@ export const FAQS_DATA: FAQItem[] = [
     id: 'faq-17',
     category: 'Membership',
     question: 'Is there a trial period or introductory review?',
-    answer: 'All memberships begin with a six-month initial charter, accompanied by a proactive 90-day review with Camilla Vance-Moreau to calibrate service delivery, refine member preferences, and ensure our support exceeds expectations.'
+    answer: 'All memberships begin with a six-month initial charter, accompanied by a proactive 90-day review with Mickell Washington and Leance Djedje to calibrate service delivery, refine member preferences, and ensure our support exceeds expectations.'
   },
   {
     id: 'faq-18',
@@ -4033,9 +4293,9 @@ export const DEMO_MEMBER_JAMES_ASHFORD: MemberProfile = {
   tier: 'The Global Membership',
   memberSince: 'March 2024',
   lifestyleManager: {
-    name: 'Camilla Vance-Moreau',
-    role: 'Director of Private Office & Client Relations',
-    image: '/assets/aistudio/team_camilla_vance_1794298891960.jpg',
+    name: 'Mickell Washington',
+    role: 'Founder & Managing Director · Albemarle Street',
+    image: '/assets/aistudio/WhatsApp_Image_2026-11-11_at_21.17.07_2194679c.jpeg',
     phone: '020 3951 6369',
     email: 'info@thegloballuxuryconsortium.com'
   },
@@ -4048,7 +4308,7 @@ export const DEMO_MEMBER_JAMES_ASHFORD: MemberProfile = {
       'Private apron transfer at Farnborough with pre-cleared Italian border entry',
       'Mercedes-Maybach transfer waiting at Florence Peretola directly at aircraft stairs',
       'Private after-hours viewing of the Vasari Corridor with senior art historian (20 May, 18:30)',
-      'Dinner reservation at Enoteca Pinchiorri, corner table, sommelier pairing selected by Camilla'
+      'Dinner reservation at Enoteca Pinchiorri, corner table, sommelier pairing coordinated by Leance Djedje'
     ],
     chauffeurStatus: 'Chauffeur Oliver Wright assigned for London departure (Range Rover SV, 08:45 pickup at Eaton Square)'
   },
@@ -4117,7 +4377,7 @@ export const DEMO_MEMBER_JAMES_ASHFORD: MemberProfile = {
     hotelStyle: 'Historic character, peaceful garden courtyards, high floor, non-feather bedding',
     dietaryNotes: 'Shellfish sensitivity, prefers Mediterranean and seasonal British produce, low-intervention European wines',
     vehiclePreference: 'Range Rover SV or Mercedes-Maybach (black or dark navy, rear climate 20.5°C)',
-    preferredContact: 'Direct WhatsApp message to Camilla Vance-Moreau / Follow up via email summary',
+    preferredContact: 'Direct message to Mickell Washington / Follow up via Albemarle Street email summary',
     confidentialityLevel: 'High (Strict NDA, Pseudonym reservations for international dining)'
   }
 };

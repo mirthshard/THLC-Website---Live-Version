@@ -64,7 +64,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     heroImage: '/assets/aistudio/private_jet_interior_suite.jpg',
     clientProfile: 'Chairman of a global technology investment consortium & family delegation',
     challenge: 'Principal required simultaneous multi-party road transfers, pre-cleared diplomatic luggage handling, and unlisted transatlantic heavy jet departure on three hours notice following an unscheduled corporate buyout in London.',
-    solution: 'Julian Sterling coordinated with RAF Northolt VIP Apron Gate 4 for immediate wheels-up slot allocation on Bombardier Global 7500 (G-TGLC). Luggage pre-cleared by close protection detail while an unmarked B6 Range Rover SV convoy provided a 22-minute blue-light escorted corridor from Belgravia.',
+    solution: 'Our Close Protection & Aviation Desk coordinated with RAF Northolt VIP Apron Gate 4 for immediate wheels-up slot allocation on Bombardier Global 7500 (G-TGLC). Luggage pre-cleared by close protection detail while an unmarked B6 Range Rover SV convoy provided a 22-minute blue-light escorted corridor from Belgravia.',
     testimonial: '“TGLC removed every seam of friction. We stepped from the mews arch directly into our cabin seats without ever entering a public facility or queue. Extraordinary precision.”',
     clientQuoteAuthor: 'Managing Partner, London & New York',
     highlights: ['Bombardier Global 7500 FL450 supersonic transatlantic corridor', 'Bespoke Mayfair cold collation & rare Meursault decanted onboard', 'Helicopter transfer from Teterboro direct to West 30th Street Heliport'],
@@ -86,7 +86,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     heroImage: '/assets/aistudio/hidden_nocturne_stealth_boat_1794295325076.jpg',
     clientProfile: 'Visiting Swiss private banking family & international art collectors',
     challenge: 'Clients desired an authentic, edgy, adrenaline-fuelled nocturnal experience that conventional luxury concierges deem impossible or too legally complex.',
-    solution: 'Secured an ex-special forces 45ft matte-black stealth interceptor with silenced twin V8s. Following an exhilarating high-speed Thames run past nocturnal London docks, the party was met by Julian Sterling’s team at a derelict wharf and escorted through an unmarked subterranean steel vault door into 18th-century bullion catacombs for a private six-course feast.',
+    solution: 'Secured an ex-special forces 45ft matte-black stealth interceptor with silenced twin V8s. Following an exhilarating high-speed Thames run past nocturnal London docks, the party was met by our Close Protection team at a derelict wharf and escorted through an unmarked subterranean steel vault door into 18th-century bullion catacombs for a private six-course feast.',
     testimonial: '“This showed us a London that 99% of people never know exists. The combination of speed on the river and absolute silence forty feet underground was hauntingly beautiful.”',
     clientQuoteAuthor: 'Principal Trustee, Geneva Private Office',
     highlights: ['Matte-black twin-engine stealth vessel licensed for night navigation', 'Descend through 20-ton bank-grade steel vault blast door', 'Six-course tasting menu paired with 1982 Armagnacs by candlelight'],
@@ -108,7 +108,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     heroImage: '/assets/aistudio/florence_palazzo_courtyard.jpg',
     clientProfile: 'American museum trustee & European Renaissance art patron',
     challenge: 'The historic Vasari Corridor had been closed for extensive restorations; client sought exclusive private transit from Palazzo Vecchio across the Ponte Vecchio to the Boboli Gardens without museum crowds.',
-    solution: 'Dr. Helena Zhang-Somerset negotiated after-hours ministerial access with the Soprintendenza Archeologia Belle Arti. Accompanied by the Senior Conservator, the family walked the 1-kilometre elevated corridor in total privacy, followed by an acoustic lute recital inside a privately opened Renaissance chapel.',
+    solution: 'Melize Nastaasia and our Cultural Liaison Desk negotiated after-hours ministerial access with the Soprintendenza Archeologia Belle Arti. Accompanied by the Senior Conservator, the family walked the 1-kilometre elevated corridor in total privacy, followed by an acoustic lute recital inside a privately opened Renaissance chapel.',
     testimonial: '“To stand alone in the Vasari Corridor as dusk settled over the Arno, with keys that opened doors closed for centuries, was unforgettable. TGLC’s cultural credentials are peerless.”',
     clientQuoteAuthor: 'Patron of Renaissance Antiquities',
     highlights: ['Closed-door keyholder passage above the Ponte Vecchio', 'Private access to the Medici self-portrait collection', 'Candlelit supper in private Palazzo cloister with rare Brunello'],
@@ -130,7 +130,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     heroImage: '/assets/aistudio/east_end_boxing_1794391694652.jpg',
     clientProfile: 'High-net-worth venture founder & international sports team owner',
     challenge: 'Client wanted to witness London’s legendary raw boxing heritage in an edgy, underground industrial setting—an environment where ultra-wealthy principals require discreet, battle-tested protective security.',
-    solution: 'Julian Sterling stationed two senior SIA close-protection officers in sharp dark tailoring to accompany the client into an unlisted historic railway arch hosting an invitation-only boxing showcase. Following the fights, the party was escorted into a hidden subterranean high-stakes gaming den behind a commercial dry cleaner.',
+    solution: 'Our Close Protection & Mobility Desk stationed two senior SIA officers in sharp dark tailoring to accompany the client into an unlisted historic railway arch hosting an invitation-only boxing showcase. Following the fights, the party was escorted into a hidden subterranean high-stakes gaming den behind a commercial dry cleaner.',
     testimonial: '“The energy was electrifying. I felt completely safe the entire evening while being right in the thick of a world you never get to see through ordinary channels.”',
     clientQuoteAuthor: 'Tech Founder & Investor, Silicon Valley',
     highlights: ['Front-row ringside staging inside closed Victorian railway arch', 'Two close-protection officers with discreet counter-surveillance', 'Secret doorway entry to high-roller backroom with £50k table stakes'],
@@ -174,7 +174,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     heroImage: '/assets/aistudio/hero_luxury_london_residence_1794298893032.jpg',
     clientProfile: 'British-American industrial family gathering 14 members across three generations',
     challenge: 'A historic 1,200-acre estate required full domestic re-staffing, fire logs laid, heating calibrated, gamekeeper briefings, and sporting clays organized for novice family members.',
-    solution: 'Camilla Vance-Moreau dispatched our estate advance team 48 hours prior. Two AgustaWestland AW109 helicopters transferred the family from Battersea to the estate lawn in 28 minutes. A team of four chefs, three housekeepers, and senior gamekeepers oversaw private shoots and fireside suppers.',
+    solution: 'Leance Djedje dispatched our estate advance team 48 hours prior. Two AgustaWestland AW109 helicopters transferred the family from Battersea to the estate lawn in 28 minutes. A team of four chefs, three housekeepers, and senior gamekeepers oversaw private shoots and fireside suppers.',
     testimonial: '“Everything was orchestrated to perfection. Walking into the great hall with fires blazing, beds made with Italian linen, and a bespoke shoot planned for the boys was magnificent.”',
     clientQuoteAuthor: 'Industrial Group Chairman',
     highlights: ['Two twin-engine AgustaWestland helicopters from Battersea', 'Twelve-gun private shoot with master loaders and gunsmiths', 'Private cellar sommelier and organic estate feast in candlelit barn'],
@@ -196,7 +196,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     heroImage: '/assets/aistudio/tglc_st_james_salon.jpg',
     clientProfile: 'International poker enthusiast & hedge fund founder',
     challenge: 'Client wanted a true private high-stakes poker game away from commercial Mayfair casinos, requiring elite security vetting and guaranteed privacy.',
-    solution: 'Introduced client to a private club held inside a restored Georgian townhouse basement behind a Savile Row cloth merchant. Julian Sterling assigned close-protection officers stationed at discreet entry and exit perimeters, while the client played alongside sovereign principals and elite players.',
+    solution: 'Introduced client to a private club held inside a restored Georgian townhouse basement behind a Savile Row cloth merchant. Our Close Protection Desk assigned officers stationed at discreet entry and exit perimeters, while the client played alongside sovereign principals and elite players.',
     testimonial: '“The atmosphere was straight out of a classic spy thriller. Top-tier cards, incredible cigars, and total discretion.”',
     clientQuoteAuthor: 'Quantitative Fund CIO',
     highlights: ['Private invitation-only game with zero commercial casino rake', 'Armoured Range Rover extraction on standby 24/7', 'Private Japanese barman serving Karuizawa and Yamazaki 25'],
@@ -328,7 +328,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     heroImage: '/assets/aistudio/shoreditch_dj_loft_1794391691810.jpg',
     clientProfile: 'European electronic music patron & young sovereign heirs',
     challenge: 'Clients wanted to attend an ultra-exclusive, unannounced underground electronic music gathering in an edgy industrial dockland location with full personal security and VIP extraction on standby.',
-    solution: 'Julian Sterling coordinated a midnight water approach via a military-grade RIB directly to an abandoned dockland slipway. Close-protection officers secured a private rooftop gantry overlooking the London skyline with bottle service and immediate evacuation route by river or road.',
+    solution: 'Our Tactical Mobility Desk coordinated a midnight water approach via a military-grade RIB directly to an abandoned dockland slipway. Close-protection officers secured a private rooftop gantry overlooking the London skyline with bottle service and immediate evacuation route by river or road.',
     testimonial: '“Arriving by water in the dark and walking up the concrete industrial stairs into that sound was mind-blowing. Security was so subtle my friends didn’t even realize they were there.”',
     clientQuoteAuthor: 'Creative Director & Sovereign Heir',
     highlights: ['Covert waterborne arrival avoiding road chokepoints and crowds', 'Private elevated gantry section with dedicated tactical CP officer', 'Instant extraction protocol back to central London in 25 minutes'],
@@ -435,7 +435,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     subtitle: 'One hundred feet beneath Holborn with London Philharmonic string quartet in total silence.',
     location: 'Chancery Lane Deep Underground Tunnel Network',
     duration: 'Late Evening (20:30 – 01:00)',
-    heroImage: '/assets/aistudio/down_street_station_1794391687146.jpg',
+    heroImage: '/assets/aistudio/kingsway_coldwar_tunnels.jpg',
     clientProfile: 'Philharmonic patron & acoustic architecture enthusiast',
     challenge: 'Client wanted to experience a private chamber music performance in a completely silent acoustic chamber with zero ambient surface noise from London traffic or underground rail.',
     solution: 'Obtained temporary activation permits for Kingsway Tunnels—the deepest subterranean space in central London, constructed as deep-level air raid shelters and later used for the transatlantic telephone cable terminal. Arranged four principal string players from the London Philharmonic for a private acoustic performance.',
@@ -460,8 +460,8 @@ export const CASE_STUDIES: CaseStudy[] = [
     heroImage: '/assets/aistudio/rolls-royce-cullinan-chauffeur-service-events_d3e6e421.webp',
     clientProfile: 'Visiting head of delegation, spouse, and three young children',
     challenge: 'Visiting during a high-profile diplomatic summit with road closures across Whitehall, demanding absolute security for the principal while allowing the spouse and children to shop and visit museums with warmth and normalcy.',
-    solution: 'Julian Sterling divided the security detail into two coordinated teams: Team Alpha (diplomatic protocol convoy for official bilateral meetings) and Team Bravo (unobtrusive close-protection chauffeurs in charcoal tailoring providing discreet child-friendly safeguarding during private visits to Harrods and the British Museum).',
-    testimonial: '“The balance between absolute security and gentle, friendly accompaniment for my children was magnificent. Julian’s drivers became trusted family friends.”',
+    solution: 'Our Diplomatic Protection Desk divided the security detail into two coordinated teams: Team Alpha (diplomatic protocol convoy for official bilateral meetings) and Team Bravo (unobtrusive close-protection chauffeurs in charcoal tailoring providing discreet child-friendly safeguarding during private visits to Harrods and the British Museum).',
+    testimonial: '“The balance between absolute security and gentle, friendly accompaniment for my children was magnificent. Our drivers became trusted family friends.”',
     clientQuoteAuthor: 'Ambassador & Principal',
     highlights: ['VPAM VR8 ballistic armored Range Rover SV Sentinels', 'Direct Met Police Special Operations liaison for priority traffic lanes', 'Zero public terminal interaction at Heathrow Windsor Suite'],
     itinerary: [
@@ -504,7 +504,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     heroImage: '/assets/aistudio/01_BUGATTI-SOC2022_6775a49f.jpg',
     clientProfile: 'Private hypercar syndicate of three collector couples',
     challenge: 'Navigating low-clearance hypercars over high alpine passes and through historic Italian city centres while securing secure indoor parking, pre-scouted routes, and luggage transport.',
-    solution: 'Julian Sterling pre-scouted every kilometre of mountain pass, mapping smooth road surfaces and low-incline fuel stops. A dedicated Mercedes Sprinter service van followed with luggage and dedicated master technicians. Villa d’Este and a private Florence palazzo provided private secured courtyards.',
+    solution: 'Our Continental Mobility Desk pre-scouted every kilometre of mountain pass, mapping smooth road surfaces and low-incline fuel stops. A dedicated Mercedes Sprinter service van followed with luggage and dedicated master technicians. Villa d’Este and a private Florence palazzo provided private secured courtyards.',
     testimonial: '“To drive these machines on empty Alpine passes knowing our luggage was already unpacked and private mechanics were waiting at every stop was perfection.”',
     clientQuoteAuthor: 'Hypercar Syndicate Lead',
     highlights: ['Pre-scouted Alpine passes with police road telemetry', 'Dedicated chase van with master technicians and tyre telemetry', 'Secured private courtyard staging at Villa d’Este and Florence palazzo'],
@@ -548,7 +548,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     heroImage: '/assets/aistudio/urban_hiphop_club_1794391691841.jpg',
     clientProfile: 'Global music producer & visiting tech founders',
     challenge: 'Principal sought raw underground London hip-hop and rotary vinyl culture in an architecturally raw railway arch with zero public street queueing or smartphone photography.',
-    solution: 'Dr. Helena Zhang-Somerset secured full midnight buyout of a sound-isolated double-brick arch fitted with hand-wired horn stacks, preceded by a closed Soho archive clothing appointment and staggered satin-black Maybach lane departures.',
+    solution: 'Melize Nastaasia secured full midnight buyout of a sound-isolated double-brick arch fitted with hand-wired horn stacks, preceded by a closed Soho archive clothing appointment and staggered satin-black Maybach lane departures.',
     testimonial: '“Unbeatable acoustics, total privacy in the booth, and pulling straight into the rear alley Maybach without a single lens outside.”',
     clientQuoteAuthor: 'Music Producer & Venture Principal',
     highlights: ['Hand-built analog rotary sound system inside sound-isolated railway vault', 'Private Soho archive street-couture preview with studio pattern master', 'Faraday cloakroom pouch protocol and dual-lane alley extraction'],
@@ -596,12 +596,12 @@ const SPECIFIC_CASE_ENRICHMENTS: Record<string, CaseStudyEnrichment> = {
     gallery: [
       { image: '/assets/aistudio/private_jet_interior_suite.jpg', caption: 'Bombardier Global 7500 cabin prepared at RAF Northolt for zero-friction transatlantic wheels-up.' },
       { image: '/assets/aistudio/mayfair_security_convoy.jpg', caption: 'Two matched Range Rover SV Sentinels staged along Belgravia mews for the 22-minute A40 transfer.' },
-      { image: '/assets/aistudio/01-Neo-Bankside-Luxury-Penthouse-London-England-UK-640x360_c8f27abb.jpg', caption: 'Manhattan penthouse landing arrival timed directly after the West 30th Street heliport transfer.' }
+      { image: '/assets/aistudio/five_star_mayfair_suite.jpg', caption: 'Manhattan penthouse landing arrival timed directly after the West 30th Street heliport transfer.' }
     ],
     extendedContext: 'With commercial transatlantic cabins sold out around board closing dates, TGLC simultaneously coordinated Flight Crew rest verification, UK diplomatic bag border clearance inside Belgravia, and FAA Teterboro arrival priority slots so all eight family members boarded twenty-seven minutes after leaving Eaton Square.',
     securityDetail: 'Advance close-protection detail cleared the Northolt Gate 4 VIP apron ahead of arrival while New York affiliates held tarmac rotorcraft blades running at Teterboro Signature Terminal.',
     measurableOutcome: '07h 48m door-to-penthouse across the North Atlantic with zero public terminal contact.',
-    leadDirector: 'Julian Sterling & Camilla Vance-Moreau'
+    leadDirector: 'Mickell Washington & Aviation Desk'
   },
   'cs-02': {
     gallery: [
@@ -612,7 +612,7 @@ const SPECIFIC_CASE_ENRICHMENTS: Record<string, CaseStudyEnrichment> = {
     extendedContext: 'Operating under tidal clearance from the Port of London Authority, the 45-foot carbon craft maintained thermal forward navigation past Rotherhithe before mooring directly below a derelict Victorian wharf gate where induction chefs awaited.',
     securityDetail: 'Faraday lockboxes sealed all cellular handsets behind the circular Chubb vault bulkhead while two plainclothes officers held the surface stairwell until departure.',
     measurableOutcome: '18-minute river sprint · Complete RF silence across a five-hour nocturnal supper.',
-    leadDirector: 'Dr. Helena Zhang-Somerset & Julian Sterling'
+    leadDirector: 'Melize Nastaasia & Close Protection Desk'
   },
   'cs-04': {
     gallery: [
@@ -623,7 +623,7 @@ const SPECIFIC_CASE_ENRICHMENTS: Record<string, CaseStudyEnrichment> = {
     extendedContext: 'Rather than sanitizing East End boxing heritage, we embedded the client’s small party ringside beside former Olympic trainers where leather impacts echoed down the soot-darkened brickwork, then shifted seamlessly west into Soho for cards and rare drams.',
     securityDetail: 'Perimeter risk matrix mapped three independent extraction alleys off Spa Terminus and paired two SIA officers in evening wool tailoring beside the red corner banquette.',
     measurableOutcome: '6 bout exhibition card · Zero public detection across two raw urban enclaves.',
-    leadDirector: 'Julian Sterling'
+    leadDirector: 'TGLC Security & Mobility Desk'
   },
   'cs-23': {
     gallery: [
@@ -634,7 +634,7 @@ const SPECIFIC_CASE_ENRICHMENTS: Record<string, CaseStudyEnrichment> = {
     extendedContext: 'Visiting artists and tech founders frequently request London nightlife that matches Atlanta or Tokyo listening-room energy without VIP table circus theatrics. We combined an after-hours styling appointment with an unrecorded railway-vault session.',
     securityDetail: 'Dual satin-black Maybach sedans drove inside the shuttered delivery bay directly to the heavy acoustic door; smartphone lenses remained sealed inside magnetic Faraday slips.',
     measurableOutcome: 'Zero photography leaks · Seamless multi-venue Soho to Vauxhall alley movement.',
-    leadDirector: 'Dr. Helena Zhang-Somerset & Julian Sterling'
+    leadDirector: 'Melize Nastaasia & Mobility Desk'
   },
 };
 
@@ -649,7 +649,7 @@ function getEnrichedCaseStudy(cs: CaseStudy): CaseStudyEnrichment {
       ],
       contextSuffix: 'Every property allocation, vehicle hand-off, and dining reservation was cross-checked twice daily against the household preference ledger so principals felt effortlessly at home.',
       securityDefault: 'Discreet uniformed/plainclothes chauffeur accompaniment, pseudonym advance check-in, and contingency heliport standby.',
-      lead: 'Camilla Vance-Moreau'
+      lead: 'Leance Djedje'
     },
     'hidden-london': {
       gallery: [
@@ -658,8 +658,8 @@ function getEnrichedCaseStudy(cs: CaseStudy): CaseStudyEnrichment {
         { image: '/assets/aistudio/urban_vinyl_booth_deep.jpg', caption: 'Late-night acoustic and vinyl salons curated strictly for trusted principals and guests.' }
       ],
       contextSuffix: 'All door keys, password clearances, and custodial steward permissions were verified forty-eight hours prior so the evening felt spontaneous yet ran to the minute.',
-      securityDefault: 'Plainclothes Julian Sterling advance team, alleyway vehicle holding, and strict device privacy enforcement.',
-      lead: 'Dr. Helena Zhang-Somerset & Julian Sterling'
+      securityDefault: 'Plainclothes Close Protection advance team, alleyway vehicle holding, and strict device privacy enforcement.',
+      lead: 'Melize Nastaasia & Sub-Rosa Desk'
     },
     'aviation-yacht': {
       gallery: [
@@ -669,7 +669,7 @@ function getEnrichedCaseStudy(cs: CaseStudy): CaseStudyEnrichment {
       ],
       contextSuffix: 'Synchronized slot clearance, custom cellar provisioning, and onboard crew briefings removed multi-modal waits between tarmac aprons, rotorcraft pads, and harbour berths.',
       securityDefault: 'Private FBO diplomatic apron admission, marine traffic AIS discretion, and closed passenger manifests.',
-      lead: 'Julian Sterling & Mickell Washington'
+      lead: 'Leance Djedje & Mickell Washington'
     },
     'culture-sourcing': {
       gallery: [
@@ -679,7 +679,7 @@ function getEnrichedCaseStudy(cs: CaseStudy): CaseStudyEnrichment {
       ],
       contextSuffix: 'Independent condition audits, ultraviolet spectroscopy, and archive extract cross-checks ensured every conversation remained purely scholarly and transparent.',
       securityDefault: 'Armoured fine-art and timepiece transit under museum insurance with unmarked courier handoffs.',
-      lead: 'Dr. Helena Zhang-Somerset & Mickell Washington'
+      lead: 'Melize Nastaasia & Mickell Washington'
     },
     'security-convoy': {
       gallery: [
@@ -689,7 +689,7 @@ function getEnrichedCaseStudy(cs: CaseStudy): CaseStudyEnrichment {
       ],
       contextSuffix: 'Pre-event traffic telemetry, underground loading-bay sweeps, and secondary departure drills allowed families and executives to move through dense urban gatherings serenely.',
       securityDefault: 'SIA close-protection command, VPAM ballistic fleet deployment, and encrypted inter-vehicle radio architecture.',
-      lead: 'Julian Sterling'
+      lead: 'TGLC Security & Mobility Desk'
     },
   };
   const cfg = categoryExtras[cs.category === 'all' ? 'ultra-luxury' : cs.category];
@@ -779,7 +779,7 @@ export const CaseStudiesPage: React.FC = () => {
                 <button
                   key={cat.id}
                   onClick={() => setSelectedCategory(cat.id)}
-                  className={`px-3 py-2 text-xs font-mono uppercase tracking-wider whitespace-nowrap border shrink-0 transition-all ${
+                  className={`min-h-[44px] px-3.5 py-2 text-xs font-mono uppercase tracking-wider whitespace-nowrap border shrink-0 transition-all ${
                     isActive
                       ? 'bg-[#131722] text-[#E2BA6B] border-[#E2BA6B]/70 font-medium'
                       : 'bg-[#0D1017] text-[#8F98AA] border-transparent hover:border-[#2C3140] hover:text-[#FAF7F0]'
@@ -805,12 +805,17 @@ export const CaseStudiesPage: React.FC = () => {
 
         {/* 3. Case Studies Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filtered.map((cs) => {
+          {filtered.map((cs, idx) => {
             const enriched = getEnrichedCaseStudy(cs);
             return (
-            <div
+            <motion.div
               key={cs.id}
-              className="bg-[#0D1017] border border-[#202530] hover:border-[#E2BA6B]/60 transition-all duration-300 flex flex-col justify-between group overflow-hidden"
+              initial={{ opacity: 0.9, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.05 }}
+              whileHover={{ y: -4 }}
+              transition={{ duration: 0.4, delay: Math.min(idx * 0.04, 0.2), ease: [0.16, 1, 0.3, 1] }}
+              className="bg-[#0D1017] border border-[#202530] hover:border-[#E2BA6B]/60 transition-colors duration-300 flex flex-col justify-between group overflow-hidden"
             >
               <div>
                 <div className="relative aspect-[16/10] overflow-hidden bg-[#131722]">
@@ -830,7 +835,7 @@ export const CaseStudiesPage: React.FC = () => {
                       key={gIdx}
                       type="button"
                       onClick={() => openCaseModal(cs, gIdx)}
-                      className="aspect-[16/9] overflow-hidden border border-[#202530] hover:border-[#E2BA6B] transition-colors cursor-pointer"
+                      className="aspect-[16/9] min-h-[44px] overflow-hidden border border-[#202530] hover:border-[#E2BA6B] transition-colors cursor-pointer"
                       aria-label={`Inspect photo ${gIdx + 1} for ${cs.title}`}
                     >
                       <img
@@ -881,23 +886,28 @@ export const CaseStudiesPage: React.FC = () => {
                 </div>
               </div>
 
-              <div className="p-5 pt-3 border-t border-[#181D26] mt-2 flex items-center justify-between gap-2">
-                <button
-                  type="button"
-                  onClick={() => openCaseModal(cs, 0)}
-                  className="text-xs font-mono uppercase tracking-wider text-[#E2BA6B] hover:underline flex items-center gap-1 font-medium cursor-pointer whitespace-nowrap"
-                >
-                  <Eye className="w-3.5 h-3.5" /> Full Story & Photos
-                </button>
-                <button
-                  type="button"
-                  onClick={() => openIntroductionModal(`Commission Similar Itinerary: ${cs.title}`)}
-                  className="text-[10px] font-mono text-[#8F98AA] hover:text-[#FAF7F0] flex items-center gap-1 cursor-pointer whitespace-nowrap"
-                >
-                  Commission This <ArrowUpRight className="w-3 h-3 text-[#E2BA6B]" />
-                </button>
+              <div className="p-5 pt-3 border-t border-[#181D26] mt-2 space-y-2.5">
+                <div className="flex items-center justify-between gap-2">
+                  <button
+                    type="button"
+                    onClick={() => openCaseModal(cs, 0)}
+                    className="min-h-[44px] text-xs font-mono uppercase tracking-wider text-[#E2BA6B] hover:underline flex items-center gap-1 font-medium cursor-pointer whitespace-nowrap"
+                  >
+                    <Eye className="w-3.5 h-3.5" /> Full Story & Photos
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => openIntroductionModal(`Commission Similar Itinerary: ${cs.title}`)}
+                    className="min-h-[44px] text-[10px] font-mono text-[#8F98AA] hover:text-[#FAF7F0] flex items-center gap-1 cursor-pointer whitespace-nowrap"
+                  >
+                    Commission This <ArrowUpRight className="w-3 h-3 text-[#E2BA6B]" />
+                  </button>
+                </div>
+                <span className="block h-[1px] w-full bg-[#191C26] overflow-hidden">
+                  <span className="block h-full w-0 group-hover:w-full bg-gradient-to-r from-[#8B672B] via-[#E2BA6B] to-[#C4933F] transition-all duration-500" />
+                </span>
               </div>
-            </div>
+            </motion.div>
             );
           })}
         </div>

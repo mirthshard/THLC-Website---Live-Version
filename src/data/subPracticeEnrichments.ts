@@ -169,7 +169,7 @@ export const SUB_SERVICE_ENRICHMENTS: Record<string, SubServiceEnrichment> = {
       { q: 'Can you rent private family villas under a corporate or trust pseudonym?', a: 'Yes. With compliance KYC held cleanly by TGLC, local leases can be structured via nominee vehicles to keep your family surname off vendor sheets.' },
       { q: 'What happens if the hotel suite or villa fails inspection upon arrival?', a: 'Because our inspectors preview properties prior to occupation, surprises are practically eliminated; should an unexpected infrastructure failure occur, our network prioritizes immediate suite upgrades or replacement residence shifts within hours.' },
       { q: 'Can we keep preferred mattresses, linen weights, and espresso roasts across hotels?', a: 'Your Member Dossier records exact pillow density, sheets, room temperature, and coffee specs, dispatched automatically before every arrival.' },
-      { q: 'Do you coordinate private estate security during seasonal summer stays?', a: 'Yes. Julian Sterling’s advance unit places static gate guards, shoreline watch crews, and discreet drivers at European estates.' }
+      { q: 'Do you coordinate private estate security during seasonal summer stays?', a: 'Yes. Our Close Protection & Mobility Desk places static gate guards, shoreline watch crews, and discreet drivers at European estates.' }
     ]
   },
 
@@ -465,7 +465,7 @@ export const SUB_SERVICE_ENRICHMENTS: Record<string, SubServiceEnrichment> = {
       'Private Rotary Audio & Hip-Hop Listening Vaults (W1 / SE1 / E2)',
       'Soho Late-Night Jazz & Musicians’ Jam Cellars',
       'Shoreditch Skyline Lofts & Guest Resident DJs',
-      'Julian Sterling Night Close-Protection Specialists'
+      'TGLC Night Close-Protection Specialists'
     ],
     extraPoints: [
       'Private DJ booking & custom analog sound setups arranged inside penthouse loft buyouts',
@@ -547,7 +547,7 @@ export const SUB_SERVICE_ENRICHMENTS: Record<string, SubServiceEnrichment> = {
   'art-design-collecting': {
     extendedOverview: [
       'Public art fair VIP previews have grown into congested social promenades rather than serious spaces to examine pigment, brush velocity, or patina. TGLC returns seriousness and calm to acquiring art.',
-      'Led by Dr. Helena Zhang-Somerset, we unlock closed museum rooms once doors bolt to the public, organize unhurried afternoons inside working East London sculpture foundries and painterly warehouses, and arrange ultraviolet and provenance checks with independent scholars ahead of auctions.',
+      'Led by Melize Nastaasia and our Cultural Desk, we unlock closed museum rooms once doors bolt to the public, organize unhurried afternoons inside working East London sculpture foundries and painterly warehouses, and arrange ultraviolet and provenance checks with independent scholars ahead of auctions.',
       'Once an artwork is acquired, our registrars manage museum-grade crating, non-reflective conservation glass, water-gilded basswood frames, and bonded Freeport storage across London and Geneva.'
     ],
     galleryImages: [
@@ -1288,7 +1288,7 @@ export const SUB_SERVICE_ENRICHMENTS: Record<string, SubServiceEnrichment> = {
 
   'executive-protection': {
     extendedOverview: [
-      'Conspicuous sunglasses, bulging earpieces, and aggressive shoulder blocking draw the exact unwanted eyes they claim to deter. Under Julian Sterling’s leadership, TGLC treats personal protection as silent geometric mastery: knowing entrances, reading foot traffic early, and gliding smoothly alongside families.',
+      'Conspicuous sunglasses, bulging earpieces, and aggressive shoulder blocking draw the exact unwanted eyes they claim to deter. Under TGLC’s Close Protection Desk, we treat personal protection as silent geometric mastery: knowing entrances, reading foot traffic early, and gliding smoothly alongside families.',
       'Every close-protection specialist comes from vetted British Armed Forces, Metropolitan Police Royalty & Specialist Protection, or UK Diplomatic Protection cohorts—carrying active SIA licensing, advanced trauma medical training (FREC4), and flawless Savile Row social poise.',
       'Whether safeguarding children between school runs, inspecting late-night Soho doorways ahead of artists, or shielding high-value horology acquisitions during bond transits, safety settles imperceptibly around your day.'
     ],
@@ -1328,7 +1328,7 @@ export const SUB_SERVICE_ENRICHMENTS: Record<string, SubServiceEnrichment> = {
       {
         title: 'East End Fight Night Exit Choreography',
         description: 'Principal attending unlisted railway arch exhibition late at night in unpredictable warehouse blocks.',
-        outcome: 'Julian’s advance team locked steel archway courtyard 10 minutes before bell, stepping directly into Range Rover.'
+        outcome: 'Close Protection advance team locked steel archway courtyard 10 minutes before bell, stepping directly into Range Rover.'
       }
     ],
     faqs: [
@@ -1388,7 +1388,7 @@ export const SUB_SERVICE_ENRICHMENTS: Record<string, SubServiceEnrichment> = {
       { q: 'Can you prevent paparazzi gathering outside a private venue party?', a: 'Advance positioning maps enclosed service gates, obscured canopy entrances, and private underground garage drops.' },
       { q: 'Do you run technical vehicle checks before guests board hired limousines?', a: 'Routinely—confirming mechanical roadworthiness, clear driver vetting, and radio encryption check prior to staging.' },
       { q: 'What happens if fifteen guests depart simultaneously at midnight?', a: 'Drivers organize in holding lanes five minutes prior based on coatroom alerts transmitted quietly from lobby concierges.' },
-      { q: 'Do you liaise directly with Metropolitan Police Diplomatic units when sovereign guests attend?', a: 'Yes, Julian Sterling maintains fluent protocol dialogue with visiting embassy protection leads.' }
+      { q: 'Do you liaise directly with Metropolitan Police Diplomatic units when sovereign guests attend?', a: 'Yes, our Diplomatic & Close Protection Desk maintains fluent protocol dialogue with visiting embassy protection leads.' }
     ]
   },
 

@@ -116,7 +116,7 @@ export const DEMO_USERS: Record<UserRole, PortalUser> = {
     role: 'client',
     tier: 'The Global Membership',
     memberSince: '2023',
-    assignedManager: 'Camilla Vance-Moreau',
+    assignedManager: 'Mickell Washington',
     primaryResidence: 'Eaton Square, Belgravia & Florence',
     retainedHoursBalance: 42.5,
   },
@@ -127,29 +127,29 @@ export const DEMO_USERS: Record<UserRole, PortalUser> = {
     role: 'family_office',
     tier: 'The Private Office Charter',
     memberSince: '2022',
-    assignedManager: 'Mickell Washington',
+    assignedManager: 'Melize Nastaasia',
     primaryResidence: 'Vance-Rostova Multi-Family Office (London & Geneva)',
     retainedHoursBalance: 120.0,
   },
   admin: {
     id: 'usr-admin-01',
     email: 'admin@tglc.com',
-    name: 'Camilla Vance-Moreau',
+    name: 'Private Office Governance',
     role: 'admin',
-    tier: 'Director of Private Office',
-    memberSince: 'Founding Partner',
-    assignedManager: 'Self (Private Office Lead)',
+    tier: 'Directorate Desk · Albemarle Street',
+    memberSince: 'Founding Desk',
+    assignedManager: 'Mickell Washington',
     primaryResidence: 'TGLC House, 45 Albemarle Street, Mayfair',
     retainedHoursBalance: 0,
   },
   security: {
     id: 'usr-sec-01',
     email: 'security@tglc.com',
-    name: 'Julian Sterling',
+    name: 'Close Protection & Mobility Desk',
     role: 'security',
-    tier: 'Director of Fleet & Tactical Security',
-    memberSince: 'Founding Partner',
-    assignedManager: 'Self (Tactical Operations)',
+    tier: 'Tactical Mobility & Escort Operations',
+    memberSince: 'Founding Desk',
+    assignedManager: 'Leance Djedje',
     primaryResidence: 'London & Farnborough Tactical Desk',
     retainedHoursBalance: 0,
   },
@@ -164,7 +164,7 @@ const INITIAL_REQUESTS: ConciergeRequest[] = [
     priority: 'Urgent',
     status: 'Staged',
     submittedDate: 'Today, 08:15',
-    assignedTo: 'Julian Sterling',
+    assignedTo: 'TGLC Close Protection Desk',
     notes: 'Discreet departure at 08:45 sharp to RAF Northolt. Luggage pre-cleared for Bombardier Global 7500.',
     estimatedCost: 'Included in retained charter',
   },
@@ -176,7 +176,7 @@ const INITIAL_REQUESTS: ConciergeRequest[] = [
     priority: 'Standard',
     status: 'Completed',
     submittedDate: 'Yesterday, 14:20',
-    assignedTo: 'Camilla Vance-Moreau',
+    assignedTo: 'Leance Djedje',
     notes: 'Exclusive acoustic alcove confirmed for 4 guests. Non-feather linens pre-set in garden suite.',
     estimatedCost: '€1,850 (Disbursed via direct pass-through)',
   },
@@ -188,7 +188,7 @@ const INITIAL_REQUESTS: ConciergeRequest[] = [
     priority: 'Standard',
     status: 'In Progress',
     submittedDate: '09 Nov, 11:30',
-    assignedTo: 'Dr. Helena Zhang-Somerset',
+    assignedTo: 'Leance Djedje',
     notes: 'Curator permission cleared. Awaiting Italian Ministry of Culture after-hours pass issuance.',
     estimatedCost: '€2,400',
   },
@@ -200,7 +200,7 @@ const INITIAL_REQUESTS: ConciergeRequest[] = [
     priority: 'Standard',
     status: 'Assigned',
     submittedDate: 'Today, 09:30',
-    assignedTo: 'Camilla Vance-Moreau',
+    assignedTo: 'Melize Nastaasia',
     notes: 'Ground-source pumps inspected, fire logs restocked, and estate chef in place for Friday arrival.',
     estimatedCost: 'Included in retained estate management',
   },
@@ -224,7 +224,7 @@ const INITIAL_REQUESTS: ConciergeRequest[] = [
     priority: 'Standard',
     status: 'Completed',
     submittedDate: '02 Nov, 14:00',
-    assignedTo: 'Julian Sterling',
+    assignedTo: 'TGLC Maritime & Security Desk',
     notes: 'Mooring lines inspected, yacht tender winter-stored at Antibes shipyard, perimeter telemetry verified.',
     estimatedCost: '€3,400',
   },
@@ -236,7 +236,7 @@ const INITIAL_REQUESTS: ConciergeRequest[] = [
     priority: 'Standard',
     status: 'In Progress',
     submittedDate: 'Yesterday, 11:15',
-    assignedTo: 'Camilla Vance-Moreau',
+    assignedTo: 'Melize Nastaasia',
     notes: 'Recruitment of 4 seasonal chalet staff, ski room warming check, and Swiss customs wine pre-import.',
     estimatedCost: 'CHF 8,200',
   },
@@ -248,7 +248,7 @@ const INITIAL_REQUESTS: ConciergeRequest[] = [
     priority: 'Urgent',
     status: 'Staged',
     submittedDate: 'Today, 06:30',
-    assignedTo: 'Julian Sterling',
+    assignedTo: 'TGLC Close Protection Desk',
     notes: 'Range Rover SV & Maybach S680 staging on tarmac. Radio frequency telemetry aligned with TAG tower.',
     estimatedCost: 'Retained Tactical Unit',
   },
@@ -272,7 +272,7 @@ const INITIAL_REQUESTS: ConciergeRequest[] = [
     priority: 'Immediate',
     status: 'Completed',
     submittedDate: 'Today, 08:00',
-    assignedTo: 'Dr. Helena Zhang-Somerset',
+    assignedTo: 'Leance Djedje',
     notes: 'Regent’s Park preview director passes hand-delivered to Eaton Square and Kensington residences.',
     estimatedCost: 'Master Retained Core',
   },
@@ -282,8 +282,8 @@ const INITIAL_MESSAGES: DirectMessage[] = [
   {
     id: 'msg-1',
     userId: 'usr-client-01',
-    senderName: 'Camilla Vance-Moreau',
-    senderRole: 'Director of Private Office',
+    senderName: 'Mickell Washington',
+    senderRole: 'Founder & Managing Director',
     timestamp: '14:20',
     text: 'Good afternoon James. Your garden wing suite at Four Seasons Firenze is re-confirmed with hypoallergenic non-feather bedding as specified in your dossier.',
     isStaff: true,
@@ -294,14 +294,14 @@ const INITIAL_MESSAGES: DirectMessage[] = [
     senderName: 'James Ashford',
     senderRole: 'Principal',
     timestamp: '14:35',
-    text: 'Thank you Camilla. Has Julian verified the morning departure timing from the mews?',
+    text: 'Thank you Mickell. Has the Mobility Desk verified the morning departure timing from the mews?',
     isStaff: false,
   },
   {
     id: 'msg-3',
     userId: 'usr-client-01',
-    senderName: 'Julian Sterling',
-    senderRole: 'Tactical Mobility Lead',
+    senderName: 'Close Protection & Mobility Desk',
+    senderRole: 'Tactical Mobility Operations',
     timestamp: '14:41',
     text: 'All confirmed James. Range Rover SV will be stationed outside at 08:45. Traffic route scouting across A40 complete. Estimated tarmac time 28 minutes.',
     isStaff: true,
@@ -309,8 +309,8 @@ const INITIAL_MESSAGES: DirectMessage[] = [
   {
     id: 'msg-fo-1',
     userId: 'usr-fo-01',
-    senderName: 'Camilla Vance-Moreau',
-    senderRole: 'Director of Private Office',
+    senderName: 'Melize Nastaasia',
+    senderRole: 'Executive Coordination & Partnerships',
     timestamp: 'Today, 09:40',
     text: 'Elena, Cotswolds estate heating recalibration is complete. Head chef has received the weekend organic provisioning manifest.',
     isStaff: true,
@@ -321,7 +321,7 @@ const INITIAL_MESSAGES: DirectMessage[] = [
     senderName: 'Elena Rostova',
     senderRole: 'Family Office Executive',
     timestamp: 'Today, 10:05',
-    text: 'Splendid Camilla. Please ensure the Geneva wardrobe trunks are transferred to Eaton Square by 18:00.',
+    text: 'Splendid Melize. Please ensure the Geneva wardrobe trunks are transferred to Eaton Square by 18:00.',
     isStaff: false,
   },
   {
@@ -330,7 +330,7 @@ const INITIAL_MESSAGES: DirectMessage[] = [
     senderName: 'Mickell Washington',
     senderRole: 'Private Office Governance',
     timestamp: 'Today, 10:20',
-    text: 'Wardrobe trunks cleared customs at Northolt; currently en route via armoured transit with Julian’s team.',
+    text: 'Wardrobe trunks cleared customs at Northolt; currently en route via armoured transit with our transport unit.',
     isStaff: true,
   },
   {
@@ -339,14 +339,14 @@ const INITIAL_MESSAGES: DirectMessage[] = [
     senderName: 'Marcus Webb',
     senderRole: 'Tactical Close Protection',
     timestamp: 'Today, 08:10',
-    text: 'Julian, Farnborough TAG terminal advance check complete. Maybach S680 Guard is pre-positioned on Stand 14.',
+    text: 'Farnborough TAG terminal advance check complete. Maybach S680 Guard is pre-positioned on Stand 14.',
     isStaff: true,
   },
   {
     id: 'msg-sec-2',
     userId: 'usr-sec-01',
-    senderName: 'Julian Sterling',
-    senderRole: 'Fleet & Tactical Lead',
+    senderName: 'Close Protection & Mobility Desk',
+    senderRole: 'Fleet & Tactical Duty Officer',
     timestamp: 'Today, 08:22',
     text: 'Copy Marcus. Holding at Eaton Square Mews for Principal James Ashford departure at 08:45 to Northolt.',
     isStaff: false,
@@ -537,7 +537,7 @@ const INITIAL_BILLING: BillingEntry[] = [
 
 const INITIAL_BROADCAST: HouseBroadcast = {
   id: 'brd-01',
-  author: 'Camilla Vance-Moreau · Private Office Desk',
+  author: 'Albemarle Private Office Desk',
   timestamp: 'Today, 08:00 GMT',
   priority: 'Advisory',
   message:
@@ -549,22 +549,22 @@ const INITIAL_AUDIO_MEMOS: AudioMemo[] = [
     id: 'aud-01',
     userId: 'usr-client-01',
     title: 'RAF Northolt VIP Apron & Tarmac Clearance Protocol',
-    speakerName: 'Julian Sterling',
-    speakerRole: 'Tactical Mobility Lead',
+    speakerName: 'Close Protection & Mobility Desk',
+    speakerRole: 'Tactical Mobility Operations',
     durationSeconds: 102,
     durationFormatted: '01:42',
     timestamp: 'Today, 07:30',
     audioCategory: 'Flight Telemetry',
     classification: 'Priority Secret',
-    transcript: 'James, Julian here. Route briefing for your morning departure: Eaton Square mews convoy departs 08:45 sharp. A40 cleared of commercial bottlenecks. TGLC-01 Bombardier Global 7500 fueled with diplomatic flight clearance pre-stamped. Luggage will transfer directly airside without terminal transit.',
+    transcript: 'James, Tactical Mobility Desk here. Route briefing for your morning departure: Eaton Square mews convoy departs 08:45 sharp. A40 cleared of commercial bottlenecks. TGLC-01 Bombardier Global 7500 fueled with diplomatic flight clearance pre-stamped. Luggage will transfer directly airside without terminal transit.',
     waveformHeights: [15, 30, 60, 85, 45, 90, 75, 40, 65, 80, 95, 70, 50, 85, 90, 60, 40, 25, 45, 70, 85, 60, 30, 50, 75, 60, 40, 20],
   },
   {
     id: 'aud-02',
     userId: 'usr-client-01',
     title: 'Vasari Corridor Keyholder Directives & Medici Archive Study',
-    speakerName: 'Dr. Helena Zhang-Somerset',
-    speakerRole: 'Senior Curator & Cultural Envoy',
+    speakerName: 'Leance Djedje',
+    speakerRole: 'VIP Hospitality & Cultural Logistics',
     durationSeconds: 138,
     durationFormatted: '02:18',
     timestamp: 'Yesterday, 17:15',
@@ -577,28 +577,28 @@ const INITIAL_AUDIO_MEMOS: AudioMemo[] = [
     id: 'aud-03',
     userId: 'usr-client-01',
     title: 'Four Seasons Firenze Cloister Staging & Sommelier Notes',
-    speakerName: 'Camilla Vance-Moreau',
-    speakerRole: 'Director of Private Office',
+    speakerName: 'Mickell Washington',
+    speakerRole: 'Founder & Managing Director',
     durationSeconds: 75,
     durationFormatted: '01:15',
     timestamp: 'Yesterday, 14:10',
     audioCategory: 'Residency Staging',
     classification: 'Confidential',
-    transcript: 'James, Camilla here. The garden suite at Four Seasons has undergone our full physical pre-audit. Non-feather linens are fitted, room temperature calibrated to 20°C, and two bottles of 2010 Biondi-Santi Riserva decanted in your salon.',
+    transcript: 'James, Mickell here. The garden suite at Four Seasons has undergone our full physical pre-audit. Non-feather linens are fitted, room temperature calibrated to 20°C, and two bottles of 2010 Biondi-Santi Riserva decanted in your salon.',
     waveformHeights: [10, 25, 45, 60, 75, 85, 50, 65, 80, 90, 70, 55, 40, 60, 75, 85, 60, 45, 35, 50, 65, 70, 40, 25, 15, 20, 30, 15],
   },
   {
     id: 'aud-04',
     userId: 'usr-fo-01',
     title: 'Cotswolds Manor Heating & Domestic Brigade Deployment',
-    speakerName: 'Camilla Vance-Moreau',
-    speakerRole: 'Director of Private Office',
+    speakerName: 'Melize Nastaasia',
+    speakerRole: 'Executive Coordination & Partnerships',
     durationSeconds: 125,
     durationFormatted: '02:05',
     timestamp: 'Today, 09:15',
     audioCategory: 'Residency Staging',
     classification: 'Restricted',
-    transcript: 'Elena, Camilla reporting for the Family Office desk. Cotswolds estate heating recalibration is complete. Head chef has received the weekend organic provisioning manifest, and gatehouse perimeter security link is active.',
+    transcript: 'Elena, Melize reporting for the Family Office desk. Cotswolds estate heating recalibration is complete. Head chef has received the weekend organic provisioning manifest, and gatehouse perimeter security link is active.',
     waveformHeights: [25, 45, 65, 80, 60, 40, 70, 85, 95, 75, 50, 65, 80, 70, 55, 40, 60, 75, 85, 60, 40, 55, 70, 60, 35, 25, 15, 10],
   },
 ];
@@ -726,36 +726,13 @@ export const simulatedSupabase = {
 
       const defaultRole = targetRole || getStorage<UserRole>('active_role', 'client');
 
-      // Seamless login when using standard credentials, glc / glcglc, or selected desk
-      if (!cleanIdentity || cleanIdentity === 'glc' || cleanIdentity === 'glc@tglc.com' || cleanPass === 'glcglc' || cleanPass === '') {
+      // Primary consortium passphrase: glc / glcglc enters any chosen desk cleanly
+      if ((cleanIdentity === 'glc' || cleanIdentity === 'glc@tglc.com') && cleanPass === 'glcglc') {
         setStorage('active_role', defaultRole);
         return { user: DEMO_USERS[defaultRole], error: null };
       }
 
-      // Role aliases support
-      const roleAliasMap: Record<string, UserRole> = {
-        client: 'client',
-        principal: 'client',
-        james: 'client',
-        family_office: 'family_office',
-        familyoffice: 'family_office',
-        elena: 'family_office',
-        admin: 'admin',
-        director: 'admin',
-        governance: 'admin',
-        camilla: 'admin',
-        security: 'security',
-        tactical: 'security',
-        julian: 'security',
-      };
-
-      if (roleAliasMap[cleanIdentity]) {
-        const roleToUse = roleAliasMap[cleanIdentity];
-        setStorage('active_role', roleToUse);
-        return { user: DEMO_USERS[roleToUse], error: null };
-      }
-
-      // Match demo accounts and passcodes
+      // Specific desk credentials also validated strictly
       const DEMO_PASSWORDS: Record<UserRole, string> = {
         client: 'james123',
         family_office: 'office123',
@@ -767,20 +744,14 @@ export const simulatedSupabase = {
         (r) => DEMO_USERS[r].email.toLowerCase() === cleanIdentity || r === cleanIdentity
       );
 
-      if (foundRole && (cleanPass === DEMO_PASSWORDS[foundRole] || cleanPass === 'glcglc' || cleanPass === '')) {
+      if (foundRole && (cleanPass === DEMO_PASSWORDS[foundRole] || cleanPass === 'glcglc')) {
         setStorage('active_role', foundRole);
         return { user: DEMO_USERS[foundRole], error: null };
       }
 
-      // If user typed anything else, grant access to selected desk gracefully or prompt discreetly
-      if (cleanPass.length > 0) {
-        setStorage('active_role', defaultRole);
-        return { user: DEMO_USERS[defaultRole], error: null };
-      }
-
       return {
         user: null,
-        error: 'Invalid credentials. Please verify your member authorization or contact the Albemarle admissions desk.',
+        error: 'Invalid credentials. Verify your designated Member ID and confidential passphrase.',
       };
     },
     signOut: async (): Promise<void> => {

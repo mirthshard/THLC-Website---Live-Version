@@ -219,10 +219,10 @@ export const ConsortiumPages: React.FC<ConsortiumPagesProps> = ({ subPage = 'ove
                   A private house built on trust, instinct, and sound judgement.
                 </h1>
                 <p className="font-serif italic text-lg sm:text-2xl text-[#E2BA6B] leading-relaxed">
-                  “The right introduction, at the right moment.”
+                  “Opening doors that don’t usually exist — discretion by default, British poise by nature.”
                 </p>
                 <p className="tglc-prose text-sm sm:text-base max-w-2xl">
-                  The Global Luxury Consortium exists for individuals and families who have outgrown scripted hotel desks and impersonal call centres. From TGLC House at 3rd Floor, 45 Albemarle Street, we steward every practical and cultural contour of life in London and abroad with calm poise and unwavering discretion.
+                  The Global Luxury Consortium exists for individuals, corporate teams, and families who want a calm, accountable human point of contact in London and abroad. From our office at 3rd Floor, 45 Albemarle Street, we operate on a simple conviction: luxury is not defined by how much somebody spends, whether a request is £100 or £100,000, but by how exceptionally they are treated.
                 </p>
               </motion.div>
             </div>
@@ -239,13 +239,13 @@ export const ConsortiumPages: React.FC<ConsortiumPagesProps> = ({ subPage = 'ove
                   Stewardship shaped by human relationships, never software queues.
                 </h2>
                 <p className="text-sm sm:text-base text-[#C8C2B7] leading-relaxed font-light">
-                  When a diplomatic aircraft touches down at Farnborough ahead of schedule, or a rare pocket watch needs discreet authentication by an independent horologist in Mayfair, your Lifestyle Director does not log a ticket into an outsourced portal. They speak directly with colleagues they have broken bread with for fifteen years.
+                  When an executive flight arrives ahead of schedule, an anniversary table seems fully booked, or a confidential client visit requires three days of five-star hospitality across London, our directors do not log your brief into an automated portal. We lift the telephone and speak directly with the trusted people who run those rooms.
                 </p>
                 <p className="text-xs sm:text-sm text-[#9C968A] leading-relaxed font-light">
-                  We intentionally keep our member roster small so our principals actually recognise the voices of every household in their care—your preferred corners in St James’s dining rooms, your seasonal countryside shooting calendar, and the unhurried rhythm your family values most.
+                  We work closely with private individuals, visiting families, and busy executive assistants alike—bringing the same patience, respect, and quiet rigour to a thoughtful dinner recommendation as we bring to multi-city aviation and estate arrangements.
                 </p>
                 <p className="text-xs sm:text-sm text-[#9C968A] leading-relaxed font-light">
-                  Nothing is templated or delegated to scripted call centres. Whether negotiating an off-market Belgravia townhouse lease or lighting the hearth at a Cotswolds estate six hours before arrival, every decision settles quietly behind our third-floor Albemarle Street doors.
+                  Nothing is templated or passed down to anonymous call centres. Whether securing VIP Wembley or Ringside suites, sourcing discreet Belgravia stays, or coordinating tarmac chauffeurs at sunrise, every detail is weighed carefully behind our Albemarle Street doors.
                 </p>
               </div>
               <div className="lg:col-span-6 overflow-hidden border border-[#242630] bg-[#12141A] group">
@@ -258,7 +258,7 @@ export const ConsortiumPages: React.FC<ConsortiumPagesProps> = ({ subPage = 'ove
                   />
                 </div>
                 <div className="px-5 py-3.5 border-t border-[#222530] flex flex-wrap items-center justify-between gap-2 text-xs text-[#D4D8E2]">
-                  <span>Morning fireplace checks and fresh floral staging completed prior to household arrival</span>
+                  <span>Townhouse preparation and private arrival staging coordinated ahead of household check-in</span>
                   <span className="text-[#E2BA6B] font-mono text-[11px]">Mayfair · Belgravia SW1</span>
                 </div>
               </div>
@@ -275,7 +275,7 @@ export const ConsortiumPages: React.FC<ConsortiumPagesProps> = ({ subPage = 'ove
                   />
                 </div>
                 <div className="px-5 py-3.5 border-t border-[#222530] flex flex-wrap items-center justify-between gap-2 text-xs text-[#D4D8E2]">
-                  <span>Private Florentine palazzo courtyards prepared exclusively for single-household stays</span>
+                  <span>Private Florentine courtyards and European sanctuaries coordinated for visiting households</span>
                   <span className="text-[#E2BA6B] font-mono text-[11px]">Florence · Geneva · Paris</span>
                 </div>
               </div>
@@ -284,13 +284,13 @@ export const ConsortiumPages: React.FC<ConsortiumPagesProps> = ({ subPage = 'ove
                   Borderless Continuity
                 </span>
                 <h2 className="font-serif text-3xl sm:text-4xl text-[#F4F1EA] leading-tight">
-                  A single standard of quiet precision across continents.
+                  A single standard of quiet precision across borders.
                 </h2>
                 <p className="text-sm sm:text-base text-[#C8C2B7] leading-relaxed font-light">
-                  Although Mayfair is our philosophical and operational heart, contemporary life moves effortlessly between London, Geneva, the Tuscan hills, and Tokyo. Rather than passing your family to unfamiliar regional affiliates, your single TGLC desk coordinates every flight leg, private museum keyholder, and villa staff roster under one roof.
+                  Although London is our philosophical and operational home, client life moves continuously between Europe, North America, Asia, and the Pacific. Rather than handing you off to detached third-party desks, a single relationship-led point of contact stays with your itinerary from departure to return.
                 </p>
                 <p className="text-xs sm:text-sm text-[#9C968A] leading-relaxed font-light">
-                  Our regional fixers in Italy, France, Switzerland, and Japan report directly to Camilla Vance-Moreau and Julian Sterling, preserving the exact tone, billing transparency, and security discipline established in London.
+                  Our international coordination is led personally by Mickell Washington, Leance Djedje, and Melize Nastaasia from 45 Albemarle Street—preserving the exact tone, clear pricing transparency, and quiet security discipline established in Mayfair.
                 </p>
               </div>
             </motion.div>
@@ -314,13 +314,13 @@ export const ConsortiumPages: React.FC<ConsortiumPagesProps> = ({ subPage = 'ove
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 {
                   img: '/assets/aistudio/rolls-cullian-featured_a41abfa9.webp',
                   kicker: 'Precision Transit',
                   title: 'Wing-to-Townhouse Chauffeur',
-                  caption: 'Direct tarmac coordination out of Farnborough and Northolt in armoured and luxury British fleets.',
+                  caption: 'Direct tarmac coordination out of Farnborough, Northolt, and Heathrow VIP suites in executive and luxury fleets.',
                   action: () => navigateTo('service-detail', { serviceId: 'transport-security' }),
                 },
                 {
@@ -334,8 +334,29 @@ export const ConsortiumPages: React.FC<ConsortiumPagesProps> = ({ subPage = 'ove
                   img: '/assets/aistudio/mayfair_fine_dining.jpg',
                   kicker: 'Evening Hospitality',
                   title: 'Unlisted Tables & Wine Vaults',
-                  caption: 'Acoustic corner alcoves, private dining rooms, and pre-pulled vintages arranged by personal introduction.',
+                  caption: 'Acoustic corner alcoves, private dining rooms, and thoughtfully curated evenings arranged by personal introduction.',
                   action: () => navigateTo('service-detail', { serviceId: 'dining-nightlife' }),
+                },
+                {
+                  img: '/assets/aistudio/wembley_vip_hospitality.jpg',
+                  kicker: 'Triple Up · Live Access',
+                  title: 'VIP Suites, Derbies & Fight Nights',
+                  caption: 'Official hospitality suites across Wembley, Premier League grounds, Wimbledon, and Championship Boxing—paired seamlessly with stays and chauffeurs.',
+                  action: () => navigateTo('service-detail', { serviceId: 'events-culture' }),
+                },
+                {
+                  img: '/assets/aistudio/corporate_ea_boardroom.jpg',
+                  kicker: 'Executive & EA Desk',
+                  title: 'Seamless Corporate Briefings',
+                  caption: 'Dedicated day-and-night relief for Executive Assistants and visiting delegations—boardroom logistics, five-star stays, and group hosting.',
+                  action: () => navigateTo('service-detail', { serviceId: 'lifestyle-management' }),
+                },
+                {
+                  img: '/assets/aistudio/Main-5_c9bf5214.png',
+                  kicker: 'Five-Star Sanctuary',
+                  title: 'London Townhouses & Suites',
+                  caption: 'Quiet sanctuary suites across Mayfair, Knightsbridge, and the City inspected ahead of arrival so your key works effortlessly on step-in.',
+                  action: () => navigateTo('service-detail', { serviceId: 'private-estates' }),
                 },
               ].map((card, i) => (
                 <motion.div
@@ -343,9 +364,10 @@ export const ConsortiumPages: React.FC<ConsortiumPagesProps> = ({ subPage = 'ove
                   initial={{ opacity: 0.9, y: 14 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.01 }}
-                  transition={{ duration: 0.5, delay: i * 0.08 }}
+                  transition={{ duration: 0.5, delay: i * 0.06 }}
+                  whileHover={{ y: -4 }}
                   onClick={card.action}
-                  className="group cursor-pointer bg-[#12141A] border border-[#242630] hover:border-[#CFA85E]/70 transition-all overflow-hidden flex flex-col justify-between"
+                  className="group relative cursor-pointer bg-[#12141A] border border-[#242630] hover:border-[#CFA85E]/70 transition-all overflow-hidden flex flex-col justify-between"
                 >
                   <div>
                     <div className="aspect-[16/10] w-full overflow-hidden bg-black">
@@ -370,6 +392,7 @@ export const ConsortiumPages: React.FC<ConsortiumPagesProps> = ({ subPage = 'ove
                     <span>Inspect Practice</span>
                     <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                   </div>
+                  <div className="absolute bottom-0 inset-x-0 h-[2px] bg-[#E2BA6B] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500" />
                 </motion.div>
               ))}
             </div>
@@ -555,7 +578,7 @@ export const ConsortiumPages: React.FC<ConsortiumPagesProps> = ({ subPage = 'ove
                   “A life arranged with precision, warmth, and unhurried grace.”
                 </p>
                 <p className="tglc-prose text-sm max-w-2xl">
-                  Founded by Mickell Washington and a four-person senior council to bring private-bank steadiness and genuine cultural fluency back to personal lifestyle management.
+                  Founded by Mickell Washington and stewarded alongside Leance Djedje and Melize Nastaasia to bring unhurried warmth, British poise, and transparent human accountability to personal and corporate concierge work.
                 </p>
               </motion.div>
             </div>
@@ -674,12 +697,12 @@ export const ConsortiumPages: React.FC<ConsortiumPagesProps> = ({ subPage = 'ove
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-[#0A0D14]/80 via-transparent to-transparent pointer-events-none" />
                         <span className="absolute bottom-3 left-3 px-2 py-0.5 bg-[#0A0D14]/90 border border-[#E2BA6B]/40 font-mono text-[9px] uppercase tracking-widest text-[#E2BA6B]">
-                          Founder & Managing Director
+                          {member.role}
                         </span>
                       </div>
                     ) : (
                       <div className="aspect-[3/4] w-full mb-6 bg-gradient-to-br from-[#151922] via-[#0E121A] to-[#080A0F] border border-[#242C3C] flex flex-col items-center justify-center p-6 text-center relative overflow-hidden group-hover:border-[#E2BA6B]/50 transition-colors">
-                        <div className="w-20 h-20 rounded-full border border-[#E2BA6B]/50 bg-[#171D2A] flex items-center justify-center mb-4 shadow-[0_0_20px_rgba(226,186,107,0.1)]">
+                        <div className="w-20 h-20 border border-[#E2BA6B]/55 bg-[#171D2A] flex items-center justify-center mb-4 shadow-[0_0_24px_rgba(226,186,107,0.12)] group-hover:border-[#E2BA6B] transition-colors">
                           <span className="font-serif text-3xl text-[#E2BA6B] font-medium tracking-widest">
                             {member.initials}
                           </span>
@@ -687,10 +710,10 @@ export const ConsortiumPages: React.FC<ConsortiumPagesProps> = ({ subPage = 'ove
                         <span className="font-serif text-lg text-[#FAF7F0] font-light">
                           {member.title}
                         </span>
-                        <div className="mt-2 inline-flex items-center gap-1.5 px-2.5 py-1 bg-[#10141D] border border-[#273042]">
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#E2BA6B]" />
+                        <div className="mt-2.5 inline-flex items-center gap-2 px-3 py-1 bg-[#10141D] border border-[#273042]">
+                          <span className="w-1.5 h-1.5 rotate-45 bg-[#E2BA6B]" />
                           <span className="text-[10px] font-mono uppercase tracking-[0.18em] text-[#CFA85E]">
-                            Origin: {member.origin}
+                            {member.origin}
                           </span>
                         </div>
                       </div>
@@ -1004,12 +1027,21 @@ export const ConsortiumPages: React.FC<ConsortiumPagesProps> = ({ subPage = 'ove
                   title: 'Perpetual NDA Execution',
                   body: 'No subcontractor receives surname details or photographic permission without express written sign-off from the household Principal.',
                 },
-              ].map((g) => (
-                <div key={g.gate} className="p-6 bg-[#0D1017] border border-[#242630] space-y-2.5">
+              ].map((g, idx) => (
+                <motion.div
+                  key={g.gate}
+                  initial={{ opacity: 0.9, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.01 }}
+                  transition={{ duration: 0.45, delay: idx * 0.06 }}
+                  whileHover={{ y: -3 }}
+                  className="p-6 bg-[#0D1017] border border-[#242630] hover:border-[#CFA85E]/70 transition-colors space-y-2.5 relative overflow-hidden group"
+                >
                   <span className="font-mono text-xs text-[#E2BA6B] uppercase tracking-widest block">{g.gate}</span>
-                  <h4 className="font-serif text-xl text-[#FAF7F0] leading-snug">{g.title}</h4>
+                  <h4 className="font-serif text-xl text-[#FAF7F0] leading-snug group-hover:text-[#E2BA6B] transition-colors">{g.title}</h4>
                   <p className="text-xs text-[#D4D8E2] leading-relaxed font-light">{g.body}</p>
-                </div>
+                  <div className="absolute bottom-0 inset-x-0 h-[2px] bg-[#E2BA6B] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500" />
+                </motion.div>
               ))}
             </div>
           </section>
@@ -1117,18 +1149,23 @@ export const ConsortiumPages: React.FC<ConsortiumPagesProps> = ({ subPage = 'ove
                   viewport={{ once: true, amount: 0.01 }}
                   transition={{ duration: 0.45, delay: idx * 0.06 }}
                   whileHover={{ y: -3 }}
-                  className="p-6 bg-[#12141A] border border-[#242630] hover:border-[#8B672B] transition-colors flex flex-col justify-between"
+                  className={`p-6 bg-[#12141A] border border-[#242630] hover:border-[#CFA85E]/80 transition-colors flex flex-col justify-between relative overflow-hidden group ${
+                    idx === 4 ? 'md:col-span-2 lg:col-span-1' : ''
+                  }`}
                 >
                   <div>
                     <span className="font-serif italic text-3xl text-[#CFA85E] tabular-nums block mb-2.5">
                       {item.step}
                     </span>
-                    <h3 className="font-serif text-xl text-[#F4F1EA] mb-2.5 leading-snug">{item.title}</h3>
+                    <h3 className="font-serif text-xl text-[#F4F1EA] mb-2.5 leading-snug group-hover:text-[#E2BA6B] transition-colors">
+                      {item.title}
+                    </h3>
                     <p className="text-xs text-[#9C968A] leading-relaxed font-light">{item.description}</p>
                   </div>
                   <div className="mt-6 pt-3 border-t border-[#20232E] text-[10px] text-[#CFA85E] uppercase tracking-widest">
                     Stage {item.step}
                   </div>
+                  <div className="absolute bottom-0 inset-x-0 h-[2px] bg-[#E2BA6B] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500" />
                 </motion.div>
               ))}
             </div>
@@ -1421,25 +1458,33 @@ export const ConsortiumPages: React.FC<ConsortiumPagesProps> = ({ subPage = 'ove
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
                 {
-                  img: '/assets/aistudio/hero_luxury_london_residence_1794298893032.jpg',
+                  img: '/assets/aistudio/five_star_mayfair_suite.jpg',
                   region: 'United Kingdom',
                   title: 'London, Oxford & The Highlands',
-                  text: 'Townhouses in Belgravia, shooting estates across Gloucestershire, and direct helipad corridors from Battersea.',
+                  text: 'Five-star Mayfair suites, Cotswold manor stays, VIP stadium boxes, and seamless executive airport chauffeurs across London.',
                 },
                 {
-                  img: '/assets/aistudio/florence_palazzo_courtyard.jpg',
-                  region: 'Continental Europe',
-                  title: 'Geneva, Paris, Milan & Tuscany',
-                  text: 'After-hours Renaissance palazzos, Alpine chalets above Gstaad and St Moritz, and private yacht berths in Monaco.',
+                  img: '/assets/aistudio/9a35e56e-8aec-463b-a39b-a06bbfb6ad06_ac512cac.jpg',
+                  region: 'Continental Europe & Mediterranean',
+                  title: 'Monaco, Geneva, Milan & Tuscany',
+                  text: 'Coastal Mediterranean villas, Alpine helicopter corridors above Gstaad and St Moritz, and private yacht berths in Port Hercule.',
                 },
                 {
-                  img: '/assets/aistudio/6a5e4f29ca98c820c85071cd_file_l7dpoy6z_91be91a5.png',
-                  region: 'Transatlantic & Pacific',
-                  title: 'New York, Miami & Tokyo',
-                  text: 'Unlisted Manhattan dining salons, FBO customs fast-track across Teterboro, and omakase custodians in Ginza and Kyoto.',
+                  img: '/assets/aistudio/imagereader_3bfec03a.webp',
+                  region: 'Pacific & Transatlantic',
+                  title: 'New York, Indonesia, Tonga & Tokyo',
+                  text: 'Direct personal relationships spanning Southeast Asian sanctuaries, South Pacific cultural liaison, and Manhattan or Tokyo dispatches.',
                 },
-              ].map((cor) => (
-                <div key={cor.title} className="bg-[#12141A] border border-[#242630] overflow-hidden group">
+              ].map((cor, idx) => (
+                <motion.div
+                  key={cor.title}
+                  initial={{ opacity: 0.9, y: 14 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.01 }}
+                  transition={{ duration: 0.45, delay: idx * 0.07 }}
+                  whileHover={{ y: -3 }}
+                  className="bg-[#12141A] border border-[#242630] hover:border-[#CFA85E]/70 transition-colors overflow-hidden group relative"
+                >
                   <div className="aspect-[16/10] overflow-hidden">
                     <img
                       src={cor.img}
@@ -1450,68 +1495,85 @@ export const ConsortiumPages: React.FC<ConsortiumPagesProps> = ({ subPage = 'ove
                   </div>
                   <div className="p-6 space-y-1.5">
                     <span className="text-[11px] uppercase tracking-widest text-[#E2BA6B]">{cor.region}</span>
-                    <h4 className="font-serif text-xl text-[#FAF7F0]">{cor.title}</h4>
+                    <h4 className="font-serif text-xl text-[#FAF7F0] group-hover:text-[#E2BA6B] transition-colors">{cor.title}</h4>
                     <p className="text-xs text-[#D4D8E2] tglc-prose">{cor.text}</p>
                   </div>
-                </div>
+                  <div className="absolute bottom-0 inset-x-0 h-[2px] bg-[#E2BA6B] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500" />
+                </motion.div>
               ))}
             </div>
 
-            {/* Seven Global Regional Desks Directory */}
+            {/* Eight Global Regional Desks Directory (Balanced 4x2 Desktop / 2x4 Tablet) */}
             <div className="bg-[#0D1017] border border-[#242630] p-6 sm:p-8 space-y-5 mt-6">
               <div className="border-b border-[#20232E] pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
                 <div>
-                  <span className="tglc-kicker text-[11px] block mb-1">Regional Resident Desks</span>
+                  <span className="tglc-kicker text-[11px] block mb-1">Regional Resident Corridors</span>
                   <h3 className="font-serif text-2xl sm:text-3xl text-[#FAF7F0]">
-                    Seven Active Chapters Connected Directly to Albemarle Street
+                    Eight Active Corridors Connected Directly to Albemarle Street
                   </h3>
                 </div>
-                <span className="font-mono text-xs text-[#E2BA6B]">Direct Resident Stewards</span>
+                <span className="font-mono text-xs text-[#E2BA6B]">Opening Doors That Don’t Usually Exist</span>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 {[
                   {
                     city: 'London · Mayfair HQ',
                     address: '3rd Floor, 45 Albemarle Street, W1S 4JL',
-                    remit: 'Command Hub, Farnborough & Northolt FBO Dispatch, Royal Patronage & Sub-Rosa Nocturnal Program.',
+                    remit: 'Central coordination desk, Farnborough & Heathrow VIP transfers, sporting hospitality, and private London stays.',
                   },
                   {
                     city: 'Geneva · Rue du Rhône',
-                    address: 'Private Banking & Horology Quarter',
-                    remit: 'Independent manufactory allocations, Alpine helicopter transfers to Gstaad & Verbier, and fiduciary custodian sync.',
+                    address: 'Lakefront & Alpine Corridor',
+                    remit: 'Private alpine chalet staging, helicopter transfers to Gstaad & Verbier, and Swiss horology introductions.',
                   },
                   {
                     city: 'Paris · Place Vendôme',
-                    address: '1st Arrondissement Haute Couture Desk',
-                    remit: 'Closed haute couture fittings, private museum conservator tours, and Le Bourget tarmac clearance.',
+                    address: '1st Arrondissement Fashion & Culture',
+                    remit: 'Private salon appointments, confidential museum tours, and executive chauffeur standby from Le Bourget.',
+                  },
+                  {
+                    city: 'Monaco · Port Hercule',
+                    address: 'Principality & Riviera Quayside',
+                    remit: 'Grand Prix terrace hospitality, yacht tender provisioning, and discreet Cap Ferrat summer villa sourcing.',
                   },
                   {
                     city: 'Milan & Florence',
-                    address: 'Via Montenapoleone & Borgo Pinti',
-                    remit: 'Private palazzo keys, Lake Como Riva transfers, artisanal atelier commissions, and private harvest cellars.',
+                    address: 'Lombardy & Tuscan Sanctuary Desk',
+                    remit: 'Historic courtyard stays, Lake Como Riva transfers, artisanal tailoring, and private Tuscan wine tables.',
                   },
                   {
                     city: 'New York · Upper East Side',
-                    address: 'East 68th Street & Teterboro FBO',
-                    remit: 'Manhattan private clubs, discreet studio recording sessions, gallery acquisitions, and East Hampton aviation.',
+                    address: 'Manhattan & Teterboro Aviation Hub',
+                    remit: 'Unlisted Manhattan dining rooms, ringside Madison Square Garden access, and cross-town black fleet dispatch.',
                   },
                   {
-                    city: 'Dubai · DIFC & Jumeirah',
-                    address: 'Al Maktoum Jet Terminal Corridor',
-                    remit: 'Winter yacht charter berths, family office regional summit logistics, and off-market luxury asset custody.',
+                    city: 'Jakarta, Bali & Southeast Asia',
+                    address: 'Led via Melize Nastaasia’s Desk',
+                    remit: 'Corporate roadshows, private resort sanctuaries, and bilateral executive logistics linking Southeast Asia with London.',
                   },
                   {
-                    city: 'Tokyo · Ginza Chūō-ku',
-                    address: 'Haneda VIP & Kyoto Ryokan Network',
-                    remit: 'Six-seat omakase introductions, independent denim & knife ateliers, and imperial garden keyholders.',
+                    city: 'Tokyo & South Pacific',
+                    address: 'Ginza Chūō-ku & Tonga Cultural Liaison',
+                    remit: 'Intimate omakase counters, Kyoto ryokan sanctuaries, and Pacific hospitality stewardship with warmth and precision.',
                   },
-                ].map((desk) => (
-                  <div key={desk.city} className="p-5 bg-[#12151E] border border-[#222633] space-y-2">
-                    <span className="font-serif text-lg text-[#FAF7F0] block">{desk.city}</span>
+                ].map((desk, dIdx) => (
+                  <motion.div
+                    key={desk.city}
+                    initial={{ opacity: 0.9, y: 12 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.01 }}
+                    transition={{ duration: 0.4, delay: dIdx * 0.04 }}
+                    whileHover={{ y: -3 }}
+                    className="p-5 bg-[#12151E] border border-[#222633] hover:border-[#CFA85E]/70 transition-colors space-y-2 relative overflow-hidden group"
+                  >
+                    <span className="font-serif text-lg text-[#FAF7F0] block group-hover:text-[#E2BA6B] transition-colors">
+                      {desk.city}
+                    </span>
                     <span className="font-mono text-[11px] text-[#E2BA6B] block">{desk.address}</span>
                     <p className="text-xs text-[#D4D8E2] font-light leading-relaxed">{desk.remit}</p>
-                  </div>
+                    <div className="absolute bottom-0 inset-x-0 h-[2px] bg-[#E2BA6B] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500" />
+                  </motion.div>
                 ))}
               </div>
             </div>

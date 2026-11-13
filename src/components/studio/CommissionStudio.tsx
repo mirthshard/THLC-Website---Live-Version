@@ -105,7 +105,7 @@ const SCENARIOS: CommissionScenario[] = [
     guidanceNote: 'Directors recommend Tier 2 Close Protection plus Faraday pouches for artist & principal privacy inside high-energy bass rooms.',
     deliverables: [
       'Elevated steel & smoked-glass DJ booth gallery overlooking the custom horn stacks',
-      'Back-alley unmarked roller-shutter vehicle arrival with Julian Sterling advance sweep',
+      'Back-alley unmarked roller-shutter vehicle arrival with Close Protection advance sweep',
       'Rare Japanese whisky, tequila extra anejo & magnum champagne table ledger without bottle parades',
       'Staggered satin-black Maybach departure sequence directly from loading court',
     ],
@@ -164,7 +164,7 @@ const SCENARIOS: CommissionScenario[] = [
       'High-speed twin-engine Thames night run under Tower Bridge at 38 knots',
       'Unmarked vault descent through 20-ton steel circular bank bulkheads',
       'Private chef 6-course tasting menu paired with rare 19th-century Armagnacs',
-      'Julian Sterling tactical plainclothes security team accompanying throughout',
+      'SIA tactical plainclothes security team accompanying throughout',
     ],
   },
   {
@@ -480,7 +480,7 @@ const PREBUILT_BLUEPRINTS: PrebuiltBlueprint[] = [
     title: 'Bermondsey Arch Fight Night & Jazz Snug',
     badge: 'Raw Boxing · Close Protection',
     summary: 'Armoured B6 Range Rover to Victorian railway arch boxing followed by late-night Soho whisky.',
-    rationale: 'Raw unsanctioned exhibition boxing demands disciplined perimeter control. Julian Sterling’s Tier 2 protection detail handles advance sweeps around industrial Bermondsey arches and clean vehicle extraction.',
+    rationale: 'Raw unsanctioned exhibition boxing demands disciplined perimeter control. Our Tier 2 Close Protection detail handles advance sweeps around industrial Bermondsey arches and clean vehicle extraction.',
     image: '/assets/aistudio/east_end_boxing_1794391694652.jpg',
     scenarioId: 'underground-combat-bermondsey',
     fleetId: 'range-rover-armoured',
@@ -646,7 +646,7 @@ const SECURITY_PROTOCOLS = [
   },
   {
     id: 'close-protection',
-    name: 'Dedicated Close Protection Detail (Julian Sterling Team)',
+    name: 'Dedicated Close Protection Detail (TGLC Security Desk)',
     desc: 'Two SIA-licensed protection officers with British Special Forces background, counter-surveillance.',
     level: 'Tier 2 Tactical',
     costPerHour: 220,
@@ -686,7 +686,7 @@ const SPEC_OPTIONS = {
     { id: 'none', name: 'Principal’s Own Cellar Transported', adder: 250 },
   ],
   householdStaffing: [
-    { id: 'concierge-lead', name: 'Dedicated Senior Lifestyle Manager (Camilla Vance-Moreau)', adder: 0 },
+    { id: 'concierge-lead', name: 'Dedicated Steward & Private Office Manager (Leance Djedje)', adder: 0 },
     { id: 'michelin-brigade', name: 'Michelin-Trained Private Chef & Sommelier Brigade', adder: 2400 },
     { id: 'royal-butler', name: 'English Live-in Butler & Valet Service', adder: 1200 },
   ],
@@ -720,7 +720,7 @@ const TACTICAL_ADDONS = [
 ];
 
 const OPERATIONAL_ROADMAP = [
-  { phase: 'T-72h', title: 'Advance Reconnaissance', desc: 'Julian Sterling team conducts route drive, venue keyholder check, and acoustic sweep.' },
+  { phase: 'T-72h', title: 'Advance Reconnaissance', desc: 'Mobility & Protection unit conducts route drive, venue keyholder check, and acoustic sweep.' },
   { phase: 'T-24h', title: 'Logistics & Apron Lock', desc: 'Flight plans filed, apron security passes pre-cleared, rare vintages decanted to cellar vault.' },
   { phase: 'T-2h', title: 'Lead Scout Staging', desc: 'Chase car checks route traffic; vehicle air filters engaged; primary vehicle staged at residence.' },
   { phase: 'T-0h', title: 'Flawless Execution', desc: 'Direct encrypted radio link between lead driver, principal security escort, and Mayfair duty desk.' },
@@ -894,7 +894,7 @@ Direct Phone: ${TGLC_CONTACT.telephone}
         priority: 'Urgent',
         status: 'Received',
         submittedDate: new Date().toISOString().replace('T', ' ').substring(0, 16),
-        assignedTo: 'Camilla Vance-Moreau & Julian Sterling',
+        assignedTo: 'Mickell Washington, Leance Djedje & Melize Nastaasia',
         notes: `Codename: ${codename}. Fleet: ${selectedFleet.name}. Protocol: ${selectedProtocol.name}. Staging: ${departurePoint}. Specs: ${armourLevel.name}, ${apronHandling.name}. Add-ons: ${activeAddonItems.map((a) => a.title).join(', ') || 'None'}. Cellar: ${cellarAlloc.name}.`,
         estimatedCost: `£${totalEstimatedCost.toLocaleString('en-GB')}`,
       });
@@ -905,7 +905,7 @@ Direct Phone: ${TGLC_CONTACT.telephone}
         senderName: 'Mayfair Triage Desk',
         senderRole: 'Automated Ingestion',
         timestamp: 'Just now',
-        text: `Encrypted mandate [${mandateId}] "${selectedScenario.title}" received via Commission Studio. Assigned to Camilla Vance-Moreau and Julian Sterling for immediate reconnaissance.`,
+        text: `Encrypted mandate [${mandateId}] "${selectedScenario.title}" received via Commission Studio. Assigned to Mickell Washington, Leance Djedje, and Melize Nastaasia for immediate reconnaissance.`,
         isStaff: true,
       });
 
@@ -952,7 +952,7 @@ Direct Phone: ${TGLC_CONTACT.telephone}
           </div>
         </div>
 
-        {/* 1-Click Prebuilt Worked Blueprints Inspiration Strip */}
+        {/* Director Worked Blueprints Inspiration Strip */}
         <section className="space-y-4">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
             <div>
@@ -960,7 +960,7 @@ Direct Phone: ${TGLC_CONTACT.telephone}
                 Prebuilt Worked Examples & Inspiration
               </span>
               <h2 className="font-serif text-2xl sm:text-3xl text-[#FAF7F0]">
-                One-Click Director Blueprints
+                Director Worked Blueprints
               </h2>
             </div>
             <p className="text-xs text-[#8F98AA] max-w-md font-mono">
@@ -2115,7 +2115,7 @@ Direct Phone: ${TGLC_CONTACT.telephone}
                 </div>
                 <div className="flex justify-between text-[#8F98AA]">
                   <span>Assigned Duty Directors:</span>
-                  <span className="text-[#FAF7F0]">Camilla Vance-Moreau & Julian Sterling</span>
+                  <span className="text-[#FAF7F0]">Mickell Washington, Leance Djedje & Melize Nastaasia</span>
                 </div>
               </div>
 

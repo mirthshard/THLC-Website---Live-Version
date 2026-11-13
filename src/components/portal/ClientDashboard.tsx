@@ -24,7 +24,7 @@ import {
   Save,
   Home,
   ArrowRight,
-  Sparkles,
+  LogOut,
 } from 'lucide-react';
 import {
   PortalUser,
@@ -43,9 +43,10 @@ interface ClientDashboardProps {
   user: PortalUser;
   activeTabOverride?: string;
   onTabChange?: (tab: string) => void;
+  onSignOut?: () => void;
 }
 
-export const ClientDashboard: React.FC<ClientDashboardProps> = ({ user, activeTabOverride, onTabChange }) => {
+export const ClientDashboard: React.FC<ClientDashboardProps> = ({ user, activeTabOverride, onTabChange, onSignOut }) => {
   const [internalTab, setInternalTab] = useState<
     'dashboard' | 'itinerary' | 'requests' | 'audiolog' | 'messages' | 'vault' | 'keycard' | 'ledger' | 'preferences'
   >('dashboard');
@@ -86,7 +87,7 @@ export const ClientDashboard: React.FC<ClientDashboardProps> = ({ user, activeTa
     residence:
       '100% hypoallergenic botanical non-feather linens · Quiet garden-facing corner suites · Mayfair morning papers & cut white orchids stocked daily.',
     security:
-      'Armoured Range Rover SV Sentinel or Maybach S680 Guard · Julian Sterling verified defensive driver · Counter-surveillance sweep ahead of public theatre exits.',
+      'Armoured Range Rover SV Sentinel or Maybach S680 Guard · TGLC Security Desk verified defensive driver · Counter-surveillance sweep ahead of public theatre exits.',
     hospitality:
       'Secluded acoustic corner alcoves · Tuscans & pre-2005 Burgundy allocations · Direct ledger settlement (zero tableside card presentation).',
   };
@@ -203,7 +204,7 @@ export const ClientDashboard: React.FC<ClientDashboardProps> = ({ user, activeTa
       setIsStaffTyping(false);
       const staffReplies = [
         `Received with thanks, ${user.name.split(' ')[0]}. I am coordinating this immediately with our Mayfair desk.`,
-        `Julian and our operations team have been apprised. We will update the status in your private dossier within 20 minutes.`,
+        `Our Mayfair operations desk has been apprised. We will update the status in your private dossier within 20 minutes.`,
         `Acknowledged. The arrangements are being finalized directly with our private partner liaison.`,
       ];
       const randomReply = staffReplies[Math.floor(Math.random() * staffReplies.length)];
@@ -289,12 +290,23 @@ export const ClientDashboard: React.FC<ClientDashboardProps> = ({ user, activeTa
               </span>
             </div>
 
-            <button
-              onClick={() => setIsModalOpen(true)}
-              className="w-full sm:w-auto px-5 py-3.5 bg-[#CFA85E] hover:bg-[#DBC17D] text-[#090B0E] font-serif text-xs uppercase tracking-widest font-semibold transition-all flex items-center justify-center gap-2 shadow-lg min-h-[44px]"
-            >
-              <Plus className="w-4 h-4" /> Dispatch Request
-            </button>
+            <div className="flex flex-col sm:flex-row gap-2.5 w-full sm:w-auto">
+              <button
+                onClick={() => setIsModalOpen(true)}
+                className="w-full sm:w-auto px-5 py-3.5 bg-[#CFA85E] hover:bg-[#DBC17D] text-[#090B0E] font-serif text-xs uppercase tracking-widest font-semibold transition-all flex items-center justify-center gap-2 shadow-lg min-h-[44px]"
+              >
+                <Plus className="w-4 h-4" /> Dispatch Request
+              </button>
+              {onSignOut && (
+                <button
+                  type="button"
+                  onClick={onSignOut}
+                  className="w-full sm:w-auto px-4 py-3.5 bg-[#221315] hover:bg-[#34181B] text-[#F39DA2] hover:text-white border border-[#482024] font-mono text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 min-h-[44px]"
+                >
+                  <LogOut className="w-3.5 h-3.5" /> Log Out
+                </button>
+              )}
+            </div>
           </div>
         </div>
 
@@ -391,7 +403,7 @@ export const ClientDashboard: React.FC<ClientDashboardProps> = ({ user, activeTa
             <div className="flex items-center gap-2.5">
               <CheckCircle2 className="w-4 h-4 text-emerald-400" />
               <span>
-                Confidential request recorded in Supabase and assigned to Camilla Vance-Moreau.
+                Confidential request recorded in portal vault and assigned to your TGLC Desk Steward.
               </span>
             </div>
             <span className="text-[10px] text-emerald-500 uppercase tracking-widest font-bold">
@@ -406,11 +418,11 @@ export const ClientDashboard: React.FC<ClientDashboardProps> = ({ user, activeTa
         <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="space-y-6">
           {/* Top Live Mission Highlight */}
           <div className="bg-[#121620] border border-[#283244] p-5 sm:p-6 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-[#E2BA6B]/5 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#E2BA6B]/5 blur-3xl pointer-events-none" />
             <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-5">
               <div className="space-y-2">
                 <div className="flex items-center gap-2.5">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+                  <span className="w-2 h-2 rotate-45 bg-emerald-400 animate-ping" />
                   <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#E2BA6B]">
                     Live Mission Telemetry · Airside Staged
                   </span>
@@ -426,7 +438,7 @@ export const ClientDashboard: React.FC<ClientDashboardProps> = ({ user, activeTa
                     <Clock className="w-3.5 h-3.5" /> 08:45 GMT Convoy Rollout
                   </span>
                   <span className="flex items-center gap-1.5">
-                    <Shield className="w-3.5 h-3.5 text-emerald-400" /> Lead CP: Julian Sterling
+                    <Shield className="w-3.5 h-3.5 text-emerald-400" /> Lead CP: TGLC Security Desk
                   </span>
                   <span className="flex items-center gap-1.5">
                     <Plane className="w-3.5 h-3.5 text-[#A3B8CC]" /> Tail: G-TGLC (Global 7500)
@@ -438,7 +450,7 @@ export const ClientDashboard: React.FC<ClientDashboardProps> = ({ user, activeTa
                 <button
                   type="button"
                   onClick={() => setShowRadarModal(true)}
-                  className="px-4 py-2.5 bg-[#1B2332] hover:bg-[#253044] text-[#E2BA6B] border border-[#2D3A52] text-xs font-mono uppercase tracking-wider flex items-center justify-center gap-2 transition-colors min-h-[42px]"
+                  className="px-4 py-2.5 bg-[#1B2332] hover:bg-[#253044] text-[#E2BA6B] border border-[#2D3A52] text-xs font-mono uppercase tracking-wider flex items-center justify-center gap-2 transition-colors min-h-[44px]"
                 >
                   <Radio className="w-3.5 h-3.5 text-emerald-400" />
                   <span>Open Flight Radar</span>
@@ -446,7 +458,7 @@ export const ClientDashboard: React.FC<ClientDashboardProps> = ({ user, activeTa
                 <button
                   type="button"
                   onClick={() => setActiveTab('itinerary')}
-                  className="px-4 py-2.5 bg-[#E2BA6B] hover:bg-[#F0C97B] text-[#0A0D13] font-serif text-xs font-semibold uppercase tracking-wider flex items-center justify-center gap-2 transition-all min-h-[42px]"
+                  className="px-4 py-2.5 bg-[#E2BA6B] hover:bg-[#F0C97B] text-[#0A0D13] font-serif text-xs font-semibold uppercase tracking-wider flex items-center justify-center gap-2 transition-all min-h-[44px]"
                 >
                   <span>Full Waypoint Dossier</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -610,8 +622,8 @@ export const ClientDashboard: React.FC<ClientDashboardProps> = ({ user, activeTa
                   <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#E2BA6B]">
                     Assigned Private Director
                   </span>
-                  <span className="text-[10px] text-emerald-400 flex items-center gap-1 font-mono">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" /> Active Line
+                  <span className="text-[10px] text-emerald-400 flex items-center gap-1.5 font-mono">
+                    <span className="w-1.5 h-1.5 rotate-45 bg-emerald-400" /> Active Line
                   </span>
                 </div>
                 <div className="flex items-center gap-3.5">
@@ -663,7 +675,7 @@ export const ClientDashboard: React.FC<ClientDashboardProps> = ({ user, activeTa
                   RAF Northolt VIP Apron & Tarmac Clearance Protocol
                 </h4>
                 <p className="text-[11px] text-[#8692A6] line-clamp-2 font-light leading-relaxed">
-                  “James, Julian here. Route briefing for your morning departure: Eaton Square mews convoy departs 08:45 sharp. A40 cleared of bottlenecks...”
+                  “Albemarle Security Desk briefing for your morning departure: Eaton Square mews convoy departs 08:45 sharp. A40 cleared of bottlenecks...”
                 </p>
                 <button
                   type="button"
@@ -853,7 +865,7 @@ export const ClientDashboard: React.FC<ClientDashboardProps> = ({ user, activeTa
               </div>
               <div>
                 <h3 className="font-serif text-sm text-[#F4F1EA] font-normal">
-                  Private Desk: Camilla Vance-Moreau & Julian Sterling
+                  Private Desk: Mickell Washington & Mayfair Operations
                 </h3>
                 <p className="text-[10px] font-mono text-[#788296]">
                   End-to-End Encrypted Liaison Channel • Mayfair HQ & Farnborough Desk
@@ -903,7 +915,7 @@ export const ClientDashboard: React.FC<ClientDashboardProps> = ({ user, activeTa
                     key={i}
                     animate={{ y: [0, -3, 0], opacity: [0.45, 1, 0.45] }}
                     transition={{ duration: 0.9, repeat: Infinity, delay, ease: 'easeInOut' }}
-                    className="w-1.5 h-1.5 rounded-full bg-[#E2BA6B]"
+                    className="w-1.5 h-1.5 rotate-45 bg-[#E2BA6B]"
                   />
                 ))}
                 <span className="text-[11px]">{user.assignedManager} is drafting response...</span>
@@ -916,7 +928,7 @@ export const ClientDashboard: React.FC<ClientDashboardProps> = ({ user, activeTa
               type="text"
               value={chatInput}
               onChange={(e) => setChatInput(e.target.value)}
-              placeholder="Send priority instruction or request update to Camilla & Julian..."
+              placeholder="Send priority instruction or request update to the Mayfair Desk..."
               className="flex-1 px-4 py-3 bg-[#0E1117] border border-[#202530] text-xs font-mono text-[#F4F1EA] focus:outline-none focus:border-[#CFA85E]"
             />
             <button
@@ -1262,7 +1274,7 @@ export const ClientDashboard: React.FC<ClientDashboardProps> = ({ user, activeTa
                     disabled={isSubmittingReq}
                     className="px-6 py-2.5 bg-[#CFA85E] hover:bg-[#DBC17D] text-[#090B0E] font-serif text-xs uppercase tracking-widest font-semibold flex items-center gap-2"
                   >
-                    {isSubmittingReq ? 'Encrypting & Transmitting...' : 'Dispatch to Camilla'}
+                    {isSubmittingReq ? 'Encrypting & Transmitting...' : 'Dispatch to Mayfair Desk'}
                   </button>
                 </div>
               </form>

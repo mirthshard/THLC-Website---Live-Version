@@ -30,7 +30,7 @@ export const SecurityDashboard: React.FC<SecurityDashboardProps> = ({ user }) =>
       image: '/assets/aistudio/mayfair_security_convoy.jpg',
       registration: 'LX24 TGL',
       ballisticRating: 'VPAM BRV 2009 (VR8 / B6)',
-      assignedDriver: 'Julian Sterling (Lead CP)',
+      assignedDriver: 'TGLC Security Desk (Lead CP)',
       location: 'Eaton Square Mews, Belgravia',
       status: 'Staged for Departure',
       passenger: 'James Ashford',

@@ -111,7 +111,7 @@ export const FamilyOfficeDashboard: React.FC<FamilyOfficeDashboardProps> = ({ us
       priority: 'Standard',
       status: 'Received',
       submittedDate: 'Just now',
-      assignedTo: 'Camilla Vance-Moreau',
+      assignedTo: 'Mickell Washington',
       notes: taskNotes.trim() || 'Logged via Family Office executive terminal.',
       estimatedCost: 'Retained Estate Core',
     });
@@ -165,13 +165,13 @@ export const FamilyOfficeDashboard: React.FC<FamilyOfficeDashboardProps> = ({ us
           <div className="flex flex-wrap items-center gap-3">
             <button
               onClick={() => setIsTaskModalOpen(true)}
-              className="px-5 py-3.5 bg-[#CFA85E] hover:bg-[#DBC17D] text-[#090B0E] font-serif text-xs uppercase tracking-widest font-semibold transition-all flex items-center gap-2 shadow-lg"
+              className="px-5 py-3.5 min-h-[44px] bg-[#CFA85E] hover:bg-[#DBC17D] text-[#090B0E] font-serif text-xs uppercase tracking-widest font-semibold transition-all flex items-center gap-2 shadow-lg"
             >
               <Plus className="w-4 h-4" /> Log Estate Task
             </button>
             <button
               onClick={handleExportAudit}
-              className="px-4 py-3.5 bg-[#171F2C] hover:bg-[#202C3E] text-[#A3B8CC] border border-[#2D3E54] text-xs font-mono uppercase tracking-wider flex items-center gap-2 transition-colors"
+              className="px-4 py-3.5 min-h-[44px] bg-[#171F2C] hover:bg-[#202C3E] text-[#A3B8CC] border border-[#2D3E54] text-xs font-mono uppercase tracking-wider flex items-center gap-2 transition-colors"
             >
               <Download className="w-4 h-4" /> Export Q4 Audit Dossier
             </button>
@@ -366,7 +366,7 @@ export const FamilyOfficeDashboard: React.FC<FamilyOfficeDashboardProps> = ({ us
                     channel: 'Encrypted Portal + PGPsigned Wire',
                   },
                   {
-                    person: 'Julian Sterling',
+                    person: 'TGLC Tactical Desk',
                     role: 'Tactical Security Lead',
                     scope: 'Emergency Extraction, FBO Clearance & Fleet',
                     limit: '£40,000 Immediate Mobilisation',
@@ -464,8 +464,8 @@ export const FamilyOfficeDashboard: React.FC<FamilyOfficeDashboardProps> = ({ us
               <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#A3B8CC]">
                 Secure Communications
               </span>
-              <span className="text-[10px] text-emerald-400 font-mono flex items-center gap-1">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" /> Albemarle Desk Live
+              <span className="text-[10px] text-emerald-400 font-mono flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rotate-45 bg-emerald-400" /> Albemarle Desk Live
               </span>
             </div>
 

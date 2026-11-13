@@ -178,7 +178,7 @@ export const AmbiencePlayer: React.FC = () => {
                   >
                     <div className="flex items-center justify-between mb-1">
                       <span
-                        className="w-2.5 h-2.5 rounded-full inline-block"
+                        className="w-2.5 h-2.5 rotate-45 inline-block"
                         style={{ backgroundColor: t.previewColor }}
                       />
                       {theme === t.id && <Check className="w-3 h-3 text-[#CFA85E]" />}

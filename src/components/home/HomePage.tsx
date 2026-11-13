@@ -3,8 +3,48 @@ import { HeroCarousel } from './HeroCarousel';
 import { useNavigation } from '../../context/NavigationContext';
 import { SERVICES_DATA, ETHOS_PRINCIPLES, LONDON_NEIGHBOURHOODS, TGLC_CONTACT } from '../../data/tglcData';
 import { GoldDivider } from '../common/GoldDivider';
-import { ArrowUpRight, Flame, Lock, Shield, Compass, Calendar, Sliders } from 'lucide-react';
-import { motion } from 'motion/react';
+import { ArrowUpRight, Lock, Compass, Sliders } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
+
+const sectionStaggerVariants = {
+  hidden: { opacity: 0.9 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.06,
+      delayChildren: 0.04,
+    },
+  },
+};
+
+const blockItemVariants = {
+  hidden: { opacity: 0.88, y: 14 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] },
+  },
+};
+
+const imagePlateVariants = {
+  hidden: { opacity: 0.86, scale: 1.04 },
+  show: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.65, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] },
+  },
+};
+
+const HOME_SECTION_JUMPS = [
+  { id: 'section-pillars', label: 'I–VI Pillars' },
+  { id: 'section-sub-rosa', label: 'Sub-Rosa' },
+  { id: 'section-commission', label: 'Commission Studio' },
+  { id: 'section-showcase', label: 'Sovereign Standard' },
+  { id: 'section-services', label: 'Seven Practices' },
+  { id: 'section-cases', label: '24 Itineraries' },
+  { id: 'section-difference', label: 'Difference' },
+  { id: 'section-enclaves', label: 'London Enclaves' },
+] as const;
 
 const LIFESTYLE_PILLARS = [
   {
@@ -111,10 +151,10 @@ const LIFESTYLE_PILLARS = [
 
 const DIFFERENCE_IMAGERY = [
   '/assets/aistudio/tglc_st_james_salon.jpg',
-  '/assets/aistudio/mayfair_fine_dining.jpg',
-  '/assets/aistudio/savile_row_bespoke.jpg',
-  '/assets/aistudio/florence_palazzo_courtyard.jpg',
-  '/assets/aistudio/bond_street_jewellery.jpg',
+  '/assets/aistudio/wembley_vip_hospitality.jpg',
+  '/assets/aistudio/five_star_mayfair_suite.jpg',
+  '/assets/aistudio/corporate_ea_boardroom.jpg',
+  '/assets/aistudio/Main-5_c9bf5214.png',
 ];
 
 export const HomePage: React.FC = () => {
@@ -122,6 +162,13 @@ export const HomePage: React.FC = () => {
   const [activeTab, setActiveTab] = useState(0);
 
   const currentPillar = LIFESTYLE_PILLARS[activeTab];
+
+  const scrollToSection = (sectionId: string) => {
+    const el = document.getElementById(sectionId);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
 
   return (
     <div className="bg-[#08090C] text-[#F4F1EA] selection:bg-[#B98633]/30 selection:text-[#F4F1EA]">
@@ -131,16 +178,16 @@ export const HomePage: React.FC = () => {
       <GoldDivider />
 
       {/* 2. Authoritative Introduction with Unified Crest Emblem on Seamless Pure Black */}
-      <section className="relative overflow-hidden border-b border-[#1A1C24] bg-[#08090C]">
+      <section id="section-pillars" className="relative overflow-hidden border-b border-[#1A1C24] bg-[#08090C] scroll-mt-20">
         <div className="bg-black pt-10 sm:pt-14 pb-6 px-6 sm:px-12 relative z-10">
-          <div className="max-w-7xl mx-auto flex flex-col items-center text-center space-y-5">
-            <motion.div
-              initial={{ opacity: 0.92, y: 8 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.01 }}
-              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className="flex justify-center"
-            >
+          <motion.div
+            variants={sectionStaggerVariants}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.05 }}
+            className="max-w-7xl mx-auto flex flex-col items-center text-center space-y-5"
+          >
+            <motion.div variants={imagePlateVariants} className="flex justify-center">
               <img
                 src="/assets/aistudio/tglc_lockup_transparent.png"
                 alt="The Global Luxury Consortium Crest & Wordmark"
@@ -148,134 +195,233 @@ export const HomePage: React.FC = () => {
               />
             </motion.div>
 
-            <span className="text-[11px] uppercase tracking-[0.28em] text-[#C4933F] font-medium block tabular-nums pt-1">
+            <motion.span
+              variants={blockItemVariants}
+              className="text-[11px] uppercase tracking-[0.28em] text-[#C4933F] font-medium block tabular-nums pt-1"
+            >
               Mayfair Private Office · 3rd Floor, 45 Albemarle Street, London W1S 4JL
-            </span>
+            </motion.span>
 
             <motion.h2
-              initial={{ opacity: 0.92, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.01 }}
-              transition={{ duration: 0.6 }}
+              variants={blockItemVariants}
               className="font-serif text-3xl sm:text-5xl md:text-6xl font-normal leading-tight text-[#F4F1EA] max-w-5xl mx-auto text-balance"
             >
               Opening doors that don’t usually exist. Discretion by default, British poise by nature.
             </motion.h2>
 
-            <p className="text-xs sm:text-sm text-[#B5AFA3] max-w-3xl mx-auto leading-relaxed font-light">
+            <motion.p
+              variants={blockItemVariants}
+              className="text-xs sm:text-sm text-[#B5AFA3] max-w-3xl mx-auto leading-relaxed font-light"
+            >
               Luxury is not defined by how much somebody spends—it is defined by how exceptionally they are treated. From our Mayfair desk, The Global Luxury Consortium acts as a trusted intermediary connecting private and corporate clients with carefully sourced experiences, executive transport, and considered lifestyle solutions.
-            </p>
+            </motion.p>
 
-            <div className="w-24 h-[1px] bg-gradient-to-r from-transparent via-[#B98633] to-transparent mx-auto my-1" />
-          </div>
+            <motion.div
+              variants={blockItemVariants}
+              className="w-24 h-[1px] bg-gradient-to-r from-transparent via-[#B98633] to-transparent mx-auto my-1"
+            />
+          </motion.div>
         </div>
 
         <div className="h-6 bg-gradient-to-b from-black to-[#08090C]" aria-hidden="true" />
 
-        <div className="max-w-7xl mx-auto px-6 sm:px-12 pb-10 sm:pb-14 relative z-10 space-y-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 border-t border-[#1D1F28] pt-8">
-            <motion.div
-              initial={{ opacity: 0.9, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.01 }}
-              whileHover={{ y: -3 }}
-              transition={{ duration: 0.5 }}
-              className="space-y-3 p-5 bg-[#0C0D12] border border-[#1E202B] hover:border-[#8B672B]/60 transition-colors"
-            >
-              <span className="font-serif text-2xl text-[#CFA85E] block font-light">I.</span>
-              <span className="text-xs tracking-wide text-[#C4933F] font-medium block">Pillar One · Hospitality</span>
-              <h3 className="font-serif text-xl sm:text-2xl text-[#F4F1EA]">VIP Ticketing & Hospitality</h3>
-              <p className="text-xs sm:text-sm text-[#9C968A] leading-relaxed font-light">
-                Premier League, European football, boxing championships, and major cultural festivals. We connect clients directly with legitimate, appropriately authorised providers—coordinating premium suites and hospitality with unhurried care.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0.9, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.01 }}
-              whileHover={{ y: -3 }}
-              transition={{ duration: 0.5, delay: 0.06 }}
-              className="space-y-3 p-5 bg-[#0C0D12] border border-[#1E202B] hover:border-[#8B672B]/60 transition-colors"
-            >
-              <span className="font-serif text-2xl text-[#CFA85E] block font-light">II.</span>
-              <span className="text-xs tracking-wide text-[#C4933F] font-medium block">Pillar Two · Accommodation</span>
-              <h3 className="font-serif text-xl sm:text-2xl text-[#F4F1EA]">Luxury Accommodation</h3>
-              <p className="text-xs sm:text-sm text-[#9C968A] leading-relaxed font-light">
-                Five-star heritage hotels, private suites, and English country residences sourced with tailored terms. Sourced for corporate business delegations, extended executive stays, and memorable private occasions.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0.9, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.01 }}
-              whileHover={{ y: -3 }}
-              transition={{ duration: 0.5, delay: 0.12 }}
-              className="space-y-3 p-5 bg-[#0C0D12] border border-[#1E202B] hover:border-[#8B672B]/60 transition-colors"
-            >
-              <span className="font-serif text-2xl text-[#CFA85E] block font-light">III.</span>
-              <span className="text-xs tracking-wide text-[#C4933F] font-medium block">Pillar Three · Chauffeurs</span>
-              <h3 className="font-serif text-xl sm:text-2xl text-[#F4F1EA]">Executive Ground Transportation</h3>
-              <p className="text-xs sm:text-sm text-[#9C968A] leading-relaxed font-light">
-                Executive chauffeur transport, airport transfers, and event mobility across Rolls-Royce, Maybach, and Range Rover vehicles. Coordinated through reputable operators with discreet professionalism.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0.9, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.01 }}
-              whileHover={{ y: -3 }}
-              transition={{ duration: 0.5, delay: 0.12 }}
-              className="space-y-3 p-5 bg-[#0C0D12] border border-[#1E202B] hover:border-[#8B672B]/60 transition-colors"
-            >
-              <span className="font-serif text-2xl text-[#CFA85E] block font-light">III.</span>
-              <span className="text-xs tracking-wide text-[#C4933F] font-medium block">Confidential Protocol</span>
-              <h3 className="font-serif text-xl sm:text-2xl text-[#F4F1EA]">Absolute Discretion & Privacy</h3>
-              <p className="text-xs sm:text-sm text-[#9C968A] leading-relaxed font-light">
-                Our member roll is never published, our principals are never photographed, and every arrangement is booked on strict need-to-know authority from our Mayfair drawing room.
-              </p>
-            </motion.div>
+        <div className="max-w-7xl mx-auto px-5 sm:px-12 pb-10 sm:pb-14 relative z-10 space-y-8">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-t border-[#1D1F28] pt-8">
+            <div>
+              <span className="text-[11px] uppercase tracking-[0.26em] text-[#CFA85E] font-medium block">
+                Six Core Concierge Pillars
+              </span>
+              <h3 className="font-serif text-2xl sm:text-3xl text-[#F4F1EA] mt-1">
+                Core Areas of Private Representation
+              </h3>
+            </div>
+            <span className="text-xs text-[#9C968A] font-light">
+              Tailored coordination across every mandate—from £100 engagements to sovereign itineraries.
+            </span>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-5 pt-2">
+          <motion.div
+            variants={sectionStaggerVariants}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.05 }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+          >
+            {[
+              {
+                num: 'I.',
+                kicker: 'Pillar One · Hospitality & Suites',
+                title: 'VIP Ticketing & Sporting Boxes',
+                desc: 'Premier League derby boxes, Champions League finals, world-title fight nights, and major cultural festivals. We connect principals directly with authorised suite holders—handling seating, fine dining, and quiet matchday coordination without stress.',
+                route: 'service-detail' as const,
+                params: { serviceId: 'experiences-culture' },
+              },
+              {
+                num: 'II.',
+                kicker: 'Pillar Two · Accommodation',
+                title: 'Luxury Suites & Country Estates',
+                desc: 'London five-star hotel suites, discreet mews townhouses, and staffed countryside estates arranged on tailored terms. Every stay—whether an overnight boardroom trip or an extended family summer—is verified before your luggage crosses the threshold.',
+                route: 'service-detail' as const,
+                params: { serviceId: 'residences-relocation' },
+              },
+              {
+                num: 'III.',
+                kicker: 'Pillar Three · Chauffeurs',
+                title: 'Executive Ground Transportation',
+                desc: 'Immaculate Rolls-Royce, Mercedes-Maybach, and Range Rover fleets driven by vetted defensive chauffeurs who know London’s mews lanes by heart. Seamless transfers between private aviation aprons, residences, and late evening tables.',
+                route: 'service-detail' as const,
+                params: { serviceId: 'transport-security' },
+              },
+              {
+                num: 'IV.',
+                kicker: 'Pillar Four · Aviation & Sea',
+                title: 'Private Aviation & Coastal Charters',
+                desc: 'Direct Part 135 charter sourcing across RAF Northolt, Farnborough, and continental hubs alongside vetted yacht tenders—moving you effortlessly from boardroom meetings straight onto alpine valleys or Mediterranean moorings.',
+                route: 'service-detail' as const,
+                params: { serviceId: 'travel-aviation' },
+              },
+              {
+                num: 'V.',
+                kicker: 'Pillar Five · Dining & Private Clubs',
+                title: 'Private Dining & Social Access',
+                desc: 'Hard-to-reach corner tables in Mayfair and St James’s, sommelier cellar rooms, and personal introductions to historic private members’ clubs—coordinated discreetly through long-standing maître d’ relationships.',
+                route: 'service-detail' as const,
+                params: { serviceId: 'dining-nightlife' },
+              },
+              {
+                num: 'VI.',
+                kicker: 'Pillar Six · Private Sourcing',
+                title: 'Sartorial Craft & Objects of Desire',
+                desc: 'In-residence Savile Row basted fittings, independent watchmaker introductions, rare cellar bottles, and closed-door Bond Street previews—sourced directly through primary craftspeople with clear pass-through terms.',
+                route: 'service-detail' as const,
+                params: { serviceId: 'luxury-sourcing' },
+              },
+            ].map((pillar) => (
+              <motion.div
+                key={pillar.num}
+                variants={blockItemVariants}
+                whileHover={{ y: -4 }}
+                onClick={() => navigateTo(pillar.route, pillar.params)}
+                className="group relative cursor-pointer space-y-3 p-6 bg-[#0C0D12] border border-[#1E202B] hover:border-[#CFA85E]/70 transition-colors flex flex-col justify-between overflow-hidden"
+              >
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="font-serif text-2xl text-[#CFA85E] font-light tabular-nums">{pillar.num}</span>
+                    <ArrowUpRight className="w-4 h-4 text-[#8B672B] group-hover:text-[#CFA85E] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                  </div>
+                  <span className="text-xs tracking-wide text-[#C4933F] font-medium block">{pillar.kicker}</span>
+                  <h3 className="font-serif text-xl sm:text-2xl text-[#F4F1EA] group-hover:text-[#E2BA6B] transition-colors">
+                    {pillar.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-[#A5A096] leading-relaxed font-light">
+                    {pillar.desc}
+                  </p>
+                </div>
+                <div className="pt-4">
+                  <span className="block h-[1px] w-full bg-[#1C1E28] relative overflow-hidden">
+                    <span className="block h-full w-0 group-hover:w-full bg-gradient-to-r from-[#8B672B] via-[#E2BA6B] to-[#C4933F] transition-all duration-500" />
+                  </span>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          {/* Standalone House Covenant Architectural Ribbon */}
+          <motion.div
+            variants={blockItemVariants}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.05 }}
+            onClick={() => navigateTo('ethos')}
+            className="group relative cursor-pointer bg-[#0D1017] border border-[#2A2D3B] hover:border-[#CFA85E]/80 p-6 sm:p-8 flex flex-col lg:flex-row lg:items-center justify-between gap-6 transition-colors"
+          >
+            <span aria-hidden="true" className="absolute top-0 left-0 w-2.5 h-2.5 border-t border-l border-[#CFA85E]" />
+            <span aria-hidden="true" className="absolute bottom-0 right-0 w-2.5 h-2.5 border-b border-r border-[#CFA85E]" />
+            <div className="space-y-2 max-w-4xl">
+              <span className="text-[11px] uppercase tracking-[0.24em] text-[#CFA85E] font-medium block">
+                House Covenant · Our Operating Standard
+              </span>
+              <h3 className="font-serif text-2xl sm:text-3xl text-[#FAF7F0] group-hover:text-[#E2BA6B] transition-colors">
+                Discretion by Default & Sound Poise
+              </h3>
+              <p className="text-xs sm:text-sm text-[#C4BFB5] leading-relaxed font-light">
+                Whether a £100 dinner arrangement or a £100,000 sovereign itinerary, our standard never shifts: human conversations instead of call queues, zero member publicity, and relationship-led judgment from 45 Albemarle Street.
+              </p>
+            </div>
+            <div className="shrink-0 flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#E2BA6B] group-hover:text-[#FAF7F0] transition-colors">
+              <span>Read Ethos & Covenant</span>
+              <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </div>
+          </motion.div>
+
+          <motion.div
+            variants={blockItemVariants}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.05 }}
+            className="flex flex-wrap items-center justify-center gap-4 sm:gap-5 pt-2"
+          >
             <button
               onClick={() => openIntroductionModal('Introductory Consultation')}
-              className="btn-gold px-8 py-3.5 text-xs flex items-center gap-2"
+              className="btn-gold px-8 py-3.5 text-xs flex items-center gap-2 min-h-[44px]"
             >
               <span>Begin a Private Conversation</span>
               <ArrowUpRight className="w-4 h-4 text-[#08090C]" />
             </button>
             <button
               onClick={() => navigateTo('commission-studio')}
-              className="btn-outline-gold px-7 py-3.5 text-xs flex items-center gap-2"
+              className="btn-outline-gold px-7 py-3.5 text-xs flex items-center gap-2 min-h-[44px]"
             >
               <Sliders className="w-3.5 h-3.5 text-[#E2BA6B]" />
               <span>Private Commission Studio</span>
             </button>
             <button
               onClick={() => navigateTo('hidden-london')}
-              className="px-6 py-3.5 text-xs text-[#D4D8E2] hover:text-[#E2BA6B] transition-colors flex items-center gap-2"
+              className="px-6 py-3.5 text-xs text-[#D4D8E2] hover:text-[#E2BA6B] transition-colors flex items-center gap-2 min-h-[44px]"
             >
               <Lock className="w-3.5 h-3.5 text-[#8B672B]" />
               <span>Explore Sub-Rosa London</span>
             </button>
-          </div>
+          </motion.div>
+
+          {/* Architectural In-Page Quick-Jump Navigator */}
+          <motion.nav
+            aria-label="Home page sections"
+            variants={blockItemVariants}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.05 }}
+            className="pt-4 border-t border-[#171922] flex items-center justify-start md:justify-center gap-1.5 overflow-x-auto pb-1"
+          >
+            {HOME_SECTION_JUMPS.map((jump, jIdx) => (
+              <button
+                key={jump.id}
+                type="button"
+                onClick={() => scrollToSection(jump.id)}
+                className="min-h-[44px] px-3 py-2 text-[11px] font-mono uppercase tracking-wider text-[#9C968A] hover:text-[#CFA85E] hover:bg-[#101219] border border-transparent hover:border-[#242632] transition-colors whitespace-nowrap shrink-0 flex items-center gap-1.5"
+              >
+                <span className="text-[#8B672B] tabular-nums">{String(jIdx + 1).padStart(2, '0')}</span>
+                <span>{jump.label}</span>
+              </button>
+            ))}
+          </motion.nav>
         </div>
       </section>
 
       <GoldDivider />
 
       {/* 3. Sub-Rosa London Spotlight */}
-      <section className="py-10 sm:py-14 border-b border-[#1A1C24] bg-[#07080B] relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 sm:px-12">
+      <section id="section-sub-rosa" className="py-10 sm:py-14 border-b border-[#1A1C24] bg-[#07080B] relative overflow-hidden scroll-mt-20">
+        <motion.div
+          variants={sectionStaggerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.05 }}
+          className="max-w-7xl mx-auto px-6 sm:px-12"
+        >
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             <motion.div
-              initial={{ opacity: 0.9, x: -16 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.01 }}
-              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              variants={imagePlateVariants}
               className="lg:col-span-7 relative"
             >
               <div className="relative aspect-[16/10] overflow-hidden bg-[#0D1017] border border-[#242632] shadow-2xl group">
@@ -300,62 +446,65 @@ export const HomePage: React.FC = () => {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0.9, x: 16 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.01 }}
-              transition={{ duration: 0.6, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
+              variants={sectionStaggerVariants}
               className="lg:col-span-5 space-y-5"
             >
-              <span className="text-xs uppercase tracking-[0.22em] text-[#CFA85E] font-medium block">
+              <motion.span variants={blockItemVariants} className="text-xs uppercase tracking-[0.22em] text-[#CFA85E] font-medium block">
                 The Unlisted Network
-              </span>
+              </motion.span>
 
-              <h2 className="font-serif text-3xl sm:text-5xl text-[#F4F1EA] leading-tight">
+              <motion.h2 variants={blockItemVariants} className="font-serif text-3xl sm:text-5xl text-[#F4F1EA] leading-tight">
                 The other side of London.
-              </h2>
+              </motion.h2>
 
-              <p className="font-serif italic text-base sm:text-lg text-[#CFA85E]">
+              <motion.p variants={blockItemVariants} className="font-serif italic text-base sm:text-lg text-[#CFA85E]">
                 “Beyond Mayfair tea rooms lies the capital’s covert pulse.”
-              </p>
+              </motion.p>
 
-              <div className="space-y-3 text-xs sm:text-sm text-[#9C968A] leading-relaxed font-light">
+              <motion.div variants={blockItemVariants} className="space-y-3 text-xs sm:text-sm text-[#9C968A] leading-relaxed font-light">
                 <p>
                   Through personal alliances with championship fight promoters, historic estate custodians, and underground gallerists, TGLC unlocks rooms invisible to the public calendar.
                 </p>
                 <p>
                   Step inside front-row Octagon cageside seats at UFC London with fighter tunnel credentials, command private 20-seat arena hospitality boxes, or gather in 300-year-old Square Mile bullion vaults after midnight.
                 </p>
-              </div>
+              </motion.div>
 
-              <div className="pt-2 flex flex-wrap items-center gap-4">
+              <motion.div variants={blockItemVariants} className="pt-2 flex flex-wrap items-center gap-4">
                 <button
                   onClick={() => navigateTo('hidden-london')}
-                  className="btn-gold px-7 py-3.5 text-xs flex items-center gap-2"
+                  className="btn-gold px-7 py-3.5 text-xs flex items-center gap-2 min-h-[44px]"
                 >
                   <span>Explore Sub-Rosa Access</span>
                   <ArrowUpRight className="w-4 h-4 text-[#08090C]" />
                 </button>
                 <button
                   onClick={() => openIntroductionModal('Priority Arena & UFC Access Inquiry')}
-                  className="px-4 py-3 text-xs text-[#D9D4CA] hover:text-[#CFA85E] transition-colors font-medium"
+                  className="px-4 py-3 text-xs text-[#D9D4CA] hover:text-[#CFA85E] transition-colors font-medium min-h-[44px]"
                 >
                   Inquire Privately →
                 </button>
-              </div>
+              </motion.div>
             </motion.div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       <GoldDivider />
 
       {/* 3.5 The Commission Studio Spotlight (Interactive Itinerary Configurator) */}
-      <section className="py-12 sm:py-16 px-6 sm:px-12 bg-[#0C0D13] border-b border-[#1A1C24] relative overflow-hidden">
+      <section id="section-commission" className="py-12 sm:py-16 px-6 sm:px-12 bg-[#0C0D13] border-b border-[#1A1C24] relative overflow-hidden scroll-mt-20">
         {/* Subtle decorative grid background */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(185,134,51,0.06)_0%,_transparent_70%)] pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto space-y-10 relative z-10">
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-6 border-b border-[#1E202B]">
+        <motion.div
+          variants={sectionStaggerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.05 }}
+          className="max-w-7xl mx-auto space-y-10 relative z-10"
+        >
+          <motion.div variants={blockItemVariants} className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-6 border-b border-[#1E202B]">
             <div>
               <div className="flex items-center gap-2 tglc-kicker mb-2">
                 <Sliders className="w-3.5 h-3.5" />
@@ -368,75 +517,96 @@ export const HomePage: React.FC = () => {
             <p className="tglc-prose text-xs sm:text-sm max-w-md">
               From our Albemarle Street salon, select prebuilt blueprints or combine 18 scenarios across urban sound vaults, aviation air corridors, and heritage salons.
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Left Preview Grid */}
             <div className="lg:col-span-7 space-y-4">
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                <div
+              <motion.div variants={sectionStaggerVariants} className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <motion.div
+                  variants={blockItemVariants}
+                  whileHover={{ y: -4 }}
                   onClick={() => navigateTo('commission-studio')}
                   className="group cursor-pointer p-4 bg-[#0D1017] border border-[#222430] hover:border-[#E2BA6B] transition-all flex flex-col justify-between"
                 >
                   <div>
-                    <div className="aspect-[16/10] overflow-hidden mb-3 bg-[#131722]">
+                    <motion.div variants={imagePlateVariants} className="aspect-[16/10] overflow-hidden mb-3 bg-[#131722]">
                       <img
-                        src="/assets/aistudio/savile_row_bespoke.jpg"
-                        alt="Savile Row"
+                        src="/assets/aistudio/images__2__92f11072.jpg"
+                        alt="Savile Row & Sartorial Craft"
                         referrerPolicy="no-referrer"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-105"
                       />
-                    </div>
+                    </motion.div>
                     <span className="text-[10px] font-mono uppercase text-[#E2BA6B] block">Sartorial & Horology</span>
                     <h3 className="font-serif text-base text-[#FAF7F0] group-hover:text-[#E2BA6B] mt-1 transition-colors">
                       Savile Row Cut & Vault
                     </h3>
                   </div>
-                  <span className="text-[11px] text-[#8F98AA] mt-3">Mayfair in-suite cutter</span>
-                </div>
+                  <div className="space-y-2 mt-3">
+                    <span className="text-[11px] text-[#8F98AA] block">Mayfair in-suite cutter</span>
+                    <span className="block h-[1px] w-full bg-[#191C26] overflow-hidden">
+                      <span className="block h-full w-0 group-hover:w-full bg-gradient-to-r from-[#8B672B] via-[#E2BA6B] to-[#C4933F] transition-all duration-500" />
+                    </span>
+                  </div>
+                </motion.div>
 
-                <div
+                <motion.div
+                  variants={blockItemVariants}
+                  whileHover={{ y: -4 }}
                   onClick={() => navigateTo('commission-studio')}
                   className="group cursor-pointer p-4 bg-[#0D1017] border border-[#222430] hover:border-[#E2BA6B] transition-all flex flex-col justify-between"
                 >
                   <div>
-                    <div className="aspect-[16/10] overflow-hidden mb-3 bg-[#131722]">
+                    <motion.div variants={imagePlateVariants} className="aspect-[16/10] overflow-hidden mb-3 bg-[#131722]">
                       <img
-                        src="/assets/aistudio/urban_hiphop_club_1794391691841.jpg"
+                        src="/assets/aistudio/shoreditch_street_couture.jpg"
                         alt="Vauxhall Sound Vault & Nocturne"
                         referrerPolicy="no-referrer"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-105"
                       />
-                    </div>
+                    </motion.div>
                     <span className="text-[10px] font-mono uppercase text-[#E2BA6B] block">Urban Sound & Stealth</span>
                     <h3 className="font-serif text-base text-[#FAF7F0] group-hover:text-[#E2BA6B] mt-1 transition-colors">
                       Vauxhall Vault & Maybach
                     </h3>
                   </div>
-                  <span className="text-[11px] text-[#8F98AA] mt-3">Alley staging & rotary rig</span>
-                </div>
+                  <div className="space-y-2 mt-3">
+                    <span className="text-[11px] text-[#8F98AA] block">Alley staging & rotary rig</span>
+                    <span className="block h-[1px] w-full bg-[#191C26] overflow-hidden">
+                      <span className="block h-full w-0 group-hover:w-full bg-gradient-to-r from-[#8B672B] via-[#E2BA6B] to-[#C4933F] transition-all duration-500" />
+                    </span>
+                  </div>
+                </motion.div>
 
-                <div
+                <motion.div
+                  variants={blockItemVariants}
+                  whileHover={{ y: -4 }}
                   onClick={() => navigateTo('commission-studio')}
                   className="group cursor-pointer p-4 bg-[#0D1017] border border-[#222430] hover:border-[#E2BA6B] transition-all flex flex-col justify-between"
                 >
                   <div>
-                    <div className="aspect-[16/10] overflow-hidden mb-3 bg-[#131722]">
+                    <motion.div variants={imagePlateVariants} className="aspect-[16/10] overflow-hidden mb-3 bg-[#131722]">
                       <img
-                        src="/assets/aistudio/698157105b08bd0b828e954b_file_k95qb05z_c7bc7f74.png"
-                        alt="Challenger 350"
+                        src="/assets/aistudio/images__3__7bd6ae28.jpg"
+                        alt="Private Apron Aviation & Saloon"
                         referrerPolicy="no-referrer"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-105"
                       />
-                    </div>
+                    </motion.div>
                     <span className="text-[10px] font-mono uppercase text-[#E2BA6B] block">Aviation & Mobility</span>
                     <h3 className="font-serif text-base text-[#FAF7F0] group-hover:text-[#E2BA6B] mt-1 transition-colors">
                       RAF Northolt Charter
                     </h3>
                   </div>
-                  <span className="text-[11px] text-[#8F98AA] mt-3">30-sec tarmac handover</span>
-                </div>
-              </div>
+                  <div className="space-y-2 mt-3">
+                    <span className="text-[11px] text-[#8F98AA] block">30-sec tarmac handover</span>
+                    <span className="block h-[1px] w-full bg-[#191C26] overflow-hidden">
+                      <span className="block h-full w-0 group-hover:w-full bg-gradient-to-r from-[#8B672B] via-[#E2BA6B] to-[#C4933F] transition-all duration-500" />
+                    </span>
+                  </div>
+                </motion.div>
+              </motion.div>
 
               <div className="flex flex-wrap items-center justify-between gap-4 pt-2">
                 <span className="text-xs text-[#8F98AA]">
@@ -444,7 +614,7 @@ export const HomePage: React.FC = () => {
                 </span>
                 <button
                   onClick={() => navigateTo('commission-studio')}
-                  className="btn-gold px-7 py-3 text-xs flex items-center gap-2"
+                  className="btn-gold px-7 py-3 text-xs flex items-center gap-2 min-h-[44px]"
                 >
                   <span>Launch Private Commission Studio</span>
                   <ArrowUpRight className="w-3.5 h-3.5 text-[#07080B]" />
@@ -453,7 +623,7 @@ export const HomePage: React.FC = () => {
             </div>
 
             {/* Right Live Dossier Teaser Card */}
-            <div className="lg:col-span-5 bg-[#07080B] border border-[#262835] p-6 shadow-2xl relative">
+            <motion.div variants={blockItemVariants} className="lg:col-span-5 bg-[#07080B] border border-[#262835] p-6 shadow-2xl relative">
               <div className="flex items-center justify-between pb-3 border-b border-[#1E202B]">
                 <div className="flex items-center gap-2 text-xs font-mono text-[#E2BA6B]">
                   <Lock className="w-3.5 h-3.5" />
@@ -485,22 +655,28 @@ export const HomePage: React.FC = () => {
 
               <button
                 onClick={() => navigateTo('commission-studio')}
-                className="btn-outline-gold w-full py-3 text-xs flex items-center justify-center gap-2"
+                className="btn-outline-gold w-full py-3 text-xs flex items-center justify-center gap-2 min-h-[44px]"
               >
                 <Sliders className="w-3.5 h-3.5 text-[#E2BA6B]" />
                 <span>Configure Your Commission Now</span>
               </button>
-            </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       <GoldDivider />
 
       {/* 4. Interactive Sovereign Lifestyle Showcase */}
-      <section className="py-10 sm:py-14 px-6 sm:px-12 bg-[#08090C] border-b border-[#1A1C24] relative">
-        <div className="max-w-7xl mx-auto space-y-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-5 border-b border-[#1D1F28]">
+      <section id="section-showcase" className="py-10 sm:py-14 px-6 sm:px-12 bg-[#08090C] border-b border-[#1A1C24] relative scroll-mt-20">
+        <motion.div
+          variants={sectionStaggerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.05 }}
+          className="max-w-7xl mx-auto space-y-8"
+        >
+          <motion.div variants={blockItemVariants} className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-5 border-b border-[#1D1F28]">
             <div>
               <span className="text-[11px] uppercase tracking-[0.26em] text-[#CFA85E] font-medium block mb-2">
                 The Sovereign Standard
@@ -512,65 +688,75 @@ export const HomePage: React.FC = () => {
             <p className="text-xs sm:text-sm text-[#9C968A] max-w-md leading-relaxed font-light">
               Inspect how our Mayfair directors orchestrate every movement—from twilight Rolls-Royce dispatches to Savile Row commissions and closed-door club sanctums.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="flex items-center gap-2 overflow-x-auto pb-3 border-b border-[#181A22]">
+          <motion.div variants={blockItemVariants} className="flex items-center gap-2 overflow-x-auto pb-3 border-b border-[#181A22]">
             {LIFESTYLE_PILLARS.map((pillar, idx) => (
               <button
                 key={pillar.id}
                 onClick={() => setActiveTab(idx)}
-                className={`px-5 py-3 text-xs font-medium whitespace-nowrap shrink-0 transition-all duration-300 border-b-2 flex items-center gap-2.5 cursor-pointer ${
+                className={`relative min-h-[44px] px-5 py-3 text-xs font-medium whitespace-nowrap shrink-0 transition-colors duration-300 flex items-center gap-2.5 cursor-pointer ${
                   activeTab === idx
-                    ? 'border-[#B98633] text-[#CFA85E] bg-[#12141C]'
-                    : 'border-transparent text-[#8E8A83] hover:text-[#D9D4CA] hover:bg-[#0D0F15]'
+                    ? 'text-[#CFA85E] bg-[#12141C]'
+                    : 'text-[#8E8A83] hover:text-[#D9D4CA] hover:bg-[#0D0F15]'
                 }`}
               >
                 <span className="text-[11px] tabular-nums text-[#8B672B]">{`0${idx + 1}`}</span>
                 <span>{pillar.label}</span>
+                {activeTab === idx && (
+                  <motion.span
+                    layoutId="homeShowcaseTab"
+                    transition={{ type: 'spring', stiffness: 360, damping: 32 }}
+                    className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#B98633]"
+                  />
+                )}
               </button>
             ))}
-          </div>
+          </motion.div>
 
-          <motion.div
-            key={currentPillar.id}
-            initial={{ opacity: 0.88, x: 12 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.38, ease: [0.16, 1, 0.3, 1] }}
-            className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center bg-[#0C0D12] border border-[#20222E] p-6 sm:p-10 shadow-2xl"
-          >
-            <div className="lg:col-span-7 space-y-4">
-              <div className="relative aspect-[16/10] overflow-hidden bg-black border border-[#242632] group">
-                <motion.img
-                  src={currentPillar.image}
-                  alt={currentPillar.title}
-                  animate={{ scale: [1.02, 1, 1.03] }}
-                  transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' }}
-                  className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105 filter brightness-105 contrast-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0C0D12]/85 via-transparent to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs text-[#DDB872] bg-[#08090C]/85 backdrop-blur-md px-4 py-2.5 border border-[#8B672B]/40">
-                  <span className="uppercase tracking-widest text-[10px] font-medium shrink-0">{currentPillar.kicker}</span>
-                  <span className="italic font-serif text-sm text-[#F4F1EA]">“{currentPillar.tagline}”</span>
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentPillar.id}
+              initial={{ opacity: 0.85, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0.85, y: -6 }}
+              transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+              className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center bg-[#0C0D12] border border-[#20222E] p-6 sm:p-10 shadow-2xl"
+            >
+              <div className="lg:col-span-7 space-y-4">
+                <div className="relative aspect-[16/10] overflow-hidden bg-black border border-[#242632] group">
+                  <motion.img
+                    src={currentPillar.image}
+                    alt={currentPillar.title}
+                    initial={{ scale: 1.04 }}
+                    animate={{ scale: 1 }}
+                    transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                    className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105 filter brightness-105 contrast-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0C0D12]/85 via-transparent to-transparent" />
+                  <div className="absolute bottom-4 left-4 right-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs text-[#DDB872] bg-[#08090C]/85 backdrop-blur-md px-4 py-2.5 border border-[#8B672B]/40">
+                    <span className="uppercase tracking-widest text-[10px] font-medium shrink-0">{currentPillar.kicker}</span>
+                    <span className="italic font-serif text-sm text-[#F4F1EA]">“{currentPillar.tagline}”</span>
+                  </div>
                 </div>
+
+                {currentPillar.secondaryImage && (
+                  <div className="flex items-center gap-4 pt-1">
+                    <div className="w-28 h-16 overflow-hidden border border-[#8B672B]/50 shrink-0 bg-black">
+                      <img
+                        src={currentPillar.secondaryImage}
+                        alt="Companion view"
+                        className="w-full h-full object-cover filter brightness-105 hover:scale-105 transition-transform duration-500"
+                      />
+                    </div>
+                    <p className="text-xs text-[#9C968A] italic font-serif">
+                      Privately coordinated on direct authority through TGLC House, Mayfair.
+                    </p>
+                  </div>
+                )}
               </div>
 
-              {currentPillar.secondaryImage && (
-                <div className="flex items-center gap-4 pt-1">
-                  <div className="w-28 h-16 overflow-hidden border border-[#8B672B]/50 shrink-0 bg-black">
-                    <img
-                      src={currentPillar.secondaryImage}
-                      alt="Companion view"
-                      className="w-full h-full object-cover filter brightness-105 hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                  <p className="text-xs text-[#9C968A] italic font-serif">
-                    Privately coordinated on direct authority through TGLC House, Mayfair.
-                  </p>
-                </div>
-              )}
-            </div>
-
-            <div className="lg:col-span-5 space-y-5">
+              <div className="lg:col-span-5 space-y-5">
               <div>
                 <span className="text-xs uppercase tracking-[0.2em] text-[#C4933F] font-medium block mb-2">
                   {currentPillar.kicker}
@@ -616,17 +802,24 @@ export const HomePage: React.FC = () => {
                   Inquire Privately →
                 </button>
               </div>
-            </div>
-          </motion.div>
-        </div>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+        </motion.div>
       </section>
 
       <GoldDivider />
 
       {/* 5. Redesigned Services & Practices Gallery (Classy, Larger Imagery & Motion — NOT a blog list) */}
-      <section className="py-12 sm:py-16 px-6 sm:px-12 bg-[#090A0E] border-b border-[#1A1C24]">
+      <section id="section-services" className="py-12 sm:py-16 px-6 sm:px-12 bg-[#090A0E] border-b border-[#1A1C24] scroll-mt-20">
         <div className="max-w-7xl mx-auto space-y-10">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-5 border-b border-[#1D1F28]">
+          <motion.div
+            variants={blockItemVariants}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.05 }}
+            className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-5 border-b border-[#1D1F28]"
+          >
             <div>
               <span className="text-[11px] uppercase tracking-[0.28em] text-[#CFA85E] font-medium block mb-2">
                 Services & Practices
@@ -638,25 +831,29 @@ export const HomePage: React.FC = () => {
             <p className="text-xs sm:text-sm text-[#9C968A] max-w-md leading-relaxed font-light">
               Seven integrated private-office practices orchestrated by specialists who act under a single roof at 3rd Floor, 45 Albemarle Street, Mayfair.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="space-y-8">
+          <motion.div
+            variants={sectionStaggerVariants}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.02 }}
+            className="space-y-8"
+          >
             {SERVICES_DATA.map((service, index) => {
               const isEven = index % 2 === 0;
               return (
                 <motion.article
                   key={service.id}
-                  initial={{ opacity: 0.9, y: 14 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.01 }}
+                  variants={blockItemVariants}
                   whileHover={{ y: -2 }}
-                  transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
                   onClick={() => navigateTo('service-detail', { serviceId: service.id })}
                   className="group cursor-pointer bg-[#0E1016] border border-[#20222E] hover:border-[#B98633]/70 transition-all duration-300 shadow-2xl overflow-hidden"
                 >
                   <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch">
                     {/* Large Cinematic Photography Panel */}
-                    <div
+                    <motion.div
+                      variants={imagePlateVariants}
                       className={`lg:col-span-6 relative aspect-[16/10] lg:aspect-auto lg:min-h-[340px] overflow-hidden bg-[#131722] ${
                         isEven ? 'lg:order-1' : 'lg:order-2'
                       }`}
@@ -668,7 +865,7 @@ export const HomePage: React.FC = () => {
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-105 contrast-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#07080B]/75 via-transparent to-transparent" />
-                    </div>
+                    </motion.div>
 
                     {/* Editorial Content Column */}
                     <div
@@ -721,7 +918,7 @@ export const HomePage: React.FC = () => {
                 </motion.article>
               );
             })}
-          </div>
+          </motion.div>
 
           <div className="text-center pt-2">
             <button
@@ -737,9 +934,15 @@ export const HomePage: React.FC = () => {
       <GoldDivider />
 
       {/* 5.5 Case Studies & 24 Signature Itineraries Showcase */}
-      <section className="py-14 sm:py-20 px-6 sm:px-12 bg-gradient-to-b from-[#07080B] via-[#0D1017] to-[#07080B] border-b border-[#1A1C24] relative overflow-hidden">
-        <div className="max-w-7xl mx-auto space-y-10 relative z-10">
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-6 border-b border-[#1E202B]">
+      <section id="section-cases" className="py-14 sm:py-20 px-6 sm:px-12 bg-gradient-to-b from-[#07080B] via-[#0D1017] to-[#07080B] border-b border-[#1A1C24] relative overflow-hidden scroll-mt-20">
+        <motion.div
+          variants={sectionStaggerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.05 }}
+          className="max-w-7xl mx-auto space-y-10 relative z-10"
+        >
+          <motion.div variants={blockItemVariants} className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-6 border-b border-[#1E202B]">
             <div>
               <div className="flex items-center gap-2 tglc-kicker mb-2">
                 <Compass className="w-3.5 h-3.5" />
@@ -752,16 +955,16 @@ export const HomePage: React.FC = () => {
             <p className="tglc-prose text-xs sm:text-sm max-w-md">
               Explore 24 comprehensive case studies spanning state visits, supersonic transfers, closed-door heritage vaults, and edgy sub-rosa nocturnal adventures under tactical protection.
             </p>
-          </div>
+          </motion.div>
 
           {/* 4 Featured Itinerary Journey Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <motion.div variants={sectionStaggerVariants} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
                 title: 'Thames Stealth & Bullion Catacombs',
                 tag: 'Sub-Rosa Nocturne',
                 kicker: 'Square Mile & River',
-                image: '/assets/aistudio/hidden_nocturne_stealth_boat_1794295325076.jpg',
+                image: '/assets/aistudio/lombard_bullion_vault.jpg',
                 desc: '02:00 AM 40-knot river sprint beneath Tower Bridge followed by private Armagnac banquet behind 20-ton bank doors.',
                 meta: 'Evening · 5 Hours · Tier 2 Security',
               },
@@ -769,7 +972,7 @@ export const HomePage: React.FC = () => {
                 title: 'RAF Northolt to Florence Renaissance Villa',
                 tag: 'Aviation & Palazzos',
                 kicker: 'London to Tuscany',
-                image: '/assets/aistudio/florence_palazzo_courtyard.jpg',
+                image: '/assets/aistudio/images_6534f5fb.jpg',
                 desc: '30-second apron tarmac handover from Cullinan to Challenger 350; staffed Chianti palazzo with fires lit before arrival.',
                 meta: '3 Days · 72 Hours · Diplomatic Gate',
               },
@@ -777,7 +980,7 @@ export const HomePage: React.FC = () => {
                 title: 'Vauxhall Concrete Bass Vault & Maybach Buyout',
                 tag: 'Urban Sound & Vaults',
                 kicker: 'SE1 Railway Arches',
-                image: '/assets/aistudio/east_end_boxing_1794391694652.jpg',
+                image: '/assets/aistudio/bermondsey_boxing_vault.jpg',
                 desc: 'Ringside brick arches & sound-isolated vinyl bass chambers with satin-black Maybach rear lane arrivals and Faraday pouches.',
                 meta: 'Full Evening · Tier 2 Tactical Escort',
               },
@@ -785,30 +988,27 @@ export const HomePage: React.FC = () => {
                 title: '3,000-Acre Cotswolds Manor & Michelin Hearth',
                 tag: 'Estates & Field Sports',
                 kicker: 'Oxfordshire Countryside',
-                image: '/assets/aistudio/highland_stone_estate_1794391698042.jpg',
+                image: '/assets/aistudio/cotswolds_manor_estate.jpg',
                 desc: 'Agusta 109 helicopter transfer from Battersea in 24 minutes; clays, bespoke Purdeys, and 8-course woodfire feast.',
                 meta: 'Weekend · 48 Hours · Full Buyout',
               },
-            ].map((card, idx) => (
+            ].map((card) => (
               <motion.div
                 key={card.title}
-                initial={{ opacity: 0.9, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.01 }}
+                variants={blockItemVariants}
                 whileHover={{ y: -4 }}
-                transition={{ duration: 0.45, delay: idx * 0.05 }}
                 onClick={() => navigateTo('case-studies')}
                 className="bg-[#0D1017] border border-[#222430] hover:border-[#E2BA6B] transition-all cursor-pointer overflow-hidden group flex flex-col justify-between"
               >
                 <div>
-                  <div className="aspect-[16/10] overflow-hidden bg-[#131722] relative">
+                  <motion.div variants={imagePlateVariants} className="aspect-[16/10] overflow-hidden bg-[#131722] relative">
                     <img
                       src={card.image}
                       alt={card.title}
                       referrerPolicy="no-referrer"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-105 contrast-105"
                     />
-                  </div>
+                  </motion.div>
                   <div className="p-5 space-y-2">
                     <div className="tglc-meta text-[10px] flex flex-wrap items-center gap-1.5">
                       <span className="text-[#E2BA6B] uppercase tracking-wider">{card.tag}</span>
@@ -824,17 +1024,20 @@ export const HomePage: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="p-5 pt-0">
+                <div className="p-5 pt-0 space-y-2.5">
                   <div className="pt-3 border-t border-[#1E202B] flex items-center justify-between text-[11px] font-mono text-[#E2BA6B]">
                     <span className="tabular-nums">{card.meta}</span>
                     <span className="group-hover:translate-x-1 transition-transform">→</span>
                   </div>
+                  <span className="block h-[1px] w-full bg-[#191C26] overflow-hidden">
+                    <span className="block h-full w-0 group-hover:w-full bg-gradient-to-r from-[#8B672B] via-[#E2BA6B] to-[#C4933F] transition-all duration-500" />
+                  </span>
                 </div>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
 
-          <div className="pt-4 flex flex-wrap items-center justify-center gap-4">
+          <motion.div variants={blockItemVariants} className="pt-4 flex flex-wrap items-center justify-center gap-4">
             <button
               onClick={() => navigateTo('case-studies')}
               className="btn-gold px-8 py-3.5 text-xs flex items-center gap-2 cursor-pointer"
@@ -848,16 +1051,22 @@ export const HomePage: React.FC = () => {
             >
               Build Your Own Commission →
             </button>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </section>
 
       <GoldDivider />
 
       {/* 6. Reimagined "The TGLC Difference" — Pictorial Bento Editorial Grid */}
-      <section className="py-12 sm:py-16 px-6 sm:px-12 border-b border-[#1A1C24] bg-[#08090C]">
-        <div className="max-w-7xl mx-auto space-y-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end border-b border-[#1D1F28] pb-6">
+      <section id="section-difference" className="py-12 sm:py-16 px-6 sm:px-12 border-b border-[#1A1C24] bg-[#08090C] scroll-mt-20">
+        <motion.div
+          variants={sectionStaggerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.05 }}
+          className="max-w-7xl mx-auto space-y-10"
+        >
+          <motion.div variants={blockItemVariants} className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end border-b border-[#1D1F28] pb-6">
             <div className="lg:col-span-7 space-y-3">
               <span className="text-[11px] uppercase tracking-[0.26em] text-[#CFA85E] font-medium block">
                 The Consortium Standard
@@ -869,24 +1078,21 @@ export const HomePage: React.FC = () => {
             <p className="lg:col-span-5 text-xs sm:text-sm text-[#9C968A] leading-relaxed font-light">
               We deliberately cap our active membership roster to preserve depth of counsel, human memory, and unhurried operational care across generations.
             </p>
-          </div>
+          </motion.div>
 
           {/* Illustrated 5-Pillar Mosaic Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <motion.div variants={sectionStaggerVariants} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {ETHOS_PRINCIPLES.map((principle, idx) => (
               <motion.div
                 key={principle.number}
-                initial={{ opacity: 0.9, y: 14 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.01 }}
+                variants={blockItemVariants}
                 whileHover={{ y: -3 }}
-                transition={{ duration: 0.5, delay: idx * 0.05 }}
                 onClick={() => navigateTo('ethos')}
                 className={`group cursor-pointer bg-[#0E1016] border border-[#20222E] hover:border-[#B98633]/65 transition-all duration-300 flex flex-col justify-between overflow-hidden ${
-                  idx === 0 ? 'lg:col-span-2' : ''
+                  idx === 0 ? 'md:col-span-2 lg:col-span-2' : ''
                 }`}
               >
-                <div className={`w-full overflow-hidden bg-black relative ${idx === 0 ? 'aspect-[21/9]' : 'aspect-[16/10]'}`}>
+                <motion.div variants={imagePlateVariants} className={`w-full overflow-hidden bg-black relative ${idx === 0 ? 'aspect-[21/9]' : 'aspect-[16/10]'}`}>
                   <img
                     src={DIFFERENCE_IMAGERY[idx % DIFFERENCE_IMAGERY.length]}
                     alt={principle.title}
@@ -896,7 +1102,7 @@ export const HomePage: React.FC = () => {
                   <span className="absolute bottom-3 left-5 font-serif text-2xl sm:text-3xl text-[#CFA85E]">
                     {principle.number}
                   </span>
-                </div>
+                </motion.div>
 
                 <div className="p-6 sm:p-7 space-y-3 flex-1 flex flex-col justify-between">
                   <div className="space-y-2">
@@ -910,23 +1116,34 @@ export const HomePage: React.FC = () => {
                       {principle.body}
                     </p>
                   </div>
-                  <div className="pt-3 border-t border-[#1D1F28] text-xs text-[#CFA85E] font-medium flex items-center justify-between">
-                    <span>Read Founding Principles</span>
-                    <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  <div className="pt-3 border-t border-[#1D1F28] space-y-2.5">
+                    <div className="text-xs text-[#CFA85E] font-medium flex items-center justify-between">
+                      <span>Read Founding Principles</span>
+                      <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    </div>
+                    <span className="block h-[1px] w-full bg-[#191C26] overflow-hidden">
+                      <span className="block h-full w-0 group-hover:w-full bg-gradient-to-r from-[#8B672B] via-[#E2BA6B] to-[#C4933F] transition-all duration-500" />
+                    </span>
                   </div>
                 </div>
               </motion.div>
             ))}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </section>
 
       <GoldDivider />
 
       {/* 7. London’s Sovereign Enclaves */}
-      <section className="py-10 sm:py-14 px-6 sm:px-12 border-b border-[#1A1C24] bg-[#0A0B0F]">
-        <div className="max-w-7xl mx-auto space-y-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-5 border-b border-[#1D1F28]">
+      <section id="section-enclaves" className="py-10 sm:py-14 px-6 sm:px-12 border-b border-[#1A1C24] bg-[#0A0B0F] scroll-mt-20">
+        <motion.div
+          variants={sectionStaggerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.05 }}
+          className="max-w-7xl mx-auto space-y-8"
+        >
+          <motion.div variants={blockItemVariants} className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-5 border-b border-[#1D1F28]">
             <div>
               <span className="text-[11px] uppercase tracking-[0.26em] text-[#CFA85E] font-medium block mb-2">
                 Capital Intelligence
@@ -938,21 +1155,19 @@ export const HomePage: React.FC = () => {
             <p className="text-xs sm:text-sm text-[#9C968A] max-w-md leading-relaxed font-light">
               Our house stands at 3rd Floor, 45 Albemarle Street in Mayfair, with localized intelligence across St James’s, Knightsbridge, Belgravia, and Chelsea.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {LONDON_NEIGHBOURHOODS.slice(0, 4).map((enclave, idx) => (
+          <motion.div variants={sectionStaggerVariants} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {LONDON_NEIGHBOURHOODS.slice(0, 4).map((enclave) => (
               <motion.div
                 key={enclave.name}
-                initial={{ opacity: 0.9, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.01 }}
+                variants={blockItemVariants}
                 whileHover={{ y: -3 }}
-                transition={{ duration: 0.5, delay: idx * 0.05 }}
                 onClick={() => navigateTo('our-london')}
                 className="group cursor-pointer relative aspect-[3/4] overflow-hidden bg-black border border-[#20222E] hover:border-[#B98633]/65 transition-all"
               >
-                <img
+                <motion.img
+                  variants={imagePlateVariants}
                   src={enclave.image}
                   alt={enclave.name}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-105 contrast-105"
@@ -966,8 +1181,8 @@ export const HomePage: React.FC = () => {
                 </div>
               </motion.div>
             ))}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </section>
 
       <GoldDivider />
@@ -975,41 +1190,41 @@ export const HomePage: React.FC = () => {
       {/* 8. Confidential Introduction Finale */}
       <section className="py-12 sm:py-16 px-6 sm:px-12 bg-black text-center">
         <motion.div
-          initial={{ opacity: 0.92, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.01 }}
-          transition={{ duration: 0.6 }}
+          variants={sectionStaggerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.05 }}
           className="max-w-3xl mx-auto space-y-6"
         >
-          <div className="w-20 h-[1px] bg-gradient-to-r from-transparent via-[#B98633] to-transparent mx-auto" />
+          <motion.div variants={blockItemVariants} className="w-20 h-[1px] bg-gradient-to-r from-transparent via-[#B98633] to-transparent mx-auto" />
 
-          <span className="text-[11px] uppercase tracking-[0.28em] text-[#C4933F] font-medium block">
+          <motion.span variants={blockItemVariants} className="text-[11px] uppercase tracking-[0.28em] text-[#C4933F] font-medium block">
             Admissions by Recommendation
-          </span>
+          </motion.span>
 
-          <h2 className="font-serif text-3xl sm:text-5xl md:text-6xl text-[#F4F1EA] leading-tight">
+          <motion.h2 variants={blockItemVariants} className="font-serif text-3xl sm:text-5xl md:text-6xl text-[#F4F1EA] leading-tight">
             Begin with an unhurried conversation.
-          </h2>
+          </motion.h2>
 
-          <p className="text-xs sm:text-sm text-[#9C968A] font-light max-w-xl mx-auto leading-relaxed">
+          <motion.p variants={blockItemVariants} className="text-xs sm:text-sm text-[#9C968A] font-light max-w-xl mx-auto leading-relaxed">
             Whether arranging family office support, bespoke chauffeur fleets, or private salon introductions across London, our directors at TGLC House respond personally and in confidence.
-          </p>
+          </motion.p>
 
-          <div className="pt-2 flex flex-wrap items-center justify-center gap-4 sm:gap-5">
+          <motion.div variants={blockItemVariants} className="pt-2 flex flex-wrap items-center justify-center gap-4 sm:gap-5">
             <button
               onClick={() => openIntroductionModal('Private Principal Inquiry')}
-              className="btn-gold px-8 py-3.5 text-xs flex items-center gap-2"
+              className="btn-gold px-8 py-3.5 text-xs flex items-center gap-2 min-h-[44px]"
             >
               <span>Request Confidential Introduction</span>
               <ArrowUpRight className="w-4 h-4 text-[#08090C]" />
             </button>
             <button
               onClick={() => navigateTo('contact')}
-              className="btn-outline-gold px-7 py-3.5 text-xs"
+              className="btn-outline-gold px-7 py-3.5 text-xs min-h-[44px]"
             >
               Contact TGLC House
             </button>
-          </div>
+          </motion.div>
         </motion.div>
       </section>
     </div>

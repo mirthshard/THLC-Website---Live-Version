@@ -416,10 +416,10 @@ export const ConsortiumLocationsMap: React.FC<ConsortiumLocationsMapProps> = ({ 
                 {/* Legend & Controls */}
                 <div className="absolute bottom-3 left-3 bg-[#08090C]/90 border border-[#242630] px-3 py-1.5 text-[10px] text-[#B5AFA3] flex items-center gap-3">
                   <span className="flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-[#8B672B]" /> TGLC Enclave
+                    <span className="w-2 h-2 rotate-45 bg-[#8B672B]" /> TGLC Enclave
                   </span>
                   <span className="flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-[#CFA85E]" /> Active Selection
+                    <span className="w-2 h-2 rotate-45 bg-[#CFA85E]" /> Active Selection
                   </span>
                 </div>
 
@@ -523,7 +523,7 @@ export const ConsortiumLocationsMap: React.FC<ConsortiumLocationsMapProps> = ({ 
                       <ul className="space-y-2">
                         {currentDisplayVenue.tglcPrivileges.map((privilege, pIdx) => (
                           <li key={pIdx} className="text-xs text-[#C8C2B7] flex items-start gap-2.5 font-light">
-                            <span className="w-1.5 h-1.5 bg-[#CFA85E] rounded-full mt-1.5 shrink-0" />
+                            <span className="w-1.5 h-1.5 rotate-45 bg-[#CFA85E] mt-1.5 shrink-0" />
                             <span className="leading-relaxed">{privilege}</span>
                           </li>
                         ))}

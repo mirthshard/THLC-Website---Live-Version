@@ -372,7 +372,7 @@ export const MembershipPage: React.FC = () => {
                 We notice the quiet details that shift a busy week from exhausting to restorative: knowing which corner room at Claridge’s catches soft morning light, ensuring your Range Rover SV holds still glass-bottled spring water at Heathrow, or having your country home in Oxfordshire warmly lit hours before you turn into the drive.
               </p>
               <p>
-                Membership terms and retainers are shared candidly following an unhurried initial conversation with Camilla Vance-Moreau in person at our Mayfair house or over private call. Every flight invoice, cellar allocation, and hotel folio passes through at transparent supplier cost without hidden markups.
+                Membership terms and retainers are shared candidly following an unhurried initial conversation with our directors in person at our Mayfair house or over private call. Every flight invoice, cellar allocation, and hotel folio passes through at transparent supplier cost without hidden markups.
               </p>
             </div>
           </motion.div>
@@ -858,7 +858,7 @@ export const MembershipPage: React.FC = () => {
             Begin with a Private Conversation
           </h3>
           <p className="text-xs sm:text-sm text-[#9C968A] max-w-lg mx-auto leading-relaxed font-light">
-            We invite prospective members to arrange an unhurried consultation with Camilla Vance-Moreau at 3rd Floor, 45 Albemarle Street, London W1S 4JL, or via telephone on <span className="text-[#CFA85E] tabular-nums">{TGLC_CONTACT.telephone}</span>.
+            We invite prospective members to arrange an unhurried consultation with our Membership Committee at 3rd Floor, 45 Albemarle Street, London W1S 4JL, or via telephone on <span className="text-[#CFA85E] tabular-nums">{TGLC_CONTACT.telephone}</span>.
           </p>
           <div className="pt-2">
             <button

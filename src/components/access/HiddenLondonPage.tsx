@@ -107,7 +107,7 @@ export const CLANDESTINE_DOSSIERS: ClandestineDossier[] = [
     title: 'Kingsway Deep Intelligence Tunnels & Cold War Vaults',
     kicker: 'Citadel 02 · Holborn Deep Sub-Level',
     tagline: 'The mile-long subterranean corridor where Britain kept its Cold War hotlines.',
-    image: '/assets/aistudio/down_street_station_1794391687146.jpg',
+    image: '/assets/aistudio/kingsway_coldwar_tunnels.jpg',
     gridCoordinates: '51.5173° N, 0.1189° W · High Holborn 100ft Below',
     clearanceLevel: 'Level 3 Sovereign Introduction',
     dressCode: 'Structured Monochrome / Discreet Outerwear',
@@ -133,7 +133,7 @@ export const CLANDESTINE_DOSSIERS: ClandestineDossier[] = [
     title: 'The 300-Year-Old Bullion Vaults & Sub-Thames Catacombs',
     kicker: 'Citadel 03 · Square Mile Catacombs',
     tagline: 'Heavy circular steel vault doors guarding quiet cigar rooms and 18th-century cellars.',
-    image: '/assets/aistudio/rare_cellar_vault.jpg',
+    image: '/assets/aistudio/lombard_bullion_vault.jpg',
     gridCoordinates: '51.5134° N, 0.0889° W · City of London Sub-Vault',
     clearanceLevel: 'Level 2 Biometric Access',
     dressCode: 'Black Tie Optional / Savile Row Tailoring',
@@ -239,7 +239,7 @@ export const CLANDESTINE_DOSSIERS: ClandestineDossier[] = [
     title: 'Hackney Canal Secret Precision Horology Laboratory',
     kicker: 'Enclave 03 · East Canal Basin',
     tagline: 'Cleanroom micro-mechanics inside an unmarked Regent’s Canal warehouse.',
-    image: '/assets/aistudio/About-Luxury-Watches_77cb4520.jpg',
+    image: '/assets/aistudio/private_horology_cleanroom.jpg',
     gridCoordinates: '51.5372° N, 0.0558° W · Regent’s Canal Basin',
     clearanceLevel: 'Level 2 Biometric Access',
     dressCode: 'Discreet Smart · Anti-Static Lab Coats Provided',
@@ -265,7 +265,7 @@ export const CLANDESTINE_DOSSIERS: ClandestineDossier[] = [
     title: 'Millennium Mills Monumental Concrete Silo Studio',
     kicker: 'Enclave 04 · Royal Docks Post-Industrial Domain',
     tagline: 'Seven stories of raw monolithic concrete overlooking the Thames barrier and London City runway lights.',
-    image: '/assets/aistudio/sky_gantry_night_1794391688194.jpg',
+    image: '/assets/aistudio/silvertown_silo_art.jpg',
     gridCoordinates: '51.5034° N, 0.0195° E · Royal Victoria Dock',
     clearanceLevel: 'Level 3 Sovereign Introduction',
     dressCode: 'Industrial Avant-Garde / High Tactical Outerwear',
@@ -298,7 +298,7 @@ export const CLANDESTINE_DOSSIERS: ClandestineDossier[] = [
     clearanceLevel: 'Level 1 Discretion',
     dressCode: 'Technical Training Kit / Ringside Casual',
     securityProtocol: 'Private Ring Closure · Zero Spectators · Armed Tactical CP Outer Watch',
-    riskMitigation: 'Julian Sterling close-protection officers guard the exterior shutter; perimeter counter-surveillance active throughout.',
+    riskMitigation: 'TGLC close-protection officers guard the exterior shutter; perimeter counter-surveillance active throughout.',
     intelBrief: 'Tucked under Bethnal Green railway arches, this storied East End gym locks its steel shutters privately for morning or midnight one-on-one sessions with former world champions.',
     deepNarrative: [
       'No posing, no cameras, no commercial group classes—just honest leather bags, seasoned ring coaches, and demanding round work tailored to your conditioning.',
@@ -319,16 +319,16 @@ export const CLANDESTINE_DOSSIERS: ClandestineDossier[] = [
     title: 'The Bermondsey Vaults: Unsanctioned Exhibition Bouts',
     kicker: 'Combat 02 · Railway Vault Ringside',
     tagline: 'Fifty invited patrons, an elevated ring under Victorian soot bricks, and world-class raw boxing.',
-    image: '/assets/aistudio/close_protection_security.jpg',
+    image: '/assets/aistudio/bermondsey_boxing_vault.jpg',
     gridCoordinates: '51.4965° N, 0.0682° W · Spa Terminus Rail Vaults',
     clearanceLevel: 'Level 3 Sovereign Introduction',
     dressCode: 'Dark Sharp Tailoring / No Ties',
-    securityProtocol: 'Julian Sterling Plainclothes Detail & Identity Screening at Archway',
-    riskMitigation: 'Three-point credential check at exterior alley; two SAS-trained security operatives escort principals inside and out.',
+    securityProtocol: 'Plainclothes Close Protection Detail & Identity Screening at Archway',
+    riskMitigation: 'Three-point credential check at exterior alley; two SIA-vetted security operatives escort principals inside and out.',
     intelBrief: 'A quarterly, invitation-only fight night held in deep secrecy under the South London viaduct. Unsanctioned by public ticket outlets, this is where London’s true fight aficionados gather.',
     deepNarrative: [
       'Principals often crave the raw, visceral drama of real East End boxing culture—the sweat, the crack of leather on chin, the tension of the crowd—but are rightfully hesitant to navigate backstreet warehouse alleys without elite protection.',
-      'TGLC embeds you ringside with Julian Sterling’s team at your shoulder, premium single malts poured into crystal, and zero risk of unwanted exposure or security compromise.'
+      'TGLC embeds you ringside with our Close Protection & Mobility Desk at your shoulder, premium single malts poured into crystal, and zero risk of unwanted exposure or security compromise.'
     ],
     deliverables: [
       'Guaranteed ringside corner table directly adjacent to the red corner',
@@ -378,7 +378,7 @@ export const CLANDESTINE_DOSSIERS: ClandestineDossier[] = [
     clearanceLevel: 'Level 3 Sovereign Introduction',
     dressCode: 'Evening Discretion / Tailored Velvet',
     securityProtocol: 'Zero Digital Devices · Faraday Cellar · Cashier Settlement by Encrypted Wire',
-    riskMitigation: 'Principals are escorted by Julian Sterling’s plainclothes detail; chip settlements handled via verified trust accounts with zero physical cash risk.',
+    riskMitigation: 'Principals are escorted by our plainclothes close-protection detail; chip settlements handled via verified trust accounts with zero physical cash risk.',
     intelBrief: 'Deep beneath the cobbled alleys of Soho sits London’s most secretive private poker game, patronised by shipping magnates, hedge fund founders, and discrete collectors.',
     deepNarrative: [
       'High-net-worth individuals often want the electric thrill of underground high-stakes cards without the danger, extortion risk, or unvetted table dynamics of street games.',
@@ -425,7 +425,7 @@ export const CLANDESTINE_DOSSIERS: ClandestineDossier[] = [
     title: 'The Seven Dials Backgammon & High-Stakes Dice Club',
     kicker: 'Gaming 03 · Covent Garden Cellars',
     tagline: 'Where master tacticians contest hundred-thousand-pound doubles over rare rums.',
-    image: '/assets/aistudio/subrosa_catacomb_dinner.jpg',
+    image: '/assets/aistudio/Copper-Club_b58a00e9.jpg',
     gridCoordinates: '51.5140° N, 0.1275° W · Seven Dials Underground',
     clearanceLevel: 'Level 2 Biometric Access',
     dressCode: 'Smart Sartorial / Relaxed Luxury',
@@ -480,12 +480,12 @@ export const CLANDESTINE_DOSSIERS: ClandestineDossier[] = [
     title: 'Isle of Dogs Abandoned Drydock Midnight Supper',
     kicker: 'Maritime 02 · East End Maritime Ruins',
     tagline: 'Step from a speed interceptor into a lit Victorian granite graving dock for private culinary theatre.',
-    image: '/assets/aistudio/brunel_brick_shaft_1794391688745.jpg',
+    image: '/assets/aistudio/thames_drydock_supper.jpg',
     gridCoordinates: '51.4925° N, 0.0075° W · Isle of Dogs Graving Dock',
     clearanceLevel: 'Level 3 Sovereign Introduction',
     dressCode: 'Tactical Cashmere / Technical Trench',
     securityProtocol: 'Compound Perimeter Sentries & Marine Patrol Boat Standby',
-    riskMitigation: 'Julian Sterling boat escort on water; fenced compound with canine security and tactical illumination.',
+    riskMitigation: 'TGLC maritime boat escort on water; fenced compound with perimeter security and tactical illumination.',
     intelBrief: 'A massive 19th-century granite drydock where historic tea clippers once refitted, now closed to the general public and opened solely for TGLC nocturne missions.',
     deepNarrative: [
       'Few experiences match the eerie, cinematic majesty of arriving by water into an empty Victorian drydock. As your boat gently docks at the stone slipway, lanterns light up towering granite walls.',
@@ -506,7 +506,7 @@ export const CLANDESTINE_DOSSIERS: ClandestineDossier[] = [
     title: 'Docklands Black-Water Insertion & Private Penthouse Ascent',
     kicker: 'Maritime 03 · High-Rise River Ingress',
     tagline: 'Direct marine transit from Westminster straight into a private dock and express penthouse lift.',
-    image: '/assets/aistudio/01-Neo-Bankside-Luxury-Penthouse-London-England-UK-640x360_c8f27abb.jpg',
+    image: '/assets/aistudio/pt3_6ef34e91.jpg',
     gridCoordinates: '51.5050° N, 0.0200° W · Canary Wharf Basin',
     clearanceLevel: 'Level 2 Biometric Access',
     dressCode: 'Evening Tailoring / Sharp Discretion',
@@ -586,7 +586,7 @@ export const CLANDESTINE_DOSSIERS: ClandestineDossier[] = [
     title: 'Clerkenwell 18th-Century Meat-Hook Open-Flame Supper Club',
     kicker: 'Gastronomy 03 · Smithfield Sub-Level',
     tagline: 'Dry-aged British beef cooked over oak embers in a subterranean brick smokehouse.',
-    image: '/assets/aistudio/mayfair_fine_dining.jpg',
+    image: '/assets/aistudio/subrosa_catacomb_dinner.jpg',
     gridCoordinates: '51.5190° N, 0.1015° W · Smithfield Sub-Arches',
     clearanceLevel: 'Level 2 Biometric Access',
     dressCode: 'Smart Casual / Tailored Dark Denim & Wool',
@@ -675,7 +675,7 @@ export const CLANDESTINE_DOSSIERS: ClandestineDossier[] = [
     intelBrief: 'A private maintenance gantry high above London’s financial towers, accessed via confidential engineering permits and express service shafts.',
     deepNarrative: [
       'For clients who seek pure vertigo and raw exhilaration without public viewing decks or tourist crowds. Step onto the open-air steel grating as night winds whip past and the Thames curves below like a ribbon of molten glass.',
-      'Julian Sterling’s team ensures total perimeter security and safe harness anchorings while our concierge serves hot artisanal teas and aged cognacs from thermal flasks.'
+      'Our Close Protection & Mobility Desk ensures total perimeter security and safe harness anchorings while our concierge serves hot artisanal teas and aged cognacs from thermal flasks.'
     ],
     deliverables: [
       'Private ascent via security-cleared high-speed industrial lift',
@@ -750,12 +750,12 @@ export const CLANDESTINE_DOSSIERS: ClandestineDossier[] = [
     gridCoordinates: '51.5195° N, 0.0750° W · Spitalfields Georgian Quarter',
     clearanceLevel: 'Level 3 Sovereign Introduction',
     dressCode: 'Evening Tailoring / Velvet Smoking Jackets',
-    securityProtocol: 'Encrypted Guest List & Julian Sterling Close Protection Detail',
+    securityProtocol: 'Encrypted Guest List & TGLC Close Protection Detail',
     riskMitigation: 'Armed response team on standby, encrypted identity verification at archway, secure underground vault storage.',
     intelBrief: 'Set inside the brick undercroft of an 18th-century Huguenot silk merchant’s house, this monthly midnight salon hosts private watch collectors and art connoisseurs.',
     deepNarrative: [
       'Away from public auction houses and trade fairs, collectors meet here by candlelight to inspect museum-grade vintage watches, rare coins, and pre-embargo Cuban cigars.',
-      'Julian Sterling’s protection detail provides absolute security for physical assets in transit, while high-efficiency airflow keeps the atmosphere crisp and fragrant.'
+      'Our Close Protection & Mobility Desk provides absolute security for physical assets in transit, while high-efficiency airflow keeps the atmosphere crisp and fragrant.'
     ],
     deliverables: [
       'Private access to the Huguenot crypt collector salon',
@@ -779,7 +779,7 @@ export const CLANDESTINE_DOSSIERS: ClandestineDossier[] = [
     clearanceLevel: 'Level 2 Biometric Access',
     dressCode: 'Street Couture / Archival Denim & Heavy Outerwear',
     securityProtocol: 'Unmarked Steel Service Door · Faraday Phone Stickers · Plainclothes Detail',
-    riskMitigation: 'Zero street queue exposure; matte-black Maybach stages inside adjacent freight archway while Julian Sterling officers secure VIP booth perimeter.',
+    riskMitigation: 'Zero street queue exposure; matte-black Maybach stages inside adjacent freight archway while our protection officers secure the VIP booth perimeter.',
     intelBrief: 'Engineered for ultra-wealthy principals who crave the pulse of contemporary Atlanta, Compton, and South London hip-hop culture without public nightclubs or intrusive phones.',
     deepNarrative: [
       'Behind an unsigned cargo shutter off Hanover Street sits a subterranean 140-person sound sanctuary anchored by bespoke walnut horn stacks tuned to warm sub-bass frequencies.',
@@ -831,7 +831,7 @@ export const CLANDESTINE_DOSSIERS: ClandestineDossier[] = [
     clearanceLevel: 'Level 2 Biometric Access',
     dressCode: 'Collectible Streetwear / Designer Archive',
     securityProtocol: 'Keyholder Appointment Only · Window Privacy Tint',
-    riskMitigation: 'Unmarked doorway with zero external branding; Julian Sterling escort handles high-value timepiece and trunk transfers.',
+    riskMitigation: 'Unmarked doorway with zero external branding; our close-protection escort handles high-value timepiece and trunk transfers.',
     intelBrief: 'Before heading to late-night sound clubs, principals convene at an invitation-only stylist lounge stocking museum-grade sample pieces, bespoke leather bombers, and limited global collaborations.',
     deepNarrative: [
       'Curated for music executives, athletes, and tech founders who operate equally smoothly between Savile Row and backstage festival compounds.',
@@ -976,7 +976,7 @@ const SUBPAGE_META: Record<
     heroSlides: [
       { id: 'paddock', image: '/assets/aistudio/hidden_subterranean_vault_1794295323175.jpg', title: 'Churchill’s Paddock War Map Room', coordinates: '51.5542° N · 40ft Below' },
       { id: 'brunel', image: '/assets/aistudio/brunel_brick_shaft_1794391688745.jpg', title: 'Brunel Thames Sub-Aqueous Shaft', coordinates: '51.5011° N · Rotherhithe' },
-      { id: 'kingsway', image: '/assets/aistudio/down_street_station_1794391687146.jpg', title: 'Kingsway Deep Intelligence Galleries', coordinates: '51.5173° N · 100ft Deep' },
+      { id: 'kingsway', image: '/assets/aistudio/kingsway_coldwar_tunnels.jpg', title: 'Kingsway Deep Intelligence Galleries', coordinates: '51.5173° N · 100ft Deep' },
     ],
     coordinates: '51.5542° N, 0.2520° W · Deep Subterranean Grid',
     lead: 'Sealed behind five-foot blast bulkheads and unlisted street grates, these historic underground spaces welcome trusted TGLC gatherings, private candlelight dinners, and wholly unmonitored strategic councils with zero electronic leakage.'
@@ -989,8 +989,8 @@ const SUBPAGE_META: Record<
     heroSlides: [
       { id: 'barbican', image: '/assets/aistudio/hidden_brutalist_penthouse_1794295322915.jpg', title: 'Barbican Concrete Sky-Terraces', coordinates: '51.5204° N · City Top Tier' },
       { id: 'bermondsey', image: '/assets/aistudio/leather_saddlery_bench_1794391695162.jpg', title: 'Bermondsey Bespoke Saddlery Vaults', coordinates: '51.4988° N · SE1 Arches' },
-      { id: 'silvertown', image: '/assets/aistudio/sky_gantry_night_1794391688194.jpg', title: 'Royal Docks Monolith Silo Studios', coordinates: '51.5034° N · E16 Silos' },
-      { id: 'hackney', image: '/assets/aistudio/About-Luxury-Watches_77cb4520.jpg', title: 'Regent’s Canal Horology Cleanroom', coordinates: '51.5372° N · Basin 04' },
+      { id: 'silvertown', image: '/assets/aistudio/silvertown_silo_art.jpg', title: 'Royal Docks Monolith Silo Studios', coordinates: '51.5034° N · E16 Silos' },
+      { id: 'hackney', image: '/assets/aistudio/private_horology_cleanroom.jpg', title: 'Regent’s Canal Horology Cleanroom', coordinates: '51.5372° N · Basin 04' },
     ],
     coordinates: '51.5204° N, 0.0928° W · City Skyline & Docklands',
     lead: 'Whether admiring post-war art from a Barbican penthouse terrace, fitting bespoke aircraft luggage under Bermondsey railway arches, or inspecting tourbillons by the canal, we connect you directly with London’s raw creative masters.'
@@ -1003,10 +1003,10 @@ const SUBPAGE_META: Record<
     heroSlides: [
       { id: 'bethnal', image: '/assets/aistudio/east_end_boxing_1794391694652.jpg', title: 'Bethnal Green Railway Arch Ring', coordinates: '51.5290° N · Arch 14' },
       { id: 'o2', image: '/assets/aistudio/ufc_arena_ringside.jpg', title: 'O2 Cageside Row 1 & Tunnel Access', coordinates: '51.5030° N · Greenwich' },
-      { id: 'protection', image: '/assets/aistudio/close_protection_security.jpg', title: 'Julian Sterling Ringside Security Cordon', coordinates: 'Tier 2 · SIA Escort' },
+      { id: 'protection', image: '/assets/aistudio/bermondsey_boxing_vault.jpg', title: 'Bermondsey Private Exhibition Vault & Cordon', coordinates: 'Tier 2 · SIA Escort' },
     ],
     coordinates: '51.5290° N, 0.0560° W · Bethnal Green to Greenwich',
-    lead: 'The visceral electricity of London pugilism, experienced with total security. Julian Sterling’s tactical close-protection team escorts principals directly ringside under Victorian brick viaducts for raw, uncommercialised fight nights.'
+    lead: 'The visceral electricity of London pugilism, experienced with total security. Our Close Protection & Mobility Desk escorts principals directly ringside under Victorian brick viaducts for raw, uncommercialised fight nights.'
   },
   'clandestine-gaming': {
     title: 'Secret High-Stakes Gaming & Clandestine Salons',
@@ -1015,7 +1015,7 @@ const SUBPAGE_META: Record<
     heroImage: '/assets/aistudio/meard_poker_sanctum.jpg',
     heroSlides: [
       { id: 'meard', image: '/assets/aistudio/meard_poker_sanctum.jpg', title: 'Meard Street £50k Faraday Cardroom', coordinates: '51.5134° N · Soho Vault' },
-      { id: 'sevendials', image: '/assets/aistudio/subrosa_catacomb_dinner.jpg', title: 'Seven Dials Backgammon & Rare Rum Cellar', coordinates: '51.5140° N · WC2 Crypt' },
+      { id: 'sevendials', image: '/assets/aistudio/Copper-Club_b58a00e9.jpg', title: 'Seven Dials Backgammon & Rare Rum Cellar', coordinates: '51.5140° N · WC2 Crypt' },
     ],
     coordinates: '51.5134° N, 0.1332° W · Soho & Mayfair Sub-Vaults',
     lead: 'Pure high-stakes drama with zero institutional risk. Professional European dealers, institutional trust settlements, and cryptographic privacy shielding allow principals to contest high-limit poker and baccarat in complete peace.'
@@ -1027,7 +1027,7 @@ const SUBPAGE_META: Record<
     heroImage: '/assets/aistudio/hidden_nocturne_stealth_boat_1794295325076.jpg',
     heroSlides: [
       { id: 'stealth', image: '/assets/aistudio/hidden_nocturne_stealth_boat_1794295325076.jpg', title: '45ft Matte-Black Carbon River Sprint', coordinates: '51.5055° N · 38 Knots' },
-      { id: 'drydock', image: '/assets/aistudio/brunel_brick_shaft_1794391688745.jpg', title: 'Isle of Dogs Graving Dock Supper', coordinates: '51.4925° N · E14 Dock' },
+      { id: 'drydock', image: '/assets/aistudio/thames_drydock_supper.jpg', title: 'Isle of Dogs Graving Dock Supper', coordinates: '51.4925° N · E14 Dock' },
       { id: 'monaco', image: '/assets/aistudio/monaco_harbor_twilight_1794391696625.jpg', title: 'Continental Mediterranean Chase Boat Link', coordinates: 'LFMN ➔ Port Hercule' },
     ],
     coordinates: '51.5055° N, 0.0754° W · Tower Pier to Greenwich',
@@ -1098,7 +1098,7 @@ const SUBPAGE_META: Record<
       { id: 'catacomb', image: '/assets/aistudio/subrosa_catacomb_dinner.jpg', title: '03:30 · Sub-Thames Catacomb Exchange', coordinates: 'Square Mile Sub-Vault' },
     ],
     coordinates: 'London Metropolitan Area · 21:00 to 05:00',
-    lead: 'Every handover, cold-room password, armoured scout convoy, soundbooth bypass, high-speed boat captain, and dawn whisky pour synchronised to the minute by Julian Sterling and our Mayfair directors.'
+    lead: 'Every handover, cold-room password, armoured scout convoy, soundbooth bypass, high-speed boat captain, and dawn whisky pour synchronised to the minute by our Close Protection & Mobility Desk and Mayfair stewards.'
   }
 };
 
@@ -1157,8 +1157,8 @@ const DEFAULT_EXTENDED_INTEL: Record<string, DossierExtendedIntel> = {
     architecturalNotes: 'Cast-iron segment tunnel rings spanning a full mile beneath High Holborn, preserving original Cold War communications cable racking and subterranean artesian pump room.',
     extraNarrative: 'Whether hosting an unamplified string quartet whose cello harmonics float endlessly along the cast-iron cylinder or convening an off-the-record venture syndicate briefing, no surface city hum ever reaches this depth.',
     gallery: [
-      { image: '/assets/aistudio/down_street_station_1794391687146.jpg', caption: 'Original subterranean tunnel tiles and executive chambers beneath central London untouched since wartime duty.' },
-      { image: '/assets/aistudio/hidden_subterranean_vault_1794295323175.jpg', caption: 'Vaulted deep-level chambers lit exclusively by portable amber floor uplighters for acoustic recitals.' },
+      { image: '/assets/aistudio/kingsway_coldwar_tunnels.jpg', caption: 'Deep-level cast-iron Cold War tunnel galleries beneath High Holborn preserved in unbroken acoustic hush.' },
+      { image: '/assets/aistudio/lombard_bullion_vault.jpg', caption: 'Reinforced subterranean vault doors and private chamber staging arranged under custodial discretion.' },
       { image: '/assets/aistudio/rare_cellar_vault.jpg', caption: 'Private spirit bottles transported in temperature-controlled panniers for post-briefing tastings.' },
     ]
   },
@@ -1170,7 +1170,7 @@ const DEFAULT_EXTENDED_INTEL: Record<string, DossierExtendedIntel> = {
     architecturalNotes: 'Twentieth-century Chubb circular steel doors weighing twenty tons set against hand-laid 1720s brick vaults with whisper-quiet air extraction.',
     extraNarrative: 'Principals utilize these sealed sub-Thames catacombs when delicate cross-border settlements, private treaty drafts, or high-value watch inspections require total sanctuary in the heart of the Square Mile.',
     gallery: [
-      { image: '/assets/aistudio/rare_cellar_vault.jpg', caption: 'Aged vintage reserves and hand-blown crystal service inside London’s oldest private bullion cellars.' },
+      { image: '/assets/aistudio/lombard_bullion_vault.jpg', caption: 'Heavy circular steel vault doors and bespoke lockers inside London’s oldest Lombard Street catacombs.' },
       { image: '/assets/aistudio/subrosa_catacomb_dinner.jpg', caption: 'Candlelit dining tables beneath 18th-century arched brickwork protected by circular steel vault doors.' },
       { image: '/assets/aistudio/tglc_st_james_salon.jpg', caption: 'Private leather-panelled smoking room adjoining the main cellar lockers.' },
     ]
@@ -1204,7 +1204,7 @@ const DEFAULT_EXTENDED_INTEL: Record<string, DossierExtendedIntel> = {
   'concrete-bass-vault': {
     timingWindow: '23:30 – 05:00 GMT · Sound Sanctuary Lockout',
     groupCapacity: '4 to 24 Principals (VIP Booth Buyouts)',
-    ingressProtocol: 'Stealth Maybach enters the unmarked shuttered delivery court off Hanover Mews; Julian Sterling protection lead clears the heavy acoustic airlock directly to elevated walnut banquettes.',
+    ingressProtocol: 'Stealth Maybach enters the unmarked shuttered delivery court off Hanover Mews; our Close Protection Desk clears the heavy acoustic airlock directly to elevated walnut banquettes.',
     culinaryNotes: 'Dom Pérignon P2 magnums in matte-black chillers, spiced yuzu mezcal infusions, and 02:30 AM Tokyo-style charcoal yakitori trays.',
     architecturalNotes: 'Board-formed poured concrete shell decoupled from surrounding structures on neoprene springs, housing custom cedar and birch-ply sub-bass horn stacks.',
     extraNarrative: 'This room bridges global hip-hop and underground club authenticity with billionaire operational discipline: world-class producers test unreleased acetates over warm analog rotary mixers while zero smartphone lenses cross the doorway.',
@@ -1269,7 +1269,7 @@ function getExtendedIntel(dossier: ClandestineDossier): DossierExtendedIntel {
       { image: '/assets/aistudio/leather_saddlery_bench_1794391695162.jpg', caption: 'Master artisan benches unlocked by private appointment behind unmarked railway arches.' },
     ],
     'underground-combat': [
-      { image: dossier.image, caption: `Ringside corridor prepared inside ${dossier.title} under Julian Sterling close protection.` },
+      { image: dossier.image, caption: `Ringside corridor prepared inside ${dossier.title} under our Close Protection & Mobility Desk.` },
       { image: '/assets/aistudio/close_protection_security.jpg', caption: 'SIA-vetted plainclothes detail verifying exterior mews and alley perimeters prior to arrival.' },
       { image: '/assets/aistudio/ufc_arena_ringside.jpg', caption: 'Unobstructed championship sightlines paired with backstage warm-up accreditation.' },
     ],
@@ -1631,7 +1631,7 @@ export const HiddenLondonPage: React.FC<{ initialSubPage?: SubRosaCategory }> = 
               transition={{ duration: 0.55, delay: 0.1 }}
               className="text-xs sm:text-base text-[#D4D8E2] max-w-3xl mx-auto leading-[1.75]"
             >
-              Beyond the quiet townhouses of Mayfair lies an exhilarating, raw London that few outsiders ever see: subterranean DJ & hip-hop concrete vaults with Maybach back-alley ingress, bare-knuckle railway arch sparring, clandestine £50k poker salons behind Soho shops, 02:00 AM Thames stealth sprints, and Churchill’s wartime bunkers. Protected under Director Julian Sterling.
+              Beyond the quiet townhouses of Mayfair lies an exhilarating, raw London that few outsiders ever see: subterranean DJ & hip-hop concrete vaults with Maybach back-alley ingress, bare-knuckle railway arch sparring, clandestine £50k poker salons behind Soho shops, 02:00 AM Thames stealth sprints, and Churchill’s wartime bunkers—always overseen by our Close Protection & Mobility Desk.
             </motion.p>
 
             <motion.div
@@ -1708,7 +1708,7 @@ export const HiddenLondonPage: React.FC<{ initialSubPage?: SubRosaCategory }> = 
 
           <div className="hidden lg:flex items-center gap-2 font-mono text-[11px] text-[#8F98AA] shrink-0 whitespace-nowrap">
             <Shield className="w-3.5 h-3.5 text-[#E2BA6B]" />
-            <span>Julian Sterling CP Active</span>
+            <span>Close Protection Active</span>
           </div>
         </div>
       </section>
@@ -1725,7 +1725,7 @@ export const HiddenLondonPage: React.FC<{ initialSubPage?: SubRosaCategory }> = 
             </h2>
           </div>
           <p className="lg:col-span-7 text-xs sm:text-sm text-[#D4D8E2] leading-[1.75]">
-            Ultra-wealthy principals frequently tire of the predictable hotel ballrooms and sanitized dining rooms of Central London. They crave the raw, edgy, authentic pulse of underground London—from 02:00 AM hip-hop sound vaults with headline DJs and back-alley Maybach arrivals, to railway arch fight rings and midnight river interceptors—experienced with ironclad security under Julian Sterling.
+            Ultra-wealthy principals frequently tire of the predictable hotel ballrooms and sanitized dining rooms of Central London. They crave the raw, edgy, authentic pulse of underground London—from 02:00 AM hip-hop sound vaults with headline DJs and back-alley Maybach arrivals, to railway arch fight rings and midnight river interceptors—experienced with calm protection from our Mayfair and Security teams.
           </p>
         </div>
 
@@ -2075,7 +2075,7 @@ export const HiddenLondonPage: React.FC<{ initialSubPage?: SubRosaCategory }> = 
           </h2>
 
           <p className="text-xs sm:text-base text-[#D4D8E2] max-w-xl mx-auto leading-relaxed">
-            Our London directors and Julian Sterling’s security desk stay on call day and night with direct keys to private vaults, concrete DJ & hip-hop sound rooms, underground combat rings, and river piers.
+            Our Mayfair stewards and Close Protection & Mobility Desk stay on call day and night with direct keys to private vaults, concrete DJ & hip-hop sound rooms, underground combat rings, and river piers.
           </p>
 
           <div className="p-4 max-w-md mx-auto bg-[#0D1017] border border-[#232736] flex items-center justify-center gap-3 text-xs">

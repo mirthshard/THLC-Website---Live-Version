@@ -257,7 +257,7 @@ export const PortalAudioLog: React.FC<PortalAudioLogProps> = ({ user }) => {
               Encrypted Voice Dossier
             </h1>
             <p className="text-xs sm:text-sm text-[#D4D8E2] font-light flex items-center gap-2">
-              <Radio className="w-3.5 h-3.5 text-[#E2BA6B]" /> Spoken operational briefs from Camilla Vance-Moreau, Julian Sterling & Dr. Helena Zhang
+              <Radio className="w-3.5 h-3.5 text-[#E2BA6B]" /> Spoken operational briefs from Mickell Washington, Leance Djedje & Melize Nastaasia
             </p>
           </div>
 
@@ -281,7 +281,7 @@ export const PortalAudioLog: React.FC<PortalAudioLogProps> = ({ user }) => {
               className="mt-4 p-3.5 bg-[#14231E] border border-[#2B6049] text-emerald-300 text-xs font-mono flex items-center gap-2"
             >
               <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-              <span>Verbal mandate encrypted, archived to the Private Office Vault, and flagged for priority triage with Camilla & Julian.</span>
+              <span>Verbal mandate encrypted, archived to the Private Office Vault, and flagged for priority triage with the Mayfair Operations Desk.</span>
             </motion.div>
           )}
         </AnimatePresence>

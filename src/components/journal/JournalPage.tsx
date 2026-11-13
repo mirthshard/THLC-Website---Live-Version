@@ -26,6 +26,16 @@ const JOURNAL_CATEGORIES = [
 
 const JOURNAL_HERO_SLIDES = [
   {
+    image: '/assets/aistudio/wembley_vip_hospitality.jpg',
+    caption: 'Triple-Up Standard · Unified Hospitality Suites, Stays & Chauffeurs',
+    slug: 'triple-up-concierge-hospitality-stays-chauffeurs-guide',
+  },
+  {
+    image: '/assets/aistudio/corporate_ea_boardroom.jpg',
+    caption: 'Executive Playbook · Supporting Travelling Principals & EAs Calmly',
+    slug: 'corporate-ea-pa-consortium-support-playbook',
+  },
+  {
     image: '/assets/aistudio/journal_editorial_brief.jpg',
     caption: 'Editorial Research Desk · London Architectural Blueprints & Curated Essays',
     slug: 'the-horological-renaissance-closed-door-watch-salons',
@@ -47,6 +57,35 @@ const JOURNAL_HERO_SLIDES = [
   },
 ];
 
+const journalStaggerVariants = {
+  hidden: { opacity: 0.9 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.06,
+      delayChildren: 0.04,
+    },
+  },
+};
+
+const journalItemVariants = {
+  hidden: { opacity: 0.88, y: 14 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.48, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] },
+  },
+};
+
+const journalImageVariants = {
+  hidden: { opacity: 0.86, scale: 1.04 },
+  show: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.65, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] },
+  },
+};
+
 export const JournalPage: React.FC = () => {
   const { navigateTo } = useNavigation();
   const [selectedFormat, setSelectedFormat] = useState<string>('All Formats');
@@ -63,6 +102,10 @@ export const JournalPage: React.FC = () => {
 
   const orderedArticles = useMemo(() => {
     const prioritySlugs = [
+      'triple-up-concierge-hospitality-stays-chauffeurs-guide',
+      'corporate-ea-pa-consortium-support-playbook',
+      'london-five-star-sanctuary-suites-insider-guide',
+      'private-aviation-aprons-and-executive-chauffeur-logistics',
       'london-urban-hiphop-sound-vaults-shoreditch-mayfair',
       'subrosa-catacomb-candlelit-banquet-protocol',
       'shoreditch-street-couture-drop-rotary-vinyl-sessions',
@@ -158,24 +201,25 @@ export const JournalPage: React.FC = () => {
 
           <div className="relative z-10 w-full p-6 sm:p-10 flex flex-col lg:flex-row lg:items-end justify-between gap-6">
             <motion.div
-              initial={{ opacity: 0.85, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.55 }}
+              variants={journalStaggerVariants}
+              initial="hidden"
+              animate="show"
               className="max-w-3xl space-y-3"
             >
-              <span className="tglc-kicker block">
+              <motion.span variants={journalItemVariants} className="tglc-kicker block">
                 The Journal of The Global Luxury Consortium
-              </span>
-              <h1 className="font-serif text-3xl sm:text-5xl lg:text-[3.5rem] text-[#FAF7F0] leading-[1.06]">
+              </motion.span>
+              <motion.h1 variants={journalItemVariants} className="font-serif text-3xl sm:text-5xl lg:text-[3.5rem] text-[#FAF7F0] leading-[1.06]">
                 News Dispatches, Field Reports & Cultural Briefings
-              </h1>
-              <p className="font-serif italic text-lg sm:text-2xl text-[#E2BA6B] leading-relaxed">
+              </motion.h1>
+              <motion.p variants={journalItemVariants} className="font-serif italic text-lg sm:text-2xl text-[#E2BA6B] leading-relaxed">
                 “Details noticed by those who take their time.”
-              </p>
-              <p className="tglc-prose text-sm sm:text-base max-w-2xl">
+              </motion.p>
+              <motion.p variants={journalItemVariants} className="tglc-prose text-sm sm:text-base max-w-2xl">
                 Timely city intelligence spanning Vauxhall and Shoreditch sound vaults, seasonal Regent’s Park previews, private aviation briefings, and architectural dinners across Europe.
-              </p>
-              <button
+              </motion.p>
+              <motion.button
+                variants={journalItemVariants}
                 type="button"
                 onClick={() => navigateTo('journal-article', { articleSlug: activeSlide.slug })}
                 className="inline-flex items-center gap-2 text-xs font-mono tracking-wider uppercase text-[#FAF7F0] hover:text-[#E2BA6B] transition-colors pt-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#E2BA6B]"
@@ -183,7 +227,7 @@ export const JournalPage: React.FC = () => {
                 <span className="text-[#E2BA6B]">Featured Frame:</span>
                 <span>{activeSlide.caption}</span>
                 <ArrowUpRight className="w-3.5 h-3.5 text-[#E2BA6B]" />
-              </button>
+              </motion.button>
             </motion.div>
 
             {/* Carousel Controls */}
@@ -197,7 +241,7 @@ export const JournalPage: React.FC = () => {
                   setHeroIdx((prev) => (prev - 1 + JOURNAL_HERO_SLIDES.length) % JOURNAL_HERO_SLIDES.length)
                 }
                 aria-label="Previous hero dispatch frame"
-                className="w-10 h-10 flex items-center justify-center bg-[#0D1017]/90 border border-[#2C3140] hover:border-[#E2BA6B] text-[#FAF7F0] transition-colors focus-visible:outline-2 focus-visible:outline-[#E2BA6B]"
+                className="w-11 h-11 flex items-center justify-center bg-[#0D1017]/90 border border-[#2C3140] hover:border-[#E2BA6B] text-[#FAF7F0] transition-colors focus-visible:outline-2 focus-visible:outline-[#E2BA6B]"
               >
                 <ChevronLeft className="w-4 h-4" />
               </button>
@@ -205,7 +249,7 @@ export const JournalPage: React.FC = () => {
                 type="button"
                 onClick={() => setHeroIdx((prev) => (prev + 1) % JOURNAL_HERO_SLIDES.length)}
                 aria-label="Next hero dispatch frame"
-                className="w-10 h-10 flex items-center justify-center bg-[#0D1017]/90 border border-[#2C3140] hover:border-[#E2BA6B] text-[#FAF7F0] transition-colors focus-visible:outline-2 focus-visible:outline-[#E2BA6B]"
+                className="w-11 h-11 flex items-center justify-center bg-[#0D1017]/90 border border-[#2C3140] hover:border-[#E2BA6B] text-[#FAF7F0] transition-colors focus-visible:outline-2 focus-visible:outline-[#E2BA6B]"
               >
                 <ChevronRight className="w-4 h-4" />
               </button>
@@ -214,8 +258,14 @@ export const JournalPage: React.FC = () => {
         </section>
 
         {/* News Wire & Upcoming Events Briefing Strip */}
-        <section className="grid grid-cols-1 lg:grid-cols-12 gap-6 bg-[#0D1017] border border-[#242630] p-6 sm:p-8">
-          <div className="lg:col-span-7 space-y-4">
+        <motion.section
+          variants={journalStaggerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.05 }}
+          className="grid grid-cols-1 lg:grid-cols-12 gap-6 bg-[#0D1017] border border-[#242630] p-6 sm:p-8"
+        >
+          <motion.div variants={journalItemVariants} className="lg:col-span-7 space-y-4">
             <div className="flex items-center justify-between gap-4 border-b border-[#20232E] pb-3">
               <div>
                 <span className="tglc-kicker block">Latest Wire</span>
@@ -232,9 +282,10 @@ export const JournalPage: React.FC = () => {
               </button>
             </div>
 
-            <div className="divide-y divide-[#1E2230]">
+            <motion.div variants={journalStaggerVariants} className="divide-y divide-[#1E2230]">
               {wireDispatches.map((item) => (
-                <button
+                <motion.button
+                  variants={journalItemVariants}
                   type="button"
                   key={item.slug}
                   onClick={() => navigateTo('journal-article', { articleSlug: item.slug })}
@@ -257,12 +308,12 @@ export const JournalPage: React.FC = () => {
                     </p>
                   </div>
                   <ArrowUpRight className="w-4 h-4 text-[#8F98AA] group-hover:text-[#E2BA6B] shrink-0 mt-1 transition-colors" />
-                </button>
+                </motion.button>
               ))}
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
-          <div className="lg:col-span-5 lg:border-l lg:border-[#20232E] lg:pl-6 space-y-4">
+          <motion.div variants={journalItemVariants} className="lg:col-span-5 lg:border-l lg:border-[#20232E] lg:pl-6 space-y-4">
             <div className="flex items-center justify-between gap-4 border-b border-[#20232E] pb-3">
               <div>
                 <span className="tglc-kicker block">Private Calendar</span>
@@ -280,9 +331,10 @@ export const JournalPage: React.FC = () => {
               </button>
             </div>
 
-            <div className="divide-y divide-[#1E2230]">
+            <motion.div variants={journalStaggerVariants} className="divide-y divide-[#1E2230]">
               {upcomingFixtures.map((ev) => (
-                <button
+                <motion.button
+                  variants={journalItemVariants}
                   type="button"
                   key={ev.id}
                   onClick={() => navigateTo('calendar')}
@@ -296,14 +348,20 @@ export const JournalPage: React.FC = () => {
                   <p className="font-serif text-base sm:text-lg text-[#FAF7F0] group-hover:text-[#E2BA6B] transition-colors leading-snug">
                     {ev.title}
                   </p>
-                </button>
+                </motion.button>
               ))}
-            </div>
-          </div>
-        </section>
+            </motion.div>
+          </motion.div>
+        </motion.section>
 
         {/* Format Segmented Tabs + Search + Category Filters */}
-        <section className="space-y-4 border-y border-[#20232E] py-5">
+        <motion.section
+          variants={journalItemVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.05 }}
+          className="space-y-4 border-y border-[#20232E] py-5"
+        >
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
             {/* Animated Segmented Control for Formats */}
             <div className="flex flex-wrap items-center gap-1 p-1 bg-[#0D1017] border border-[#242630]">
@@ -314,7 +372,7 @@ export const JournalPage: React.FC = () => {
                     type="button"
                     key={fmt}
                     onClick={() => setSelectedFormat(fmt)}
-                    className={`relative px-4 py-2 text-xs font-medium tracking-wide whitespace-nowrap shrink-0 transition-colors min-h-[40px] ${
+                    className={`relative px-4 py-2 text-xs font-medium tracking-wide whitespace-nowrap shrink-0 transition-colors min-h-[44px] ${
                       active ? 'text-[#07080B]' : 'text-[#8F98AA] hover:text-[#FAF7F0]'
                     }`}
                   >
@@ -347,7 +405,7 @@ export const JournalPage: React.FC = () => {
                   type="button"
                   onClick={() => setSearchQuery('')}
                   aria-label="Clear search query"
-                  className="absolute right-2.5 top-1/2 -translate-y-1/2 p-1 text-[#8F98AA] hover:text-[#FAF7F0]"
+                  className="absolute right-2.5 top-1/2 -translate-y-1/2 p-1.5 text-[#8F98AA] hover:text-[#FAF7F0]"
                 >
                   <X className="w-3.5 h-3.5" />
                 </button>
@@ -363,7 +421,7 @@ export const JournalPage: React.FC = () => {
                   type="button"
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
-                  className={`min-h-[38px] px-3.5 py-1.5 text-xs tracking-wide transition-colors border whitespace-nowrap shrink-0 ${
+                  className={`min-h-[44px] px-3.5 py-2 text-xs tracking-wide transition-colors border whitespace-nowrap shrink-0 ${
                     selectedCategory === cat
                       ? 'bg-[#131722] text-[#FAF7F0] border-[#E2BA6B] font-medium'
                       : 'text-[#8F98AA] hover:text-[#FAF7F0] bg-[#0D1017] border-[#242630] hover:border-[#8B672B]'
@@ -379,7 +437,7 @@ export const JournalPage: React.FC = () => {
                   setSelectedFormat('All Formats');
                   setSearchQuery('Vauxhall');
                 }}
-                className="min-h-[38px] px-3.5 py-1.5 text-xs tracking-wide transition-colors border border-[#8B672B]/70 bg-[#14110B] text-[#E2BA6B] hover:bg-[#E2BA6B] hover:text-[#07080B] whitespace-nowrap shrink-0"
+                className="min-h-[44px] px-3.5 py-2 text-xs tracking-wide transition-colors border border-[#8B672B]/70 bg-[#14110B] text-[#E2BA6B] hover:bg-[#E2BA6B] hover:text-[#07080B] whitespace-nowrap shrink-0"
               >
                 Other Side & Urban Nights
               </button>
@@ -388,11 +446,15 @@ export const JournalPage: React.FC = () => {
               Showing {filteredArticles.length} of {JOURNAL_ARTICLES.length} publications
             </span>
           </div>
-        </section>
+        </motion.section>
 
         {/* Empty State or Lead + Grid */}
         {!featuredArticle ? (
-          <div className="bg-[#0D1017] border border-[#242630] p-10 text-center space-y-4">
+          <motion.div
+            initial={{ opacity: 0.9, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="bg-[#0D1017] border border-[#242630] p-10 text-center space-y-4"
+          >
             <span className="tglc-kicker block">No Matching Entries</span>
             <h2 className="font-serif text-3xl text-[#FAF7F0]">
               No dispatches matched your current filters.
@@ -403,25 +465,25 @@ export const JournalPage: React.FC = () => {
             <button
               type="button"
               onClick={resetFilters}
-              className="btn-outline-gold px-6 py-2.5 text-xs inline-flex items-center gap-2"
+              className="btn-outline-gold px-6 py-2.5 text-xs inline-flex items-center gap-2 min-h-[44px]"
             >
               Reset All Filters
             </button>
-          </div>
+          </motion.div>
         ) : (
           <>
-            {/* Featured Lead Story */}
+            {/* Featured Lead Story with Staggered Content & Image Reveal */}
             <motion.article
               key={featuredArticle.slug}
-              initial={{ opacity: 0.85, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
+              variants={journalStaggerVariants}
+              initial="hidden"
+              animate="show"
               whileHover={{ y: -2 }}
-              transition={{ duration: 0.4 }}
               onClick={() => navigateTo('journal-article', { articleSlug: featuredArticle.slug })}
               className="group cursor-pointer p-6 sm:p-9 bg-[#0D1017] border border-[#242630] hover:border-[#E2BA6B]/80 transition-colors grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
             >
-              <div className="lg:col-span-6 order-2 lg:order-1 space-y-4">
-                <div className="tglc-meta flex flex-wrap items-center gap-2.5">
+              <motion.div variants={journalStaggerVariants} className="lg:col-span-6 order-2 lg:order-1 space-y-4">
+                <motion.div variants={journalItemVariants} className="tglc-meta flex flex-wrap items-center gap-2.5">
                   <span className="text-[#E2BA6B] uppercase tracking-[0.18em]">
                     {featuredArticle.articleType || 'Feature Essay'}
                   </span>
@@ -431,38 +493,38 @@ export const JournalPage: React.FC = () => {
                   <span className="tabular-nums">{featuredArticle.publishDate}</span>
                   <span aria-hidden="true">·</span>
                   <span className="tabular-nums">{featuredArticle.readTime}</span>
-                </div>
+                </motion.div>
 
-                <h2 className="font-serif text-3xl sm:text-4xl lg:text-[2.75rem] text-[#FAF7F0] group-hover:text-[#E2BA6B] transition-colors leading-[1.1]">
+                <motion.h2 variants={journalItemVariants} className="font-serif text-3xl sm:text-4xl lg:text-[2.75rem] text-[#FAF7F0] group-hover:text-[#E2BA6B] transition-colors leading-[1.1]">
                   {featuredArticle.title}
-                </h2>
+                </motion.h2>
 
-                <p className="font-serif italic text-lg sm:text-xl text-[#E2BA6B]/95">
+                <motion.p variants={journalItemVariants} className="font-serif italic text-lg sm:text-xl text-[#E2BA6B]/95">
                   {featuredArticle.subtitle}
-                </p>
+                </motion.p>
 
                 {featuredArticle.venueNote && (
-                  <p className="tglc-meta text-[#D4D8E2]">
+                  <motion.p variants={journalItemVariants} className="tglc-meta text-[#D4D8E2]">
                     {featuredArticle.venueNote}
-                  </p>
+                  </motion.p>
                 )}
 
-                <p className="tglc-prose text-sm sm:text-base max-w-2xl">
+                <motion.p variants={journalItemVariants} className="tglc-prose text-sm sm:text-base max-w-2xl">
                   {featuredArticle.excerpt}
-                </p>
+                </motion.p>
 
                 {featuredArticle.keyTakeaways && featuredArticle.keyTakeaways.length > 0 && (
-                  <ul className="space-y-1.5 pt-1 border-t border-[#1D2130]">
+                  <motion.ul variants={journalItemVariants} className="space-y-1.5 pt-1 border-t border-[#1D2130]">
                     {featuredArticle.keyTakeaways.slice(0, 2).map((point, kIdx) => (
                       <li key={kIdx} className="text-xs text-[#8F98AA] flex items-start gap-2 pt-1.5">
                         <span className="text-[#E2BA6B] font-mono shrink-0">—</span>
                         <span>{point}</span>
                       </li>
                     ))}
-                  </ul>
+                  </motion.ul>
                 )}
 
-                <div className="pt-4 flex flex-wrap items-center justify-between gap-2 text-xs text-[#8F98AA] border-t border-[#20232E]">
+                <motion.div variants={journalItemVariants} className="pt-4 flex flex-wrap items-center justify-between gap-2 text-xs text-[#8F98AA] border-t border-[#20232E]">
                   <span>
                     By <strong className="font-medium text-[#FAF7F0]">{featuredArticle.author}</strong> · {featuredArticle.authorRole}
                   </span>
@@ -470,10 +532,10 @@ export const JournalPage: React.FC = () => {
                     <span>Read {featuredArticle.articleType || 'Essay'}</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
                   </span>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
 
-              <div className="lg:col-span-6 order-1 lg:order-2">
+              <motion.div variants={journalImageVariants} className="lg:col-span-6 order-1 lg:order-2">
                 <div className="aspect-[16/10] w-full overflow-hidden bg-[#131722] border border-[#242630]">
                   <img
                     src={featuredArticle.heroImage}
@@ -482,34 +544,41 @@ export const JournalPage: React.FC = () => {
                     className="w-full h-full object-cover brightness-105 contrast-105 group-hover:scale-105 transition-transform duration-700"
                   />
                 </div>
-              </div>
+              </motion.div>
             </motion.article>
 
             {gridArticles.length > 0 && (
               <>
                 <GoldDivider />
-                {/* Publications Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
-                  {gridArticles.map((art, idx) => (
+                {/* Staggered Publications Grid */}
+                <motion.div
+                  key={`${selectedFormat}-${selectedCategory}-${searchQuery}`}
+                  variants={journalStaggerVariants}
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true, amount: 0.02 }}
+                  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7"
+                >
+                  {gridArticles.map((art) => (
                     <motion.article
                       key={art.slug}
-                      initial={{ opacity: 0.9, y: 12 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true, amount: 0.01 }}
+                      variants={journalItemVariants}
                       whileHover={{ y: -3 }}
-                      transition={{ duration: 0.4, delay: Math.min(idx * 0.04, 0.2) }}
                       onClick={() => navigateTo('journal-article', { articleSlug: art.slug })}
                       className="group cursor-pointer bg-[#0D1017] border border-[#242630] hover:border-[#E2BA6B]/70 p-6 transition-colors flex flex-col justify-between"
                     >
                       <div>
-                        <div className="aspect-[16/10] w-full overflow-hidden mb-5 bg-[#131722] border border-[#20232E]">
+                        <motion.div
+                          variants={journalImageVariants}
+                          className="aspect-[16/10] w-full overflow-hidden mb-5 bg-[#131722] border border-[#20232E]"
+                        >
                           <img
                             src={art.heroImage}
                             alt={art.title}
                             referrerPolicy="no-referrer"
                             className="w-full h-full object-cover brightness-105 contrast-105 group-hover:scale-105 transition-transform duration-700"
                           />
-                        </div>
+                        </motion.div>
 
                         <div className="tglc-meta flex flex-wrap items-center gap-2 text-[11px] mb-2.5">
                           <span className="text-[#E2BA6B] uppercase tracking-wider">
@@ -542,16 +611,21 @@ export const JournalPage: React.FC = () => {
                         </p>
                       </div>
 
-                      <div className="pt-4 border-t border-[#20232E] flex items-center justify-between gap-2 text-xs text-[#8F98AA]">
-                        <span className="truncate">{art.author}</span>
-                        <span className="text-[#E2BA6B] group-hover:text-[#FAF7F0] transition-colors flex items-center gap-1 whitespace-nowrap shrink-0 font-mono uppercase text-[11px] tracking-wider">
-                          <span>Open</span>
-                          <ArrowUpRight className="w-3.5 h-3.5" />
+                      <div className="space-y-2.5 pt-3 border-t border-[#20232E]">
+                        <div className="flex items-center justify-between gap-2 text-xs text-[#8F98AA]">
+                          <span className="truncate">{art.author}</span>
+                          <span className="text-[#E2BA6B] group-hover:text-[#FAF7F0] transition-colors flex items-center gap-1 whitespace-nowrap shrink-0 font-mono uppercase text-[11px] tracking-wider">
+                            <span>Open</span>
+                            <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                          </span>
+                        </div>
+                        <span className="block h-[1px] w-full bg-[#191C26] overflow-hidden">
+                          <span className="block h-full w-0 group-hover:w-full bg-gradient-to-r from-[#8B672B] via-[#E2BA6B] to-[#C4933F] transition-all duration-500" />
                         </span>
                       </div>
                     </motion.article>
                   ))}
-                </div>
+                </motion.div>
               </>
             )}
           </>
@@ -560,8 +634,14 @@ export const JournalPage: React.FC = () => {
         <GoldDivider />
 
         {/* Senior Contributors Strip */}
-        <section className="space-y-5">
-          <div className="bg-[#0D1017] border border-[#20222E] p-6 sm:p-8 grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        <motion.section
+          variants={journalStaggerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.05 }}
+          className="space-y-5"
+        >
+          <motion.div variants={journalItemVariants} className="bg-[#0D1017] border border-[#20222E] p-6 sm:p-8 grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
             <div className="lg:col-span-5 space-y-1.5">
               <span className="tglc-kicker block">Uncommissioned Publishing</span>
               <h2 className="font-serif text-2xl sm:text-3xl text-[#FAF7F0]">
@@ -573,35 +653,37 @@ export const JournalPage: React.FC = () => {
                 Every dispatch in The TGLC Journal is authored directly by our house directors in Mayfair—never syndicated from publicists, paid for by hotel chains, or written to flatter commercial sponsors. We review only the sound vaults, private dining counters, workshops, and aviation corridors our principals use themselves.
               </p>
             </div>
-          </div>
+          </motion.div>
 
           <div className="space-y-3">
-            <span className="tglc-kicker block">Senior Contributors · TGLC House</span>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {TEAM_MEMBERS.map((member, idx) => (
+            <motion.span variants={journalItemVariants} className="tglc-kicker block">
+              Senior Contributors · TGLC House
+            </motion.span>
+            <motion.div variants={journalStaggerVariants} className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {TEAM_MEMBERS.map((member) => (
                 <motion.div
                   key={member.name}
-                  initial={{ opacity: 0.9, y: 12 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.01 }}
+                  variants={journalItemVariants}
                   whileHover={{ y: -3 }}
-                  transition={{ duration: 0.4, delay: idx * 0.04 }}
                   onClick={() => navigateTo('about')}
                   className="bg-[#0D1017] border border-[#242630] hover:border-[#E2BA6B]/70 overflow-hidden group cursor-pointer transition-colors flex flex-col justify-between"
                 >
                   <div>
                     {member.image ? (
-                      <div className="aspect-[4/3] overflow-hidden bg-[#131722]">
+                      <motion.div variants={journalImageVariants} className="aspect-[4/3] overflow-hidden bg-[#131722]">
                         <img
                           src={member.image}
                           alt={member.name}
                           referrerPolicy="no-referrer"
                           className="w-full h-full object-cover object-top brightness-105 contrast-105 group-hover:scale-105 transition-transform duration-700"
                         />
-                      </div>
+                      </motion.div>
                     ) : (
-                      <div className="aspect-[4/3] bg-gradient-to-br from-[#121622] via-[#0E1118] to-[#0A0C12] border-b border-[#242A38] flex flex-col items-center justify-center p-6 text-center relative overflow-hidden">
-                        <div className="w-16 h-16 rounded-full border border-[#E2BA6B]/40 bg-[#161B26] flex items-center justify-center mb-2 shadow-inner">
+                      <motion.div
+                        variants={journalImageVariants}
+                        className="aspect-[4/3] bg-gradient-to-br from-[#121622] via-[#0E1118] to-[#0A0C12] border-b border-[#242A38] flex flex-col items-center justify-center p-6 text-center relative overflow-hidden"
+                      >
+                        <div className="w-16 h-16 border border-[#E2BA6B]/45 bg-[#161B26] flex items-center justify-center mb-3 shadow-inner group-hover:border-[#E2BA6B] transition-colors">
                           <span className="font-serif text-2xl text-[#E2BA6B] font-semibold tracking-wider">
                             {member.initials || member.name.charAt(0)}
                           </span>
@@ -609,7 +691,7 @@ export const JournalPage: React.FC = () => {
                         <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#E2BA6B]">
                           {member.origin || 'International Desk'}
                         </span>
-                      </div>
+                      </motion.div>
                     )}
                     <div className="p-4 space-y-1">
                       <div className="flex items-center justify-between">
@@ -628,9 +710,9 @@ export const JournalPage: React.FC = () => {
                   </div>
                 </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
-        </section>
+        </motion.section>
       </div>
     </div>
   );

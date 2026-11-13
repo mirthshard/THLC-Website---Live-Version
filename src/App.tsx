@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavigationProvider, useNavigation } from './context/NavigationContext';
 import { Header } from './components/common/Header';
 import { BreadcrumbNav } from './components/common/BreadcrumbNav';
@@ -30,7 +30,8 @@ import { CaseStudiesPage } from './components/casestudies/CaseStudiesPage';
 import { AmbienceProvider } from './context/AmbienceContext';
 import { AmbiencePlayer } from './components/common/AmbiencePlayer';
 import { AccessGate } from './components/auth/AccessGate';
-import { motion } from 'motion/react';
+import { ArrowUp } from 'lucide-react';
+import { AnimatePresence, MotionConfig, motion, useScroll, useSpring } from 'motion/react';
 
 const PageContent: React.FC = () => {
   const { route } = useNavigation();
@@ -116,37 +117,90 @@ function PageContentWrapper() {
   const routeKey = `${route.page}-${route.serviceId || ''}-${route.subServiceId || ''}-${route.articleSlug || ''}-${route.subSection || ''}`;
 
   return (
-    <motion.div
-      key={routeKey}
-      initial={{ opacity: 0.94, y: 6 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
-      className="w-full"
-    >
-      <PageContent />
-    </motion.div>
+    <AnimatePresence mode="wait">
+      <motion.div
+        key={routeKey}
+        initial={{ opacity: 0.88, y: 8 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0.9, y: -4 }}
+        transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
+        className="w-full"
+      >
+        <PageContent />
+      </motion.div>
+    </AnimatePresence>
+  );
+}
+
+function GlobalScrollEnhancements() {
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 180,
+    damping: 30,
+    restDelta: 0.001,
+  });
+  const [showBackToTop, setShowBackToTop] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setShowBackToTop(window.scrollY > 680);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  return (
+    <>
+      {/* Subtle architectural brass hairline reading progress */}
+      <motion.div
+        style={{ scaleX }}
+        aria-hidden="true"
+        className="fixed top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#8B672B] via-[#E2BA6B] to-[#C4933F] origin-left z-[60] pointer-events-none"
+      />
+
+      {/* Desktop Back-to-Top Elevator */}
+      <AnimatePresence>
+        {showBackToTop && (
+          <motion.button
+            type="button"
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 12 }}
+            transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            aria-label="Return to top of page"
+            className="hidden md:flex fixed bottom-4 left-4 z-40 items-center gap-2 px-3.5 py-2.5 bg-[#0C0D12]/90 backdrop-blur-xl border border-[#2B2D3A] hover:border-[#CFA85E] text-xs font-serif text-[#D9D4CA] hover:text-[#CFA85E] shadow-2xl transition-colors min-h-[40px]"
+          >
+            <ArrowUp className="w-3.5 h-3.5 text-[#CFA85E]" />
+            <span>Top</span>
+          </motion.button>
+        )}
+      </AnimatePresence>
+    </>
   );
 }
 
 export default function App() {
   return (
-    <AccessGate>
-      <AmbienceProvider>
-        <NavigationProvider>
-          <div className="min-h-screen bg-[#07080B] text-[#D4D8E2] flex flex-col font-sans selection:bg-[#B98633]/30 selection:text-[#FAF7F0]">
-            <Header />
-            <BreadcrumbNav />
-            <main className="flex-1">
-              <PageContentWrapper />
-            </main>
-            <Footer />
-            <GlobalSearchModal />
-            <IntroductionModal />
-            <CookieBanner />
-            <AmbiencePlayer />
-          </div>
-        </NavigationProvider>
-      </AmbienceProvider>
-    </AccessGate>
+    <MotionConfig reducedMotion="user">
+      <AccessGate>
+        <AmbienceProvider>
+          <NavigationProvider>
+            <div className="min-h-screen bg-[#07080B] text-[#D4D8E2] flex flex-col font-sans selection:bg-[#B98633]/30 selection:text-[#FAF7F0]">
+              <GlobalScrollEnhancements />
+              <Header />
+              <BreadcrumbNav />
+              <main className="flex-1">
+                <PageContentWrapper />
+              </main>
+              <Footer />
+              <GlobalSearchModal />
+              <IntroductionModal />
+              <CookieBanner />
+              <AmbiencePlayer />
+            </div>
+          </NavigationProvider>
+        </AmbienceProvider>
+      </AccessGate>
+    </MotionConfig>
   );
 }

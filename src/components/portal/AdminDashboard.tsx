@@ -40,22 +40,21 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ user }) => {
   const [broadcastSent, setBroadcastSent] = useState(false);
 
   const DIRECTORS = [
-    'Camilla Vance-Moreau',
-    'Julian Sterling',
     'Mickell Washington',
-    'Dr. Helena Zhang-Somerset',
+    'Leance Djedje',
+    'Melize Nastaasia',
   ];
 
   // Sovereign Members Roster
   const sovereignMembers = [
     {
-      name: 'James Ashford',
+      name: 'Principal Member A.',
       tier: 'The Global Membership',
       location: 'Eaton Square / Florence',
       thumb: '/assets/aistudio/hero_luxury_london_residence_1794298893032.jpg',
       hoursRemaining: 42.5,
       activeDossier: 'Florence Villa & RAF Northolt Apron Staging',
-      manager: 'Camilla Vance-Moreau',
+      manager: 'Mickell Washington',
       status: 'Active In Transit',
     },
     {
@@ -65,7 +64,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ user }) => {
       thumb: '/assets/aistudio/cotswolds_manor_estate.jpg',
       hoursRemaining: 120.0,
       activeDossier: 'Cotswolds Manor Autumn Recalibration',
-      manager: 'Mickell Washington',
+      manager: 'Melize Nastaasia',
       status: 'Active Sovereign',
     },
     {
@@ -75,7 +74,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ user }) => {
       thumb: '/assets/aistudio/monaco_harbor_twilight_1794391696625.jpg',
       hoursRemaining: 185.0,
       activeDossier: 'Monaco Yacht Show Sovereign Berth Tender',
-      manager: 'Camilla Vance-Moreau',
+      manager: 'Leance Djedje',
       status: 'Active Sovereign',
     },
     {
@@ -85,7 +84,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ user }) => {
       thumb: '/assets/aistudio/frieze_gallery_pavilion_1794391697548.jpg',
       hoursRemaining: 68.0,
       activeDossier: 'Basel Art Fair Curatorial Escort',
-      manager: 'Dr. Helena Zhang-Somerset',
+      manager: 'Mickell Washington',
       status: 'Active',
     },
   ];

@@ -112,7 +112,7 @@ export const IntroductionModal: React.FC = () => {
                 transition={{ duration: 0.35 }}
                 className="py-8 text-center space-y-5"
               >
-                <div className="w-14 h-14 mx-auto rounded-full bg-[#151720] border border-[#8B672B]/70 flex items-center justify-center text-[#CFA85E]">
+                <div className="w-14 h-14 mx-auto bg-[#151720] border border-[#8B672B]/70 flex items-center justify-center text-[#CFA85E]">
                   <CheckCircle className="w-6 h-6" />
                 </div>
 
@@ -166,7 +166,7 @@ export const IntroductionModal: React.FC = () => {
                     Every relationship begins with a quiet conversation.
                   </h2>
                   <p className="text-xs sm:text-sm text-[#9C968A] leading-relaxed">
-                    Admission to TGLC is by referral or direct introduction. Share a brief outline below and Camilla Vance-Moreau or a senior Partner at 3rd Floor, 45 Albemarle Street will arrange a private conversation by your preferred channel.
+                    Admission to TGLC is by referral or direct introduction. Share a brief outline below and Mickell Washington or a senior Steward at 3rd Floor, 45 Albemarle Street will arrange a private conversation by your preferred channel.
                   </p>
                 </div>
 

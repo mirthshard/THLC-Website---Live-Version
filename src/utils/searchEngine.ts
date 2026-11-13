@@ -209,8 +209,8 @@ const buildSearchIndex = (): IndexItem[] => {
       snippet: 'Dedicated digital dossier for confirmed members, including ongoing itineraries, reservations, and lifestyle director contact.',
       meta: 'Portal · Member Suite',
       targetRoute: 'member-portal',
-      keywords: ['member portal', 'portal', 'login', 'itinerary', 'concierge request', 'james ashford', 'camilla vance'],
-      searchableContent: 'Private Member Access Portal itinerary concierge requests reservations dossier Camilla Vance-Moreau'
+      keywords: ['member portal', 'portal', 'login', 'itinerary', 'concierge request', 'mickell washington', 'leance djedje', 'melize nastaasia'],
+      searchableContent: 'Private Member Access Portal itinerary concierge requests reservations dossier Mickell Washington Leance Djedje Melize Nastaasia'
     },
     {
       id: 'consortium-contact',

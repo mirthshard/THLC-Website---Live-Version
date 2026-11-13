@@ -109,7 +109,7 @@ export const AccessGate: React.FC<AccessGateProps> = ({ children }) => {
         </p>
 
         <div className="bg-[#0E1015]/95 border border-[#262832] p-8 shadow-2xl relative overflow-hidden backdrop-blur-xl">
-          <div className="w-9 h-9 rounded-full border border-[#B98633]/45 bg-[#15171F] flex items-center justify-center mx-auto mb-4 text-[#CFA85E]">
+          <div className="w-9 h-9 border border-[#B98633]/45 bg-[#15171F] flex items-center justify-center mx-auto mb-4 text-[#CFA85E]">
             {success ? (
               <CheckCircle2 className="w-4 h-4 text-[#CFA85E]" />
             ) : (
